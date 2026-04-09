@@ -99,3 +99,46 @@
  .qrcode img {
      width: 150px;
  }
+
+ .third-row {
+     display: flex;
+     justify-content: center;
+     font-style: oblique;
+     padding-top: 13px;
+ }
+
+ .bc {
+     width: 100%;
+     padding-left: 146px;
+
+ }
+
+ .bc img {
+     height: 106px;
+     width: 239px;
+     padding-right: 25px;
+ }
+
+ .fourth-row {
+     display: flex;
+ }
+
+ .details {
+     width: 50%;
+     text-align: start;
+     padding-left: 15px;
+ }
+
+ .my {
+     width: 50%;
+     text-align: end;
+     padding-right: 147px;
+ }
+
+ .d3 {
+     padding: 17px;
+ }
+
+ .d2 {
+     padding: 12px;
+ }
