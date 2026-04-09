@@ -10,7 +10,7 @@
      align-items: center;
      padding: 15px;
      padding-bottom: 0;
-     background-color: aqua;
+     background-color: lightgray;
  }
 
  .first-row h2 {
@@ -99,3 +99,27 @@
  .qrcode img {
      width: 150px;
  }
+.Third-div {
+    padding: 18px;
+ }
+.fourth-row{
+    display:flex;
+}
+.candidate{
+    width: 50%;
+    justify-content: left;
+    padding: 30px;
+    font-size: large;
+    text-align: justify;
+}
+.month{
+    width: 50%;
+    justify-content: left;
+    padding: 30px;
+    font-size: large;
+    text-align: justify;
+}
+.barc {
+    width: 162%;
+    height: 40%;
+}
