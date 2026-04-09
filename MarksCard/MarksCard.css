@@ -114,13 +114,16 @@
  }
 
  .bc img {
-     height: 106px;
-     width: 239px;
-     padding-right: 25px;
+     height: 70;
+     width: 238px;
+     padding-right: 48px;
+     margin: -24px;
  }
 
  .fourth-row {
      display: flex;
+     font-size: larger;
+
  }
 
  .details {
@@ -141,4 +144,127 @@
 
  .d2 {
      padding: 12px;
+ }
+
+ table {
+     font-size: 28.6px;
+     border: 5px solid grey;
+     margin: 2px;
+ }
+
+ .fifth-row {
+     display: flex;
+     justify-content: center;
+ }
+
+ table,
+ th,
+ td {
+     border: 4px solid black;
+     border-collapse: collapse;
+     padding: 10px 0px;
+     text-align: center;
+ }
+
+ .sixth-row {
+     display: flex;
+     padding: 1px 15px;
+     margin-top: -10px;
+ }
+
+ .st {
+     width: 35%;
+     text-align: start;
+     font-size: 30px;
+ }
+
+ .num {
+     width: 65%;
+     text-align: start;
+     font-family: cursive;
+     font-style: oblique;
+ }
+
+ .seventh-row {
+     display: flex;
+     justify-content: start;
+     padding: 1px 15px;
+     font-size: 30px;
+ }
+
+ .medium {
+     width: 50%;
+     text-align: start;
+ }
+
+ .dsign {
+     width: 50%;
+     text-align: center;
+     padding-left: 330px;
+     padding-top: 5px;
+ }
+
+ .dsign img {
+     height: 89px;
+     width: 172px;
+
+ }
+
+ .eighth-row {
+     display: flex;
+     justify-content: start;
+     padding: 1px 15px;
+     font-size: 30px;
+ }
+
+ .dos {
+     width: 50%;
+     text-align: start;
+ }
+
+ .director {
+     width: 50%;
+     margin-left: 90px;
+ }
+
+ .ninth-row {
+     display: flex;
+     justify-content: start;
+     padding: 1px 15px;
+     font-size: 20px;
+ }
+
+ .bc2 {
+     width: 25%;
+     justify-content: start;
+ }
+
+ .princi {
+     width: 15%;
+     justify-content: center;
+     padding-left: 68px
+ }
+
+ .princi img {
+     width: 176px;
+     padding: 15px 0px;
+     margin: -20px -1px;
+ }
+
+ .student {
+     width: 20%;
+     padding-top: 72px;
+     padding-right: 0px;
+     padding-bottom: 20px;
+     padding-left: 37px;
+ }
+
+ .dept {
+     width: 40%;
+     text-align: center;
+ }
+
+ .dept p {
+     font-style: oblique;
+
  }
