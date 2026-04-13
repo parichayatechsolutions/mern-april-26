@@ -1,20 +1,181 @@
 .container {
-        display: flex;
-        width: 100%;
-        height: 300px;
-        background-color: mediumorchid;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 300px;
+  background-color: mediumorchid;
+  align-items: baseline;
 }
 
 .item {
-    width: 20%;
-    margin: 10px;
-    background-color: coral;
-    text-align: center;
+  width: 100px;
+  margin: 10px;
+  background-color: coral;
+  text-align: center;
 }
-.item2 {
-  order: 2
-  ; /* default is 0 */
+
+.dir {
+  width: 100px;
+  height: auto;
+  margin: 10px;
+  background-color: coral;
+  text-align: center;
 }
-.item3 {
-  order: 6; /* default is 0 */
+
+.direction {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: lightblue;
+  flex-direction: column;
+}
+
+.grow {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: lightgreen;
+  flex-flow: row nowrap;
+}
+
+.gr {
+  width: 100px;
+  margin: 10px;
+  background-color: coral;
+  text-align: center;
+}
+
+.item11 {
+  flex-grow: 1;
+}
+
+.item12 {
+  flex-grow: 2;
+}
+
+.item13 {
+  flex-grow: 3;
+}
+
+.item14 {
+  flex-grow: 4;
+}
+
+.item15 {
+  flex-grow: 5;
+}
+
+.shrink {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: lightyellow;
+  flex-direction: row;
+}
+
+.shr {
+  width: 100%;
+  margin: 10px;
+  background-color: coral;
+  text-align: center;
+}
+
+.item16 {
+  flex-shrink: 5;
+}
+
+.item17 {
+  flex-shrink: 4;
+}
+
+.item18 {
+  flex-shrink: 3;
+}
+
+.item19 {
+  flex-shrink: 2;
+}
+
+.item20 {
+  flex-shrink: 1;
+}
+
+.bss {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(225, 173, 173);
+  align-items: baseline;
+  flex-wrap: nowrap;
+
+}
+
+.bs {
+  width: 100%;
+  margin: 10px;
+  background-color: coral;
+  text-align: center;
+}
+
+.item23 {
+  flex-basis: 150px;
+}
+
+.justify {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: lightcoral;
+  justify-content: space-between;
+}
+
+.jc {
+  width: 100px;
+  margin: 10px;
+  background-color: coral;
+  text-align: center;
+}
+
+.align {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: lightpink;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.al {
+  width: 100px;
+  margin: 10px;
+  background-color: coral;
+  text-align: center;
+}
+
+.align-content {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background-color: lightsteelblue;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.al-co {
+  width: 200px;
+  height: 100px;
+  margin: 10px;
+  background-color: coral;
+  text-align: center;
+}
+
+@media screen and (min-width: 480px) {
+  .align-content {
+    background-color: lightgreen;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .align {
+    background-color: rgb(153, 59, 216);
+  }
 }
