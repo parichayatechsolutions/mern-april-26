@@ -1,13 +1,346 @@
+h2{
+    text-align: center;
+    background-color:bisque;
+    padding: 20px;
+}
 .container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: dodgerblue;
+  background-color: chocolate;
   padding: 10px;
 }
 .container div {
-  background-color: #f1f1f1;
+  background-color: ivory;
   border: 1px solid black;
   padding: 10px;
   font-size: 30px;
   text-align: center;
 }
+
+.inline {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  background-color: chocolate;
+  padding: 10px;
+}
+.inline div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.auto {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: chocolate;
+  padding: 10px;
+}
+.auto div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.mix {
+  display: grid;
+  grid-template-columns: 50px 80px auto;
+  background-color: chocolate;
+  padding: 10px;
+}
+.mix div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.fra {
+  display: grid;
+  grid-template-columns: 3fr 5fr 1fr;
+  background-color: chocolate;
+  padding: 10px;
+}
+.fra div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.rep {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  background-color: chocolate;
+  padding: 10px;
+}
+.rep div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.min {
+  display: grid;
+  grid-template-columns: minmax(50px, 1fr) 100px 100px;
+  background-color: chocolate;
+  padding: 10px;
+}
+.min div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 80px 200px;
+  background-color: chocolate;
+  padding: 10px;
+}
+.row div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.co {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 20px;
+  background-color: chocolate;
+  padding: 10px;
+}
+.co div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.ro {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 20px;
+  background-color: chocolate;
+  padding: 10px;
+}
+.ro div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.gap {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  background-color: chocolate;
+  padding: 10px;
+}
+.gap div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.ju {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  justify-content:space-evenly;
+  background-color: chocolate;
+  padding: 10px;
+}
+.ju div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.align {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  height:300px;
+  align-content:end;
+  background-color: chocolate;
+  padding: 10px;
+}
+.align div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.place {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  height:300px;
+  place-content: end space-between;
+  background-color: chocolate;
+  padding: 10px;
+  gap: 5px;
+}
+.place div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.start {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: chocolate;
+  padding: 10px;
+}
+.start div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.s1{
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.sa {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: chocolate;
+  padding: 10px;
+}
+.sa div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.sr1{
+  grid-column: 1 / span 2;
+}
+
+.end {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: chocolate;
+  padding: 10px;
+}
+.end div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.e2{
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+.rw {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: chocolate;
+  padding: 10px;
+}
+.rw div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.r1 {
+  grid-row: 1 / span 2;
+}
+
+.rc {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: chocolate;
+  padding: 10px;
+}
+.rc div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.c2 {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+.area {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-areas: 'myHeader myHeader myHeader myHeader myHeader myHeader';
+  background-color: chocolate;
+  padding: 10px;
+}
+.area div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.a2 {
+ grid-area: myHeader;
+}
+
+.use {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-areas:'header header header header header header'
+    'menu main main main main right'
+    'menu footer footer footer footer footer';
+  background-color: chocolate;
+  padding: 10px;
+}
+.use div {
+  background-color: ivory;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.u1 { grid-area: header;}
+.u2 { grid-area: main;}
+.u3 { grid-area: right;}
+.u5 { grid-area: footer;}
+.u6 { grid-area: menu;}
+.u4 { grid-area: footer;}
