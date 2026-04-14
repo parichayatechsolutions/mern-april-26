@@ -1,0 +1,180 @@
+.Grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: pink;
+    padding: 10px;
+}
+
+.g {
+    background-color: skyblue;
+    border: 5px solid black;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.Grid-inline {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    background-color: pink;
+    padding: 15px;
+}
+
+.Mix-grid {
+    display: grid;
+    grid-template-columns: 70px 170px auto;
+    grid-template-rows: 110px auto;
+    background-color: pink;
+    padding: 10px;
+}
+
+.fr-grid {
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr;
+    grid-template-rows: 2fr 5fr;
+    background-color: pink;
+    padding: 10px;
+}
+
+.minmax-grid {
+    display: grid;
+    grid-template-columns: minmax(70px, 2fr) 100px 100px;
+    background-color: pink;
+    padding: 10px;
+}
+
+.gap-grid {
+    display: grid;
+    padding: 20px;
+    grid-template-columns: auto auto auto;
+    gap: 20px 50px;
+    background-color: pink;
+}
+
+.Justify-c {
+    display: grid;
+    padding: 20px;
+    grid-template-columns: auto auto auto;
+    gap: 20px 50px;
+    background-color: pink;
+    justify-content: center;
+}
+
+.Align-c {
+    display: grid;
+    padding: 20px;
+    height: 250px;
+    grid-template-columns: auto auto auto;
+    gap: 20px 50px;
+    background-color: pink;
+    align-content: space-between;
+}
+
+.Place-c {
+    display: grid;
+    padding: 20px;
+    height: 250px;
+    grid-template-columns: auto auto auto;
+    gap: 20px 50px;
+    background-color: pink;
+    place-content: end space-between;
+}
+
+.colspan {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: pink;
+    padding: 10px;
+}
+
+.g1 {
+    background-color: skyblue;
+    border: 5px solid black;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.i7 {
+    grid-column: 1/span 3;
+}
+
+.rowspan {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: pink;
+    padding: 10px;
+}
+
+.g2 {
+    background-color: skyblue;
+    border: 5px solid black;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.i4 {
+    grid-row: 1/span 2;
+}
+
+.span {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: pink;
+    padding: 10px;
+    height: 500px;
+}
+
+.g3 {
+    background-color: skyblue;
+    border: 5px solid black;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.i15 {
+    grid-column: 1/ span 3;
+    grid-row: 3/ span 3;
+}
+
+.grid-area {
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'menu main main main main right'
+        'menu footer footer footer footer footer';
+    background-color: pink;
+    padding: 5px;
+    gap: 5px;
+    height: 300px;
+}
+
+.grid-area div {
+    background-color: skyblue;
+    color: #000;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.i25 {
+    grid-area: header;
+}
+
+.i26 {
+    grid-area: menu;
+}
+
+.i27 {
+    grid-area: main;
+}
+
+.i28 {
+    grid-area: right;
+}
+
+.i29 {
+    grid-area: footer;
+}
