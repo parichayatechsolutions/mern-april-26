@@ -5,52 +5,108 @@
     <link rel="stylesheet" href="javascript.css">
 </head>
 
-<body>
-
-    <h2>What Can JavaScript Do?</h2>
-    <h2>Java Basics</h2>
-    <p id="demo">JavaScript can change HTML content.</p>
-    <button type="button" onclick="myFunction()">Click</button>
-    <p id="de">Click to change font.</p>
-    <button type="button" onclick="function1()">Click</button>
-    <p> To use Document Write Function</p>
-    <button type="button" onclick="document.write('<h2>The page redirects to new page<br></h2><h3>And gives the value<br></h3>',10+10)">Click</button>
-    <p>Adding the iamge.</p>
-    <button type="button" onclick="image()">Click to see the change</button>
-    <img id="image" src="./color.jpg" style="width:200px">
-    <button type="button" onclick="image1()">Click revert the image</button>
-    <h2>Java Arithmetic Operators</h2>
-    <p> Addition Operator<br></p>
-    <button id="sum" type="button" onclick="add()">Click to add a + b</button>
-    <p> Subtraction Operator<br></p>
-    <button id="sub" type="button" onclick="sub()">Click to subtract a - b</button>
-    <p> Multiplication Operator<br></p>
-    <button id="multi" type="button" onclick="multi()">Click to multiply a * b</button>
-    <p> Division Operator<br></p>
-    <button id="div" type="button" onclick="div()">Click to divide a / b</button>
-    <p> Exponential Operator<br></p>
-    <button id="exp" type="button" onclick="exp()">Click to add exponent a ** b</button>
-    <p> Modulus Operator<br></p>
-    <button id="mod" type="button" onclick="mod()">Click to find modulus a % b</button>
-    <h2> Addition of strings</h2>
-    <p> Using + operator</p>
-    <button id="str" type="button" onclick="str()"> Click to add to strings</button>
-    <p> Using += operator</p>
-    <button id="equ" type="button" onclick="equ()"> Click to add to strings</button>
-    <h2> Java Comparison Operators</h2>
-    <p> Equals to operator</p>
-    <button id="to" type="button" onclick="to()"> Click to check the value</button>
-    <p> Strict Equals to operator</p>
-    <button id="to1" type="button" onclick="to1()"> Click to check the value</button>
-    <p> Comparing two strings</p>
-    <button id="com" type="button" onclick="com()"> Click to check the value</button>
+<body class="main">
+    <div class="heading">
+        <p>What Can JavaScript Do?</p>
+    </div>
+    <div class="heading2">
+        <p>Javascript Basics</p>
+    </div>
+    <div class="first">
+        <div class="basics">
+            <p id="demo">JavaScript can change HTML content.</p>
+            <button type="button" onclick="myFunction()">Click</button>
+            <p id="de">Click to change font.</p>
+            <button type="button" onclick="function1()">Click</button>
+            <p> To use Document Write Function</p>
+            <button type="button"
+                onclick="document.write('<h2>The page redirects to new page<br></h2><h3>And gives the value<br></h3>',10+10)">Click</button>
+        </div>
+        <div class="img">
+            <p>Adding the iamge.</p>
+            <button type="button" onclick="image()">Click to see the change</button>
+            <img id="image" src="./color.jpg" style="width:150px">
+            <button type="button" onclick="image1()">Click revert the image</button>
+        </div>
+    </div>
+    <div class="heading3">
+        <p>Java Arithmetic Operators
+    </div>
+    <div class="oper">
+        <div class="one">
+            <p> Addition Operator<br></p>
+            <button id="sum" type="button" onclick="add()">Click to add a + b</button>
+        </div>
+        <div class="two">
+            <p> Subtraction Operator<br></p>
+            <button id="sub" type="button" onclick="sub()">Click to subtract a - b</button>
+        </div>
+        <div class="three">
+            <p> Multiplication Operator<br></p>
+            <button id="multi" type="button" onclick="multi()">Click to multiply a * b</button>
+        </div>
+        <div class="Four">
+            <p> Division Operator<br></p>
+            <button id="div" type="button" onclick="div()">Click to divide a / b</button>
+        </div>
+        <div class="Five">
+            <p> Exponential Operator<br></p>
+            <button id="exp" type="button" onclick="exp()">Click to add exponent a ** b</button>
+        </div>
+        <div class="six">
+            <p> Modulus Operator<br></p>
+            <button id="mod" type="button" onclick="mod()">Click to find modulus a % b</button>
+        </div>
+    </div>
+    <div class="heading4">
+        <p> Addition of strings</p>
+    </div>
+    <div class="use">
+        <div class="seven">
+            <p> Using + operator</p>
+            <button id="str" type="button" onclick="str()"> Click to add to strings</button>
+        </div>
+        <div class="eight">
+            <p> Using += operator</p>
+            <button id="equ" type="button" onclick="equ()"> Click to add to strings</button>
+        </div>
+    </div>
+    <div class="heading5">
+        <p> Java Comparison Operators</p>
+    </div>
+    <div class="comparison">
+        <div class="nine">
+            <p> Equals to operator</p>
+            <button id="to" type="button" onclick="to()"> Click to check the value</button>
+        </div>
+        <div class="ten">
+            <p> Strict Equals to operator</p>
+            <button id="to1" type="button" onclick="to1()"> Click to check the value</button>
+        </div>
+        <div class="eleven">
+            <p> Comparing two strings</p>
+            <button id="com" type="button" onclick="com()"> Click to check the value<br></button>
+        </div>
+    </div>
+    <div class="heading6">
+        <p> Conditional Statements</p>
+    </div>
     <div class="container">
-    <h2>Driving Eligibility Checker</h2>
-    <p>With if condition</p>
-    <input type="number" id="userAge" placeholder="Enter your age">
-    <button onclick="checkEligibility()">Check Eligibility</button>
-    <p id="result"></p>
+        <h1><br>Driving Eligibility Checker</h1>
+        <p>With if else condition</p>
+        <input type="number" id="userAge" placeholder="Enter your age">
+        <button type="button" onclick="checkEligibility()">Check Eligibility</button>
+        <p id="result"></p>
+    </div>
+    <div class="ternary">
+        <h1> Discount Pricing</h1>
+        <p><br>With Ternary Condition</p>
+        <input type="text" id="price" placeholder="Enter the price">
+        <button type="button" onclick="checkstatus()">Check value</button>
+        <p id="res"></p>
+    </div>
     </div>
     <script src="javascript.js"></script>
 </body>
+
 </html>
