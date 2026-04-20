@@ -1,0 +1,79 @@
+.operator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    background-color: pink;
+    padding: 10px;
+    gap: 10px 20px;
+}
+
+.addition {
+    background-color: lightgreen;
+    text-align: center;
+}
+
+.subtraction {
+    background-color: lightgreen;
+    text-align: center;
+}
+
+.concate {
+    background-color: lightgreen;
+    text-align: center;
+}
+
+.increement {
+    background-color: lightgreen;
+    text-align: center;
+}
+
+.exponent {
+    background-color: lightgreen;
+    text-align: center;
+}
+
+.spread {
+    background-color: lightgreen;
+    text-align: center;
+}
+
+.compare {
+    background-color: lightgreen;
+    text-align: center;
+}
+
+.div-assign {
+    background-color: lightgreen;
+    text-align: center;
+}
+
+.conditional {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    background-color: pink;
+    padding: 10px;
+    gap: 10px 20px;
+}
+
+.drive {
+    background-color: lightgreen;
+    text-align: center;
+}
+
+.time {
+    background-color: lightgreen;
+    text-align: center;
+}
+
+.age {
+    background-color: lightgreen;
+    text-align: center;
+}
+
+.rainbow {
+    background-color: lightgreen;
+    text-align: center;
+}
