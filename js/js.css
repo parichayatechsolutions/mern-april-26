@@ -52,19 +52,31 @@
     width: 33.3%;
     height: 100%;
 }
-.ifc{
+
+.condition{
     background-color: lightyellow;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display:grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 2fr 2fr 2fr;
+    width: 100%;
+    gap:10px;
     margin-top: 10px;
+}
+.ifc{
+    background-color: lightblue;
+    padding: 10px;
     text-align: center;
+    margin: 10px;
 }
 .ifel{
-    background-color: lightyellow;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 10px;
+    background-color: rgb(223, 223, 141);
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.switch{
+    background-color: rgb(223, 223, 141);
+    margin: 10px;
+    padding: 10px;
     text-align: center;
 }
