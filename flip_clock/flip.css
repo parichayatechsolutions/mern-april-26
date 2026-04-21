@@ -1,0 +1,15 @@
+.dnd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px
+}
+#d{
+    margin:2px;
+    text-align: center;
+
+}
+.dnd h1{
+    margin:auto;
+}
