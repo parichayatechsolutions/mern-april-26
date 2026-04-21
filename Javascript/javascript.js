@@ -96,7 +96,8 @@ function checkEligibility() {
 }
 function checkstatus() {
     let p = Number(document.getElementById("price").value);
-    let count = p ? null : 20;
+    let count = p ? 20 : null;
     let total = p * count;
     document.getElementById("res").innerHTML = "The price is " + total;
+    document.getElementById("res").style.color = "green";
 }
