@@ -12,7 +12,6 @@ function clock() {
     document.getElementById('hh').innerHTML = hour;
     document.getElementById('min').innerHTML =minutes;
     document.getElementById('sec').innerHTML = seconds;
-    document.getElementById('sec').innerHTML = seconds;
     document.getElementById('dd').innerHTML = day;
     document.getElementById('mm').innerHTML = month;
     document.getElementById('yy').innerHTML = year;

@@ -3,7 +3,7 @@ header {
     color: white;
     text-align: center;
     font-family: math;
-    font-size: 50px;
+    font-size: 10vh;
     font-style: oblique;
     font-weight: bold;
     padding: 20px;
@@ -12,20 +12,78 @@ header {
 .main {
     display: flex;
     width: 100%;
+    height: 115%;
     background-color: black;
     color: white;
 }
-.left{
+
+.left,
+.right {
     width: 50%;
     background-color: black;
     color: white;
+    justify-content: space-around;
+    justify-items: center;
+    font-family: math;
+    font-style: oblique;
 }
-.right{
-    width: 50%;
-    background-color: black;
-    color: white;
+
+.ddmmyy,
+#ww {
+    place-self: center;
+    font-size: 35px;
 }
-.ddmmyy {
-    background-color: black;
+
+.ss {
+    place-self: end;
+    font-size: 35px;
+    font-family: math;
+    font-style: oblique;
+    padding-right: 30px;
+}
+
+.meri {
+    place-self: start;
+    font-size: 35px;
+    font-family: math;
+    font-style: oblique;
+    padding-left: 30px;
+}
+
+#hh,
+#min {
+    font-size: 100px;
+    margin: 0;
+    font-size: 35vw;
+    place-self: center;
+}
+
+footer {
+    background-color: #020202;
     color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+blockquote {
+    font-family: math;
+    font-size: 25px;
+    font-style: oblique;
+    text-align: center;
+}
+
+cite {
+    font-family: math;
+    font-size: 27px;
+    font-style: oblique;
+    font-weight: bold;
+    text-align: center;
+}
+
+.separator {
+    margin: 0 10px;
+    font-weight: bold;
+    color: white;
+    justify-items: center;
+    font-size: 12vw;
 }
