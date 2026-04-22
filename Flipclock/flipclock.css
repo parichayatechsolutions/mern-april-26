@@ -1,0 +1,31 @@
+header {
+    background-color: #020202;
+    color: white;
+    text-align: center;
+    font-family: math;
+    font-size: 50px;
+    font-style: oblique;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+.left{
+    width: 50%;
+    background-color: black;
+    color: white;
+}
+.right{
+    width: 50%;
+    background-color: black;
+    color: white;
+}
+.ddmmyy {
+    background-color: black;
+    color: white;
+}
