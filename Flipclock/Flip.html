@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>FlipClock</title>
+    <link rel="Stylesheet" href="Flip.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body class="dark">
+    <div class="flip-clock">
+        <div class="one">
+            <div>
+                <h2 class="date">
+                    <span id="d"></span>/
+                    <span id="month"></span>/
+                    <span id="year"></span>
+                </h2>
+            </div>
+            <div>
+                <h1 id="hrs"></h1>
+            </div>
+            <div>
+                <h3 id="am-pm"></h3>
+            </div>
+        </div>
+        <div class="two">
+            <div>
+                <h2 id="day"></h2>
+                <select id="themeColor" onchange="changeTheme(this.value)">
+                    <option value="light"></option>
+                    <option value="dark"></option>
+                </select>
+
+                <div>
+                    <h1 id="mins" class="animate__animated animate__flipInX"></h1>
+
+                </div>
+                <div>
+                    <h3 id="sec"></h3>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="Flip.js"></script>
+</body>
+
+</html>

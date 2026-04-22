@@ -1,0 +1,39 @@
+.dark{
+    background:black;
+    color:white;
+}
+.light{
+    background-color: white;
+    color:black;
+}
+.flip-clock{
+    display:flex;
+    height:70vh;
+}
+.one,
+.two{
+    display:flex;
+    flex-direction:column;
+    width:50%;
+    justify-items: center;
+    justify-content: space-around;
+}
+#am-pm{
+    place-self: start;
+    font-size:35px;
+}
+#sec{
+    place-self:end;
+    font-size:35px;
+}
+#hrs,
+#mins{
+    font-size: 40vw;
+    margin: -80px;
+    place-self: center;
+}
+#day,
+.date{
+    place-self:center;
+    font-size:25px;
+}
