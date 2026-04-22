@@ -1,15 +1,45 @@
-.dnd {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    font-size: 30px
-}
-#d{
-    margin:2px;
-    text-align: center;
+.dark {
+    background-color: black;
+    color: white;
 
 }
-.dnd h1{
-    margin:auto;
+.light {
+    background-color: white;
+    color: black;
+}
+
+.flip-clock {
+    display: flex;
+    height: 70vh;
+}
+
+.left,
+.right {
+    display: flex;
+    flex-direction: column;    width: 50%;
+    justify-content: space-around;
+    justify-items: center;
+}
+
+#hour,
+#min {
+    margin: -65px;
+    font-size: 40vw;
+    place-self: center;
+}
+
+#am_pm {
+    place-self: start;
+    font-size: 40px;
+}
+
+#sec {
+    place-self: end;
+    font-size: 40px;
+}
+
+#d,
+#dn {
+    place-self: center;
+    font-size: 40px;
 }

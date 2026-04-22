@@ -5,22 +5,37 @@
     <link rel="stylesheet" href="flip.css">
 </head>
 
-<body>
+<body class="dark">
     <div class="flip-clock">
         <div class="left">
             <div>
                 <h2 id="d">
-                    <span id="date"></span>
-                    <span id="month"></span>
+                    <span id="date"></span>-
+                    <span id="month"></span>-
+                    <span id="year"></span>
                 </h2>
             </div>
-            <div></div>
-            <div></div>
+            <div>
+                <h1 id="hour"></h1>
+            </div>
+            <div>
+                <h3 id="am_pm"></h3>
+            </div>
         </div>
         <div class="right">
-            <div></div>
-            <div></div>     
-            <div></div>
+            <div>
+                <h2 id="dn"></h2>
+                <select id="changetheme" onchange="changeTheme(this.value)">
+                    <option value="dark">Dark Theme</option>
+                    <option value="light">Light Theme</option>
+                </select>
+            </div>
+            <div>
+                <h1 id="min"></h1>
+            </div>
+            <div>
+                <h3 id="sec"></h3>
+            </div>
         </div>
         <script src="flip.js"></script>
 </body>
