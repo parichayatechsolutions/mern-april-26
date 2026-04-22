@@ -8,10 +8,11 @@ function updateClockandDate() {
     const year = now.getFullYear();
     const dayOfWeek = now.getDay();
     const ampm = hours >= 12 ? 'PM' : 'AM';
+    const anil = "abc";
     document.getElementById('hour').innerHTML = hours.toString().padStart(2, '0');
-    document.getElementById('min').innerHTML =  `<div class="${seconds.toString().padStart(2, '0') === '00' ? 'animate__animated animate__flipInX' : ''}">${minutes.toString().padStart(2, '0')}</div>` ;
-    document.getElementById('sec').innerHTML = seconds.toString().padStart(2, '0');
-    document.getElementById('sec').innerHTML = seconds.toString().padStart(2, '0');
+    document.getElementById('min').innerHTML =  `<div class="${seconds.toString().padStart(2, '0') === '00' ? 'animate__animated animate__flipInX' : 'animate__animated animate__bounceIn'}">${minutes.toString().padStart(2, '0')}</div>` ;
+    document.getElementById('sec').innerHTML = `<div>${anil} + ${seconds.toString().padStart(2, '0')}</div>`
+    // document.getElementById('sec').innerHTML = seconds.toString().padStart(2, '0');
     document.getElementById('day').innerHTML = day.toString().padStart(2, '0');
     document.getElementById('month').innerHTML = month.toString().padStart(2, '0');
     document.getElementById('year').innerHTML = year.toString().padStart(4, '0');
