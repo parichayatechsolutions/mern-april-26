@@ -9,9 +9,9 @@ function updateClockandDate() {
     const dayOfWeek = now.getDay();
     console.log(`Current time: ${hours}:${minutes}:${seconds}`);
     const ampm = hours >= 12 ? 'PM' : 'AM';
-
+console.log(seconds.toString().padStart(2, '0'));
     document.getElementById('hour').innerHTML = hours.toString().padStart(2, '0');
-    document.getElementById('min').innerHTML = minutes.toString().padStart(2, '0');
+    document.getElementById('min').innerHTML =  `<div class="${seconds.toString().padStart(2, '0') === '00' ? 'animate__animated animate__flipInX' : ''}">${minutes.toString().padStart(2, '0')}</div>` ;
     document.getElementById('sec').innerHTML = seconds.toString().padStart(2, '0');
     document.getElementById('sec').innerHTML = seconds.toString().padStart(2, '0');
     document.getElementById('day').innerHTML = day.toString().padStart(2, '0');
