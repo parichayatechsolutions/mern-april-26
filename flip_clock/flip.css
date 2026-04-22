@@ -43,3 +43,8 @@
     place-self: center;
     font-size: 40px;
 }
+.dl {
+    display: flex;
+    justify-content: flex-end;
+     
+}

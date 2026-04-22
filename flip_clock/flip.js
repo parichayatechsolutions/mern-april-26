@@ -12,8 +12,9 @@ function updateTime() {
     document.getElementById("month").innerHTML = month;
     document.getElementById("year").innerHTML = year;
     document.getElementById("hour").innerHTML = hour;
-    document.getElementById("min").innerHTML = min;
-    document.getElementById("sec").innerHTML = sec;
+    document.getElementById("sec").innerHTML = `<div class='animate__animated animate__bounceIn'>${sec.toString().padStart(2, '0')}</div>`;
+    document.getElementById('min').innerHTML = `<div class="${sec.toString().padStart(2, '0') === '00' ? 'animate__animated animate__flipInX' : ''}">${min.toString().padStart(2, '0')}</div>`;
+
     document.getElementById("am_pm").innerHTML = ampm;
     switch (daynum) {
         case 0:
@@ -49,7 +50,7 @@ startClock();
 
 function changeTheme(theme) {
     console.log(theme);
-    
+
     if (theme === "dark") {
         document.body.className = "dark";
     }

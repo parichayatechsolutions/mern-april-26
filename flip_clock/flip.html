@@ -3,6 +3,7 @@
 <head>
     <title>Flip Clock</title>
     <link rel="stylesheet" href="flip.css">
+    <link rel="stylesheet" href="animate.css">
 </head>
 
 <body class="dark">
@@ -24,11 +25,13 @@
         </div>
         <div class="right">
             <div>
+                <div class="dl">
+                    <select id="changetheme" onchange="changeTheme(this.value)">
+                        <option value="dark">Dark Theme</option>
+                        <option value="light">Light Theme</option>
+                    </select>
+                </div>
                 <h2 id="dn"></h2>
-                <select id="changetheme" onchange="changeTheme(this.value)">
-                    <option value="dark">Dark Theme</option>
-                    <option value="light">Light Theme</option>
-                </select>
             </div>
             <div>
                 <h1 id="min"></h1>
