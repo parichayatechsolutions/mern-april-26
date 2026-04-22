@@ -10,7 +10,7 @@ function clock() {
     const ampm = hour >= 12 ? 'PM' : 'AM';
 
     document.getElementById('hh').innerHTML = hour;
-    document.getElementById('min').innerHTML =minutes;
+    document.getElementById('min').innerHTML =`<div class="${minutes === '00' ? 'animate__animated animate__flipInX' : }">${minutes.toString().padStart(2, '0')}</div>` ;
     document.getElementById('sec').innerHTML = seconds;
     document.getElementById('dd').innerHTML = day;
     document.getElementById('mm').innerHTML = month;
