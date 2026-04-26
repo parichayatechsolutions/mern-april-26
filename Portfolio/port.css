@@ -1,14 +1,16 @@
 .main {
-    margin: 5px;
-    background-color: ghostwhite;
+    margin-top: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .top {
     display: flex;
-    padding: 20px 20px 20px 20px;
     width: 100%;
     align-items: center;
-    background-color: white;
+    padding: 10px;
 }
 
 .top_l {
@@ -22,39 +24,47 @@
 
 .top_m {
     width: 44%;
-    align-content: baseline;
-    background: linear-gradient(to right, #070791, #d4c7e4);
+    display: inline-block;
+    background: linear-gradient(to right, #070791, #efdb43);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
     font-weight: bold;
-    font-size: 29px;
+    font-size: 32px;
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;           
-  padding: 20px 5%;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
 }
 
 .nav-links {
-  display: flex;
-  list-style: none;              
+    display: flex;
+    list-style: none;
+
 }
+
 .nav-links li {
-  margin-left: 30px; 
+    margin: 30px;
+    width: 12%;
 }
 
 .nav-links a {
-  color: #070791;
-  font-weight: 500;
-  transition: color 0.3s;
-  background-color: lavender;
+    color: #070791;
+    font-weight: 500;
+    transition: color 0.3s;
+    background-color: lavender;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px 5px;
 }
+
 .nav-links a:hover {
-  color: aliceblue; 
+    color: rgb(6, 112, 206);
 }
 
 .second {
@@ -75,7 +85,7 @@
     border: 10px solid lavender;
     border-radius: 10px;
     padding: 5px;
-    width: 316px;
+    width: 350px;
     margin-left: 20px;
 }
 
@@ -113,4 +123,264 @@
     color: navy;
     font-size: 18px;
     margin-top: -47px;
+}
+
+.nav-links1 {
+    display: flex;
+    list-style: none;
+    width: 80%;
+
+}
+
+.nav-links1 li {
+    width: 25%;
+}
+
+.nav-links1 a {
+    color: #070791;
+    font-weight: 500;
+    transition: color 0.3s;
+    background-color: lavender;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 21px;
+    padding: 5px;
+    width: 30%;
+}
+
+.nav-links1 a:hover {
+    color: rgb(6, 112, 206);
+}
+
+.heading1 {
+    font-size: 40px;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: -27px;
+}
+
+.para {
+    font-size: 22px;
+    text-align: center;
+    color: navy;
+}
+
+.third {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.heading2 {
+    width: 100%;
+    font-size: 18px;
+    background-color: rgb(240, 240, 249);
+    padding: 20px;
+    border: rgb(232, 232, 245);
+    border-radius: 8px;
+    height: 50%;
+}
+
+.heading2 h3 {
+    font-size: 30px;
+}
+
+.per {
+    display: flex;
+    width: 100%;
+    background-color: rgb(240, 240, 249);
+    text-align: center;
+}
+
+.p {
+    font-size: 23px;
+    font-weight: bold;
+    color: #070791;
+    margin: 30px;
+}
+
+.th_r {
+    width: 40%;
+    padding-left: 31px;
+}
+
+.edu {
+    width: 80%;
+    font-size: 18px;
+    background-color: rgb(240, 240, 249);
+    padding: 10px;
+    border: rgb(232, 232, 245);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.edu h3 {
+    font-size: 30px;
+}
+
+.car {
+    width: 80%;
+    font-size: 18px;
+    background-color: rgb(240, 240, 249);
+    padding: 10px;
+    border: rgb(232, 232, 245);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.car h3 {
+    font-size: 30px;
+}
+
+.loc {
+    width: 80%;
+    font-size: 18px;
+    background-color: rgb(240, 240, 249);
+    padding: 10px;
+    border: rgb(232, 232, 245);
+    border-radius: 8px;
+}
+
+.loc h3 {
+    font-size: 30px;
+}
+
+.heading3 {
+    font-size: 40px;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: -27px;
+}
+
+.par {
+    font-size: 22px;
+    text-align: center;
+    color: navy;
+}
+
+.tt {
+    background-color: lavender;
+    border: lavender;
+    border-radius: 8px;
+    margin: 30px;
+    padding: 10px;
+    width: 100%;
+}
+
+.heading4 {
+    font-size: 25px;
+    width: 100%;
+}
+
+.items {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    gap: 10px;
+    padding: 0px;
+    justify-content: space-evenly;
+    padding: 2px;
+}
+
+.items div {
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.one {
+    background-color: white;
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+    border: white;
+    border-radius: 8px;
+    height: 33px;
+    align-content: center;
+    padding: 10px;
+}
+
+.two {
+    background-color: white;
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+    border: white;
+    border-radius: 8px;
+    height: 33px;
+    align-content: center;
+    padding: 10px;
+}
+
+.three {
+    background-color: white;
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+    border: white;
+    border-radius: 8px;
+    height: 33px;
+    align-content: center;
+    padding: 10px;
+}
+
+.four {
+    background-color: white;
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+    border: white;
+    border-radius: 8px;
+    height: 33px;
+    align-content: center;
+    padding: 10px;
+}
+
+.five {
+    background-color: white;
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+    border: white;
+    border-radius: 8px;
+    height: 33px;
+    align-content: center;
+    padding: 10px;
+}
+
+.six {
+    background-color: white;
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+    border: white;
+    border-radius: 8px;
+    height: 33px;
+    align-content: center;
+    padding: 10px;
+}
+
+.seven {
+    background-color: white;
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+    border: white;
+    border-radius: 8px;
+    height: 33px;
+    align-content: center;
+    padding: 10px;
+}
+
+.eight {
+    background-color: white;
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+    border: white;
+    border-radius: 8px;
+    height: 33px;
+    align-content: center;
+    padding: 10px;
 }
