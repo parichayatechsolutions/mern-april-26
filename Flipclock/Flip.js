@@ -13,8 +13,8 @@ function updateDateTime() {
     document.getElementById("year").innerHTML = year;
 
     document.getElementById("hrs").innerHTML = hrs;
-    document.getElementById("mins").innerHTML = mins;
-    document.getElementById("sec").innerHTML = sec;
+    document.getElementById("mins").innerHTML =`<div class="${sec.toString().padStart(2, '0')=== '00' ? 'animate__animated animate__flipInX' : ''}">${mins.toString().padStart(2, '0')}</div>`;
+    document.getElementById("sec").innerHTML = `<div class='animate__animated animate__heartbeat'>${sec.toString().padStart(2,'0')}</div>`;
     document.getElementById("am-pm").innerHTML = ampm;
     
     switch (dnum) {
@@ -52,11 +52,10 @@ function startClock() {
 startClock();
 
 function changeTheme(theme){
-    let theme=document.getElementById("themeColor").value;
-    if(theme==dark){
-        document.getElementsByClassName("dark").innerHTML;
+    if(theme=="dark"){
+        document.body.className="dark";
     }
-    if(theme==light){
-        document.getElementsByClassName("light").innerHTML;
+    else if(theme=="light"){
+        document.body.className="light";
     }
 }
