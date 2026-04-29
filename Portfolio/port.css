@@ -11,7 +11,9 @@ body {
     margin-left: 10px;
     margin-right: 10px;
 }
-
+section {
+    scroll-behavior:smooth;
+}
 .navigation,
 .second {
     max-width: 1280px;
@@ -100,8 +102,9 @@ body {
 .second_r p {
     position: absolute;
     right: 0;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     background-color: white;
+    background: rgba(233, 231, 231, 0.3); ;
     padding: 20px;
     bottom: 2px;
     border-radius: 20px;
@@ -677,7 +680,7 @@ body {
     top: 10px;
     width: 3px;
     height: 230px;
-    background-color: #6366f1;
+    background-color: #667eea;
 }
 
 .t_l h3 {
@@ -790,7 +793,16 @@ textarea {
     resize: none;
     font-family: 'Manrope', sans-serif;
 }
-
+input:focus {
+    background-color: whitesmoke;
+    opacity: 0.5;
+    border: 3px solid #5317cd;
+}
+textarea:focus {
+    background-color: whitesmoke;
+    opacity: 0.5;
+    border: 3px solid #5317cd;
+}
 .btn {
     margin-top: 10px;
     padding: 15px;
@@ -798,7 +810,6 @@ textarea {
     border-radius: 14px;
     font-size: 16px;
     color: white;
-    cursor: pointer;
     background: linear-gradient(90deg, #5f76e8, #7a4ca5);
     display: flex;
     justify-content: center;
