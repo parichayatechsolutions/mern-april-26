@@ -6,10 +6,11 @@ body {
 .one {
     display: flex;
     width: 100%;
-    margin-top: 20px;
+    padding: 16px;
     width: 1280px;
     padding-left: 16px;
     padding-right: 16px;
+    background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1));
 }
 
 .left {
@@ -53,11 +54,11 @@ body {
 .two {
     background-color: black;
     color: white;
-    margin-top: 10px;
+    margin-top: 0;
     padding-top: 140px;
     display: flex;
     width: 1280px;
-    height: 500px;
+    height: 400px;
     padding-left: 16px;
     padding-right: 16px;
 }
@@ -183,8 +184,16 @@ body {
     color: white;
 }
 
+.three {
+    margin-top: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
 .abt {
-    font-size: 26px;
+    font-size: 20px;
     text-align: center;
     list-style: 40px;
     margin-bottom: -25px;
@@ -328,6 +337,7 @@ body {
     padding-right: 16px;
     margin-left: 16px;
     margin-right: 16px;
+    background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1));
 }
 
 .Proj {
@@ -463,7 +473,7 @@ body {
     border: 2px;
     height: 200px;
     padding: 24px;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .head1 h1,
@@ -565,8 +575,7 @@ body {
     padding: 20px;
 }
 
-.five,
-.six {
+.five {
     margin-top: 40px;
     padding-left: 16px;
     padding-right: 16px;
@@ -618,15 +627,15 @@ body {
 
 .st {
     display: flex;
-    gap: 8px;
     align-items: center;
+    justify-content: space-between;
     font-size: 16px;
     padding: 10px;
 }
 
-.end {
-    align-items: flex-end;
-    padding: 10px;
+.dot1 {
+    display: flex;
+    gap: 8px;
 }
 
 .c1 {
@@ -753,10 +762,10 @@ body {
 
 .area {
     display: grid;
-    gap:20px;
+    gap: 20px;
     grid-template-columns: repeat(3, 2fr);
     grid-template-rows: repeat(1, 2fr);
-    padding:16px;
+    padding: 16px;
 
 }
 
@@ -773,6 +782,7 @@ body {
     font-size: 16px;
     padding: 14px;
 }
+
 .web {
     border: 2px;
     border-radius: 8px;
@@ -782,7 +792,8 @@ body {
     font-size: 16px;
     padding: 14px;
 }
-.mob{
+
+.mob {
     border: 2px;
     border-radius: 8px;
     width: fit-content;
@@ -791,12 +802,248 @@ body {
     font-size: 16px;
     padding: 14px;
 }
+
 .ds {
     border: 2px;
     border-radius: 8px;
     width: fit-content;
-    background-color:darksalmon;
-    color:orangered;
+    background-color: darksalmon;
+    color: orangered;
     font-size: 16px;
     padding: 14px;
+}
+
+.six {
+    margin-top: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 32px;
+    padding-bottom: 100px;
+    margin-left: 16px;
+    margin-right: 16px;
+    background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1));
+}
+
+.Act {
+    text-align: center;
+    margin-bottom: 64px;
+
+}
+
+.Act h1 {
+    font-size: 36px;
+}
+
+.Act p {
+    font-size: 20px;
+    --tw-text-opacity: 1;
+    color: rgb(71 85 105 / var(--tw-text-opacity, 1));
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.data1,
+.data2,
+.data3 {
+    border: 2px;
+    border-radius: 12px;
+    background-color: white;
+    width: 70%;
+    padding: 16px;
+    align-items: center;
+    box-shadow: 3px 3px rgb(224, 223, 223);
+}
+
+.data1 h1,
+.data2 h1,
+.data3 h1 {
+    font-size: 24px;
+    padding-left: 20px;
+}
+
+.data1 p,
+.data2 p,
+.data3 p {
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heading span {
+    color: purple;
+    font-size: 18px;
+}
+
+.data1 ul,
+.data2 ul,
+.data3 ul {
+    line-height: 2;
+}
+
+.seven {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 32px;
+    padding-bottom: 100px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.seven1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.seven1 h1 {
+    font-size: 36px;
+}
+
+.seven1 p {
+    font-size: 20px;
+    --tw-text-opacity: 1;
+    color: rgb(71 85 105 / var(--tw-text-opacity, 1));
+}
+
+.connect {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.conn1{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.conn1 h1,
+.conn2 h1{
+    font-size:22px;
+}
+.both {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap:48px;
+    padding-top:35px;
+}
+
+.details1 {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid black;
+    border-radius: 16px;
+    width: 500px;
+    height: 400px;
+    background-color: black;
+    color: white;
+    margin-left: 30px;
+    row-gap: 15px;
+    padding: 24px;
+}
+
+.items{
+    display:flex;
+    gap:5px;
+    align-items: center;
+}
+
+.items span {
+    --tw-bg-opacity: 1;
+    background-color: rgb(51 65 85 / var(--tw-bg-opacity, 1));
+    padding: 8px;
+    margin-right: 16px;
+    border-radius: 8px;
+}
+.container{
+    width:50%;
+}
+.form {
+   background: white;
+   padding:15px;
+    border-radius:10px;
+}
+.your-name{
+   display: flex;
+    gap: 95px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom:25px;
+    width:100%;
+}
+.nam{
+   display:flex;
+   flex-direction: column;
+   gap:8px;
+   width:50%;
+}
+label{
+    margin-bottom:5px;
+    font-weight:500;
+}
+input,
+textarea{
+padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.nam2{
+    display:flex;
+    flex-direction: column;
+    padding-bottom:25px;
+    width: 100%;
+    gap:8px;
+}
+.nam1{
+    display:flex;
+    flex-direction: column;
+    padding-bottom:25px;
+    width: 100%;
+    gap:8px;
+}
+.nam1 input{
+    height:144px;
+    width:100%;
+}
+input:focus, 
+textarea:focus {
+  border-color: purple;
+  box-shadow: 0 0 5px rgba(128, 0, 128, 0.3);
+}
+
+textarea {
+    width:100%;
+  height: 120px;
+  resize: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, purple,blueviolet);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
 }
