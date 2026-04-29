@@ -1,0 +1,156 @@
+.row2 {
+    display: flex;
+    height: 400px;
+    flex-direction: row;
+    padding-top: 100px;
+    padding-left: 220px;
+    padding-right: 220px
+}
+
+.row2 h1 {
+    font-weight: 700;
+    font-size: 48px;
+    font-family: cursive;
+}
+
+.row2 p {
+    font-size: 20px;
+    font-family: cursive;
+    color: grey;
+}
+
+.r2l,
+.r2r {
+    width: 50%;
+}
+
+.r2l {
+    position: relative;
+    right: 27px;
+}
+
+.r2r {
+    position: relative;
+    left: 20px;
+    top: 30px;
+}
+
+.sticker1 {
+    position: absolute;
+    font-weight: bold;
+    font-family: cursive;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px black;
+    border-width: 3px;
+    padding: 2px 7px;
+    transform: rotate(-5deg);
+    transition: all 0.3s ease;
+    background: #ff6b6b;
+    color: white;
+    top: -20px;
+    left: -20px;
+}
+
+.seelet {
+    display: flex;
+    flex-direction: row;
+    gap: 25px
+}
+
+.see,
+.let {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#btn1:hover {
+    background-color: rgb(162, 245, 67);
+    z-index: 1;
+}
+
+#btn2:hover {
+    background-color: rgb(188, 196, 178);
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    border: 3px solid #2d3748;
+    box-shadow: 8px 8px 0 #2d3748;
+    transform: rotate(-1deg);
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 32px;
+    z-index: 1;
+}
+
+.sticker2 {
+    position: absolute;
+    font-weight: bold;
+    font-family: cursive;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px black;
+    border-width: 3px;
+    padding: 2px 7px;
+    transform: rotate(-5deg);
+    transition: all 0.3s ease;
+    background: #4ecdc4;
+    color: white;
+    bottom: -10px;
+    right: -20px;
+}
+
+.lap {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    border: 3px solid #2d3748;
+    box-shadow: 8px 8px 0 #2d3748;
+    transform: rotate(5deg);
+    transition: all 0.3s ease;
+    padding: 24px;
+}
+
+.circle {
+    display: flex;
+    background: linear-gradient(85deg, rgb(164, 164, 231), pink);
+    border: 3px solid black;
+    border-radius: 50%;
+    border-width: 4px;
+    align-items: center;
+    justify-content: center;
+    height: 256px;
+    width: 256px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.yr {
+    position: absolute;
+    right: -16px;
+    bottom: 59px;
+    z-index: 1;
+    border: 3px solid black;
+    border-radius: 25px;
+    box-shadow: 8px 8px black;
+    transform: rotate(1deg);
+    transition: all 0.3s ease;
+    background: #96ceb4;
+    padding: 0px 40px;
+    text-align: center;
+}
+
+.yr p {
+    font-size: 16px;
+    line-height: 17px;
+    font-weight: 700;
+}
+
+.content:hover,
+.lap:hover,
+.yr:hover {
+    background-color: lightblue;
+    transform: rotate(0deg);
+    z-index: 1;
+}
