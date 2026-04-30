@@ -4,20 +4,20 @@ function Header() {
 
     return (
         <>
-            <nav class="header">
-                <div class="ht">
-                    <div class="hl">
-                        <div class="i1">
+            <nav className="header">
+                <div className="ht">
+                    <div className="hl">
+                        <div className="i1">
                             <img src="./icon.png!w700wp" alt="logo"/>
                         </div>
-                        <span class="name ">Lathesh</span>
+                        <span className="name ">Lathesh</span>
                     </div>
-                    <div class="hr navigation">
-                        <a href="#about" class="link">ABOUT</a>
-                        <a href="#projects" class="link">PROJECTS</a>
-                        <a href="#skills" class="link">SKILLS</a>
-                        <a href="#experience" class="link">EXPERIENCE</a>
-                        <a href="#contact" class="link">CONTACT</a>
+                    <div className="hr navigation">
+                        <a href="#about" className="link">ABOUT</a>
+                        <a href="#projects" className="link">PROJECTS</a>
+                        <a href="#skills" className="link">SKILLS</a>
+                        <a href="#experience" className="link">EXPERIENCE</a>
+                        <a href="#contact" className="link">CONTACT</a>
                     </div>
                 </div>
             </nav>
