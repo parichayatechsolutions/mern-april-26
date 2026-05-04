@@ -2,14 +2,25 @@ import "./Skill.css"
 
 
 function Skill() {
+    const te = "Technical Skills"
+    const para = "Technologies and tools I use to bring ideas to life."
+    const to = "Technology and Tools"
+    const to1 = "React"
+    const to2 = "Node.js"
+    const to3 = "MongoDB"
+    const to4 = "Git"
+    const to5 = "HTML"
+    const to6 = "CSS"
+    const to7 = "Javascript"
+    const to8 = "C & C++"
 
     return (
         <>
 
         <section id="skill">
             <div className="heading3">
-                <h3> Technical Skills </h3>
-                <p>Technologies and tools I use to bring ideas to life.</p>
+                <h3> {te} </h3>
+                <p>{para}</p>
                 <div className="chart">
                     <div className="skill">
                         <div className="circle">
@@ -36,7 +47,7 @@ function Skill() {
                     </div>
                 </div>
                 <div className="tt">
-                    <h3>Technology and Tools</h3>
+                    <h3>{to}</h3>
                     <div className="items">
                         <div className="one">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -49,7 +60,7 @@ function Skill() {
                                             d="M16.3,18.5c1.4,0,2.5-1.1,2.5-2.5s-1.1-2.5-2.5-2.5s-2.5,1.1-2.5,2.5S14.9,18.5,16.3,18.5z" />
                                     </g>
                                 </svg></span> */}
-                            <p>React</p>
+                            <p>{to1}</p>
                         </div>
                         <div className="two">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" fill="#31c969" width="40px" height="40px"
@@ -59,7 +70,7 @@ function Skill() {
                                 </svg>
 
                             </span> */}
-                            <p>Node.js</p>
+                            <p>{to2}</p>
                         </div>
                         <div className="three">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" fill="#eab308" width="40px" height="40px"
@@ -71,7 +82,7 @@ function Skill() {
                                             d="M10 6c3.9 0 7-.9 7-2s-3.1-2-7-2-7 .9-7 2 3.1 2 7 2zm0 9c-3.9 0-7-.9-7-2v3c0 1.1 3.1 2 7 2s7-.9 7-2v-3c0 1.1-3.1 2-7 2zm0-4c-3.9 0-7-.9-7-2v3c0 1.1 3.1 2 7 2s7-.9 7-2V9c0 1.1-3.1 2-7 2zm0-4c-3.9 0-7-.9-7-2v3c0 1.1 3.1 2 7 2s7-.9 7-2V5c0 1.1-3.1 2-7 2z" />
                                     </g>
                                 </svg></span> */}
-                            <p>MongoDB</p>
+                            <p>{to3}</p>
                         </div>
                         <div className="four">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24"
@@ -81,7 +92,7 @@ function Skill() {
                                         fill="#f97316" />
                                 </svg>
                             </span> */}
-                            <p>Git</p>
+                            <p>{to4}</p>
                         </div>
                         <div className="five">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 16 16"
@@ -95,7 +106,7 @@ function Skill() {
                                     <path d="M2.82843 8L4.91421 10.0858L3.5 11.5L0 8L3.5 4.5L4.91421 5.91422L2.82843 8Z"
                                         fill="#60a5fa" />
                                 </svg></span> */}
-                            <p>HTML</p>
+                            <p>{to5}</p>
                         </div>
                         <div className="six">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -104,7 +115,7 @@ function Skill() {
                                         d="M15.363 4.476c-0.863 0.281-1.431 0.944-1.575 1.831-0.050 0.3 0.006 0.931 0.313 3.706 0.206 1.838 0.363 3.381 0.356 3.425-0.012 0.044-1.313-0.875-2.925-2.056-1.594-1.169-3.044-2.2-3.219-2.294-0.425-0.219-1.181-0.262-1.688-0.1-0.744 0.231-1.375 0.863-1.606 1.6-0.206 0.681-0.119 1.287 0.287 1.9 0.394 0.588 0.656 0.731 4.187 2.3 1.813 0.8 3.294 1.481 3.287 1.512 0 0.031-1.419 0.669-3.144 1.413s-3.281 1.438-3.456 1.544c-0.419 0.25-0.869 0.744-1.075 1.181-0.144 0.3-0.169 0.438-0.169 0.887 0 0.463 0.025 0.581 0.2 0.95 0.25 0.525 0.606 0.919 1.063 1.162 0.731 0.387 1.412 0.381 2.206-0.019 0.225-0.113 1.675-1.131 3.219-2.269 2.037-1.494 2.819-2.038 2.831-1.963 0.006 0.056-0.15 1.613-0.356 3.45-0.4 3.625-0.406 3.75-0.119 4.363 0.188 0.394 0.606 0.8 1.037 1 0.313 0.15 0.438 0.169 0.981 0.169 0.556 0 0.663-0.019 0.981-0.175 0.669-0.331 1.106-0.913 1.244-1.675 0.063-0.363 0.031-0.738-0.313-3.8-0.212-1.869-0.375-3.406-0.363-3.419s1.169 0.825 2.581 1.863c3.431 2.525 3.581 2.619 4.212 2.738 1.269 0.238 2.637-0.856 2.738-2.188 0.038-0.556-0.069-0.975-0.369-1.438-0.413-0.637-0.65-0.769-4.213-2.306-1.787-0.769-3.275-1.419-3.3-1.444-0.031-0.025 1.363-0.675 3.094-1.438 3.787-1.675 3.675-1.625 4.094-2.012 0.444-0.425 0.656-0.869 0.694-1.45 0.069-1.113-0.637-2.15-1.669-2.45-0.506-0.15-1.262-0.094-1.706 0.119-0.181 0.094-1.644 1.125-3.231 2.294-1.594 1.169-2.912 2.119-2.925 2.106s0.15-1.569 0.363-3.456c0.413-3.737 0.419-3.819 0.106-4.45-0.188-0.394-0.613-0.8-1.025-0.994-0.431-0.194-1.225-0.256-1.631-0.119z" />
                                 </svg>
                             </span> */}
-                            <p>CSS</p>
+                            <p>{to6}</p>
                         </div>
                         <div className="seven">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24"
@@ -119,7 +130,7 @@ function Skill() {
                                         stroke-linejoin="round" />
                                 </svg>
                             </span> */}
-                            <p>Javascript</p>
+                            <p>{to7}</p>
                         </div>
                         <div className="eight">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24"
@@ -130,7 +141,7 @@ function Skill() {
                                         stroke-linejoin="round" />
                                 </svg>
                             </span> */}
-                            <p>C & C++</p>
+                            <p>{to8}</p>
                         </div>
                     </div>
                 </div>

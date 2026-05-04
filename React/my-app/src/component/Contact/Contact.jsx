@@ -3,14 +3,23 @@ import "./Contact.css"
 
 function Contact() {
 
+    const co1 = "Lets Connect "
+    const co2 = "Interested in working together? Let's talk."
+    const co3 = "Contact Info"
+    const co4 = "mahalakshmi@e-mail.com"
+    const co5 = "+91 9663742206"
+    const co6 = "Vasantha Nagara"
+    const co7 = " Connect with me"
+    const co8 = "Send Message"
+
     return (
         <>
 
             <section id="contact">
                 <div className="connect">
                     <div className="heading6">
-                        <h3> Lets Connect </h3>
-                        <p>Interested in working together? Let's talk.</p>
+                        <h3> {co1}</h3>
+                        <p>{co2}</p>
                     </div>
                     <div className="co_l">
                         <div className="form">
@@ -34,18 +43,19 @@ function Contact() {
                                     <textarea placeholder="Your message"></textarea>
                                 </div>
                                 <button type="submit" className="btn">
-                                    {/* Send Message<span><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="20px"
+                                    <p>{co8}</p>
+                                        {/* <span><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="20px"
                                         height="20px" viewBox="0 0 32 32" version="1.1">
                                         <title>paper-plane</title>
                                         <path
                                             d="M0 14.016l9.216 6.912 18.784-16.928-14.592 20.064 10.592 7.936 8-32zM8 32l6.016-4-6.016-4v8z" />
-                                    </svg></span> */}
+                                    </svg></span>  */}
                                 </button>
                             </form>
                         </div>
                         <div className="co_r1">
                             <div className="d_r">
-                                <h3>Contact Info</h3>
+                                <h3>{co3}</h3>
                                 <div className="mail">
                                     <div className="m_l">
                                         <div className="c_a">
@@ -58,7 +68,7 @@ function Contact() {
                                             </svg></span> */}
                                         </div>
                                         <div className="m_r">
-                                            <p> mahalakshmi@e-mail.com</p>
+                                            <p> {co4}</p>
                                         </div>
                                     </div>
                                     <div className="call">
@@ -71,7 +81,7 @@ function Contact() {
                                             </svg></span> */}
                                         </div>
                                         <div className="c_r">
-                                            <p>+91 9663742206</p>
+                                            <p>{co5}</p>
                                         </div>
                                     </div>
                                     <div className="loca">
@@ -91,14 +101,14 @@ function Contact() {
                                             </svg></span> */}
                                         </div>
                                         <div className="l_r">
-                                            <p>Vasantha Nagara</p>
+                                            <p>{co6}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="last">
                                 <div className="heading7">
-                                    <h3> Connect with me</h3>
+                                    <h3>{co7}</h3>
                                 </div>
                                 <div className="ic">
                                     <div className="icon">
