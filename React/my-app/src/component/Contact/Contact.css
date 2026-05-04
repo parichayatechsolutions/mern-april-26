@@ -1,35 +1,20 @@
 .heading6 {
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
-    margin-top: 140px;
 }
 
 .heading6 h3 {
     color: rgb(31 41 55);
     font-weight: 700;
     font-size: 36px;
-    line-height: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 16px;
 }
 
 .heading6 p {
     color: rgb(75 85 99);
     font-size: 20px;
     line-height: 28px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 672px;
+    
 }
 
-.connect {
-    width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .co_l {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -38,8 +23,6 @@
 }
 
 form {
-    max-width: 700px;
-    margin: auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -58,7 +41,6 @@ form {
 }
 
 label {
-    margin-bottom: 6px;
     font-weight: 500;
     color: #333;
     font-size: 18px;

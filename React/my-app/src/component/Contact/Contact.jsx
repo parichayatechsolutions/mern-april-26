@@ -8,7 +8,7 @@ function Contact() {
 
             <section id="contact">
                 <div className="connect">
-                    <div class="heading6">
+                    <div className="heading6">
                         <h3> Lets Connect </h3>
                         <p>Interested in working together? Let's talk.</p>
                     </div>
