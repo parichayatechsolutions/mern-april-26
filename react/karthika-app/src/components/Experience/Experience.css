@@ -1,0 +1,77 @@
+.six {
+    margin-top: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 32px;
+    padding-bottom: 100px;
+    margin-left: 16px;
+    margin-right: 16px;
+    background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1));
+}
+
+.Act {
+    text-align: center;
+    margin-bottom: 64px;
+
+}
+
+.Act h1 {
+    font-size: 36px;
+}
+
+.Act p {
+    font-size: 20px;
+    --tw-text-opacity: 1;
+    color: rgb(71 85 105 / var(--tw-text-opacity, 1));
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.data1,
+.data2,
+.data3 {
+    border: 2px;
+    border-radius: 12px;
+    background-color: white;
+    width: 70%;
+    padding: 16px;
+    align-items: center;
+    box-shadow: 3px 3px rgb(224, 223, 223);
+}
+
+.data1 h1,
+.data2 h1,
+.data3 h1 {
+    font-size: 24px;
+    padding-left: 20px;
+}
+
+.data1 p,
+.data2 p,
+.data3 p {
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heading span {
+    color: purple;
+    font-size: 18px;
+}
+
+.data1 ul,
+.data2 ul,
+.data3 ul {
+    line-height: 2;
+}

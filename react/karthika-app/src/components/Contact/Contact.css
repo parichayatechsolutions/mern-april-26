@@ -1,0 +1,152 @@
+.seven {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 32px;
+    padding-bottom: 100px;
+}
+
+.seven1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.seven1 h1 {
+    font-size: 36px;
+}
+
+.seven1 p {
+    font-size: 20px;
+    --tw-text-opacity: 1;
+    color: rgb(71 85 105 / var(--tw-text-opacity, 1));
+}
+
+.connect {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.conn1{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.conn1 h1,
+.conn2 h1{
+    font-size:22px;
+}
+.both {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap:48px;
+    padding-top:35px;
+}
+
+.details1 {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid black;
+    border-radius: 16px;
+    height: 400px;
+    background-color: black;
+    color: white;
+    margin-left: 30px;
+    row-gap: 15px;
+    padding: 24px;
+}
+
+.items{
+    display:flex;
+    gap:5px;
+    align-items: center;
+}
+
+.items span {
+    --tw-bg-opacity: 1;
+    background-color: rgb(51 65 85 / var(--tw-bg-opacity, 1));
+    padding: 8px;
+    margin-right: 16px;
+    border-radius: 8px;
+}
+.container{
+    width:50%;
+}
+.form {
+   background: white;
+   padding:15px;
+    border-radius:10px;
+}
+.your-name{
+   display: flex;
+    gap: 95px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom:25px;
+    width:100%;
+}
+.nam{
+   display:flex;
+   flex-direction: column;
+   gap:8px;
+   width:50%;
+}
+label{
+    margin-bottom:5px;
+    font-weight:500;
+}
+input,
+textarea{
+padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.nam2{
+    display:flex;
+    flex-direction: column;
+    padding-bottom:25px;
+    width: 100%;
+    gap:8px;
+}
+.nam1{
+    display:flex;
+    flex-direction: column;
+    padding-bottom:25px;
+    width: 100%;
+    gap:8px;
+}
+.nam1 input{
+    height:144px;
+    width:100%;
+}
+input:focus, 
+textarea:focus {border-color: purple;
+  box-shadow: 0 0 5px rgba(128, 0, 128, 0.3);
+}
+
+textarea {
+    width:100%;
+  height: 120px;
+  resize: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, purple,blueviolet);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
