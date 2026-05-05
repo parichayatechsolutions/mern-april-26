@@ -1,0 +1,31 @@
+.row11 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 130px;
+    line-height: 1;
+}
+
+.row11 h1 {
+    font-weight: 900;
+    font-size: 48px;
+    text-shadow: 4px 4px 0px #d0d000;
+    font-family: cursive;
+    text-align: center;
+    margin-bottom: -19px;
+}
+
+.row11 h2 {
+    font-weight: 900;
+    font-size: 50px;
+    text-shadow: 0px 3px 1px #0a0a0a;
+    font-family: cursive;
+    text-align: center;
+    margin: -5px;
+}
+
+.row11 p {
+    font-size: 20px;
+    font-family: cursive;
+    text-align: center;
+}

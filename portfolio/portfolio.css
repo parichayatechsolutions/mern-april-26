@@ -393,6 +393,8 @@ body {
 }
 
 .row6 {
+    display: flex;
+    place-self: center;
     padding-top: 74px;
     padding-left: 220px;
     padding-right: 220px;

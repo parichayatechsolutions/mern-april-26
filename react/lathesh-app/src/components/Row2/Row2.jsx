@@ -1,24 +1,34 @@
 import "./Hero.css"
-
+const cc="CREATIVE CODER"
+const intro="Hello! I'm"
+const name="Lathesh"
+const about1="I turn complex problem into"
+const about2="beautiful solution"
+const about3="through code,creativity, touch of magic✨"
+const da= "DIGITAL ARTIST"
+const yr1="2"
+const yr2="nd"
+const yr3="Year MCA"
+const button1="See My Art 🎨"
+const button2="Let's Chart 💬"
 function Hero() {
 
     return (
         <>
             <div className="row2">
                 <div className="r2l">
-                    <div className="sticker1"><strong>CREATIVE CODER</strong></div>
+                    <div className="sticker1"><strong>{cc}</strong></div>
                     <div className="content">
-                        <h1>Hello! I'm<br></br><span>Lathesh</span></h1>
-                        <p>"I turn complex problem into <span >beautiful solution</span> through code,
-                            creativity, touch of magic✨"</p>
+                        <h1>{intro}<br></br><span>{name}</span></h1>
+                        <p>{about1} <span>{about2}</span> {about3}</p>
                         <div className="seelet">
                             <button type="button"
-                                id="btn1"><a href="#projects" className="see">See My Art 🎨</a></button>
+                                id="btn1"><a href="#projects" className="see">"button1"</a></button>
                             <button type="button"
-                                id="btn2"> <a href="#contacts" className="let">Let's Chart 💬</a></button>
+                                id="btn2"> <a href="#contacts" className="let">button2</a></button>
                         </div>
                     </div>
-                    <div className="sticker2"><strong>DIGITAL ARTIST</strong></div>
+                    <div className="sticker2"><strong>{da}</strong></div>
                 </div>
                 <div className="r2r">
                     <div className="lap">
@@ -29,7 +39,7 @@ function Hero() {
                         </div>
                     </div>
                     <div className="yr">
-                        <p>2<sup>nd</sup> Year MCA</p>
+                        <p>{yr1}<sup>{yr2}</sup> {yr3}</p>
                     </div>
                 </div>
             </div>
