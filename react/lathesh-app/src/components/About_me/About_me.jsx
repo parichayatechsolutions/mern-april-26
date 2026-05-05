@@ -1,7 +1,7 @@
-import "./Row3.css"
+import "./About_me.css"
 
 
-function Row3() {
+function About() {
     const am="ABOUT ME 🎨"
     const amp="I'm excited to learn new things and I'm a chill guy 😎"
     const dash="____________"
@@ -16,4 +16,4 @@ function Row3() {
     )
 } 
 
-export default Row3;
+export default About;

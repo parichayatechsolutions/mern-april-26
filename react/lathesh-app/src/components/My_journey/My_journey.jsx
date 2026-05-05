@@ -1,6 +1,6 @@
-import "./Row9.css"
+import "./My_journey.css"
 
-function Row9() {
+function My_journey() {
     const journey="My Journey 🌟"
     const underline="____________"
     const description="The story so far..."
@@ -15,4 +15,4 @@ function Row9() {
     )
 }
 
-export default Row9;
+export default My_journey;

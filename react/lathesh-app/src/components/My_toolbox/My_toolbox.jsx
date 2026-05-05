@@ -1,6 +1,6 @@
-import "./Row7.css"
+import "./My_toolbox.css"
 
-function Row7() {
+function My_toolbox() {
     const toolbox="MY TOOLBOX 🧰"
     const underline="_______________"
     const description="The colors on my creative palette"
@@ -15,4 +15,4 @@ function Row7() {
     )
 }
 
-export default Row7;
+export default My_toolbox;

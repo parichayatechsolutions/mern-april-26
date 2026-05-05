@@ -1,6 +1,6 @@
-import "./Row6.css"
+import "./Creation_content.css"
 
-function Row6() {
+function Creation_content() {
     const ai_vision="Creative Vision AI"
     const about_ai="An AI that turns imagination into digital art. Because why should humans have all the fun?"
     const ai_image="🤖"
@@ -92,4 +92,4 @@ function Row6() {
 }
 
 
-export default Row6;
+export default Creation_content;

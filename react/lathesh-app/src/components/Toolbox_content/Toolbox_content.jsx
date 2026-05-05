@@ -1,6 +1,6 @@
-import "./Row8.css"
+import "./Toolbox_content.css"
 
-function Row8() {
+function Toolbox_content() {
     const program_name1="Python Artistry"
     const p_percentage="30%"
     const program_name2="JavaScript Creativity"
@@ -55,4 +55,4 @@ function Row8() {
 }
 
 
-export default Row8;
+export default Toolbox_content;

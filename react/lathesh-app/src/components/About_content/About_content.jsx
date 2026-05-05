@@ -1,6 +1,6 @@
-import "./Row4.css"
+import "./About_content.css"
 
-function Row4() {
+function About_content() {
     const my_story= "My Story 📖"
     const about_my_story="I'm a passionate web developer with a love for creating beautiful and functional websites. With a background in computer science and a keen eye for design, I strive to bring my clients' visions to life through innovative and user-friendly web solutions."
     const count1="1+"
@@ -86,4 +86,4 @@ function Row4() {
     )
 }
 
-export default Row4;
+export default About_content;

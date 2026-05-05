@@ -1,6 +1,6 @@
-import "./Row13.css"
+import "./Footer.css"
 
-function Row13() {
+function Footer() {
     const footer="Made with 💖 and a whole lot of creativity"
     const last_line="© 2026 Lathesh. Keep creating! 🎨"
     return (
@@ -15,4 +15,4 @@ function Row13() {
     )
 }
 
-export default Row13;
+export default Footer;

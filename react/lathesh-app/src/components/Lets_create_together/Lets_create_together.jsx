@@ -1,6 +1,6 @@
-import "./Row11.css"
+import "./Lets_create_together.css"
 
-function Row11() {
+function Lets_create_together() {
     const creativity="Let's Create Together! 🎨"
     const underline="____________"
     const description="Got a wild idea? Let's make it real!"
@@ -15,4 +15,4 @@ function Row11() {
     )
 }
 
-export default Row11;
+export default Lets_create_together;

@@ -1,6 +1,6 @@
-import "./Row12.css"
+import "./Form.css"
 
-function Row12() {
+function Form() {
     const row12="SEND MESSAGE 🚀"
     const location="Find Me Here 📍"
     const mail="lathesh@gmail.com"
@@ -64,4 +64,4 @@ function Row12() {
     )
 }
 
-export default Row12;
+export default Form;

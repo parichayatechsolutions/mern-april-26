@@ -1,6 +1,6 @@
-import "./Row10.css"
+import "./Journey_content.css"
 
-function Row10() {
+function Journey_content() {
     const role1="Creative Developer"
     const designation1="Tech Art Studio | Summer 2023"
     const about1="Where I learned that code can be poetry and pixels can dance. Built magical interfaces that made users smile."
@@ -34,4 +34,4 @@ function Row10() {
     )
 }
 
-export default Row10;
+export default Journey_content;
