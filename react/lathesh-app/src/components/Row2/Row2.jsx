@@ -1,4 +1,4 @@
-import "./Hero.css"
+import "./Row2.css"
 const cc="CREATIVE CODER"
 const intro="Hello! I'm"
 const name="Lathesh"
@@ -11,7 +11,7 @@ const yr2="nd"
 const yr3="Year MCA"
 const button1="See My Art 🎨"
 const button2="Let's Chart 💬"
-function Hero() {
+function Row2() {
 
     return (
         <>
@@ -47,4 +47,4 @@ function Hero() {
     )
 }
 
-export default Hero;
+export default Row2;

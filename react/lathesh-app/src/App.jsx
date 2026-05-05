@@ -3,7 +3,6 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import Hero from './components/Hero/Hero'
 import Header from './components/Header/Header'
 import Row3 from './components/Row3/Row3'
 import Row4 from './components/Row4/Row4'
@@ -16,13 +15,14 @@ import Row10 from './components/Row10/Row10'
 import Row11 from './components/Row11/Row11'
 import Row12 from './components/Row12/Row12'
 import Row13 from './components/Row13/Row13'
+import Row2 from './components/Row2/Row2'
 
 function App() {
 
   return (
     <>
       <Header />
-      <Hero />
+      <Row2 />
       <Row3 />
       <Row4 />
       <Row5 />
