@@ -6,9 +6,9 @@ function Footer() {
     return (
         <>
             <footer>
-                <div className="row13">
-                    <p className="r131">{footer}</p>
-                    <p className="r132">{last_line}</p>
+                <div className="text-center pt-19 px-90">
+                    <p className="font-[cursive] text-2xl">{footer}</p>
+                    <p className="text-gray-800">{last_line}</p>
                 </div>
             </footer>
         </>

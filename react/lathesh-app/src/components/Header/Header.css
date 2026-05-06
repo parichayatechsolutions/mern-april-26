@@ -1,45 +1,29 @@
-.header {
-    width: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
-}
 
-.ht {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-}
 
-.hl {
-    display: flex;
-    gap: 10px;
-    padding-left: 45px;
-    align-items: center;
-}
 
-.i1 {
+
+/* .i1 {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-}
+} */
 
-.i1 img {
+/* .i1 img {
     border-radius: 50%;
     height: 48px;
     width: 48px;
-}
+} */
 
-.name {
+/* .name {
     font-size: 30px;
     font-weight: 700;
     line-height: 36px;
     font-family: 'Comic Neue', cursive;
-    text-shadow: 3px 3px rgb(244, 244, 47);
-}
+    text-shadow: 3px 3px rgb(167, 167, 14);
+} */
 
-.hr {
+/* .hr {
     display: flex;
     justify-content: space-evenly;
     align-self: center;
@@ -64,9 +48,9 @@
 .link {
     font-weight: 700;
     text-decoration: none;
-}
+} */
 
-.navigation a:hover {
-    transform: rotate(0deg);
+/* .navigation:hover {
+    rotate: 0deg;
     background: #d0d000;
-}
+} */

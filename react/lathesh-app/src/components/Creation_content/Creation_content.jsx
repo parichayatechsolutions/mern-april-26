@@ -1,88 +1,88 @@
 import "./Creation_content.css"
 
 function Creation_content() {
-    const ai_vision="Creative Vision AI"
-    const about_ai="An AI that turns imagination into digital art. Because why should humans have all the fun?"
-    const ai_image="🤖"
-    const ai_art="AI ART"
-    const program1="PYTHON"
-    const program2="ML"
-    const program3="CREATIVE"
-    const program4="REACT"
-    const program5="FIREBASE"
-    const program6="FUN"
-    const program7="D3.JS"
-    const program8="PYTHON"
-    const program9="ART"
-    const sp1="See Magic"
-    const sp2="Play"
-    const sp3="Explore"
-    const sp4="Try It"
-    const sp5="View"
-    const sp6="Interact"
-    const mobile_image="📱"
-    const mobile="MOBILE"
-    const doodle="Doodle Task-Manager"
-    const about_doodle="Productivity app that feels like playing. Because boring tasks deserve fun solutions"
-    const data_graph="📈"
-    const data_art="DATA art"
-    const visual_data="Visual Data Stories"
-    const about_visual_data="Turning boring numbers into data visualizations that tell stories."
+    const ai_vision = "Creative Vision AI"
+    const about_ai = "An AI that turns imagination into digital art. Because why should humans have all the fun?"
+    const ai_image = "🤖"
+    const ai_art = "AI ART"
+    const program1 = "PYTHON"
+    const program2 = "ML"
+    const program3 = "CREATIVE"
+    const program4 = "REACT"
+    const program5 = "FIREBASE"
+    const program6 = "FUN"
+    const program7 = "D3.JS"
+    const program8 = "PYTHON"
+    const program9 = "ART"
+    const sp1 = "See Magic"
+    const sp2 = "Play"
+    const sp3 = "Explore"
+    const sp4 = "Try It"
+    const sp5 = "View"
+    const sp6 = "Interact"
+    const mobile_image = "📱"
+    const mobile = "MOBILE"
+    const doodle = "Doodle Task-Manager"
+    const about_doodle = "Productivity app that feels like playing. Because boring tasks deserve fun solutions"
+    const data_graph = "📈"
+    const data_art = "DATA art"
+    const visual_data = "Visual Data Stories"
+    const about_visual_data = "Turning boring numbers into data visualizations that tell stories."
     return (
         <>
-            <div className="row6">
-                <div className="r6w">
-                    <div className="rw1">
-                        <div className="r61a">
-                            <h1>{ai_vision}</h1>
-                            <div className="ai">{about_ai}</div>
+            <div className="flex place-self-center pt-18 px-55">
+                <div className="grid grid-cols-3 gap-10 w-full h-fit">
+                    <div className="font-[cursive] text-2xl border-4 border-solid border-black rounded-2xl shadow-[10px_6px_2px_black] flex flex-col bg-blue -rotate-1 transition-all delay-150 ease-in hover:rotate-0">
+                        <div className="text-center h-30 border-b-7 border-solid border-black relative bg-linear-45 from-green-500 to-gray-400">
+                            <h1 className="text-6xl">{ai_image}</h1>
+                            <div className="text-[16px] absolute top-1 right-1 border-3 border-solid border-black rounded-2xl p-1 bg-white">{ai_art}</div>
                         </div>
 
-                        <h2>{ai_image}</h2>
-                        <h4>{ai_art}</h4>
-                        <div className="r61">
-                            <div className="ri1 item2">{program1}</div>
-                            <div className="ri1 item3">{program2}</div>
-                            <div className="ri1 item4">{program3}</div>
+                        <h2 className="px-8.5 font-bold mb-0 text-green-500">{ai_vision}</h2>
+                        <h4 className="px-2.5 font-bold mb-0">{about_ai}</h4>
+                        <div className="grid grid-cols-3 mt-5">
+                            <div className="text-center border-2 border-solid rounded-2xl mx-2 px-1 font-bold bg-pink-300 text-[16px]">{program1}</div>
+                            <div className="text-center border-2 border-solid rounded-2xl mx-2 px-1 font-bold bg-blue-200 text-[16px]">{program2}</div>
+                            <div className="text-center border-2 border-solid rounded-2xl mx-2 px-1 font-bold bg-orange-200 text-[16px]">{program3}</div>
                         </div>
-                        <div className="sp">
-                            <div>{sp1}</div>
-                            <div>{sp2}</div>
+                        <div className="underline mt-5 flex flex-row justify-around">
+                            <div><a href="#home">{sp1}</a></div>
+                            <div><a href="#home">{sp2}</a></div>
                         </div>
                     </div>
-                    <div className="rw2">
-                        <div className="r61b">
-                            <h1>{mobile_image}</h1>
-                            <div className="ai">{mobile}</div>
+                    <div className="font-[cursive] text-2xl border-4 border-solid border-black rounded-2xl shadow-[10px_6px_2px_black] flex flex-col bg-blue rotate-1 transition-all delay-150 ease-in hover:rotate-0">
+                        <div className="text-center h-30 border-b-7 border-solid border-black relative bg-linear-45 from-blue-300 to-red-400">
+                            <h1 className="text-6xl">{mobile_image}</h1>
+                            <div className="text-[16px] absolute top-1 right-1 border-3 border-solid border-black rounded-2xl p-1 bg-white">{mobile}</div>
                         </div>
 
-                        <h2>{doodle}</h2>
-                        <h4>{about_doodle}</h4>
-                        <div className="r61">
-                            <div className="ri1 item3">{program4}</div>
-                            <div className="ri1 item4">{program5}</div>
-                            <div className="ri1 item2">{program6}</div>
+                        <h2 className="px-8.5 font-bold mb-0 text-green-500">{doodle}</h2>
+                        <h4 className="px-2.5 font-bold mb-0">{about_doodle}</h4>
+                        <div className="grid grid-cols-3 mt-5">
+                            <div className="text-center border-2 border-solid rounded-2xl mx-2 px-1 font-bold bg-blue-200 text-[16px]">{program4}</div>
+                            <div className="text-center border-2 border-solid rounded-2xl mx-2 px-1 font-bold bg-orange-200 text-[16px]">{program5}</div>
+                            <div className="text-center border-2 border-solid rounded-2xl mx-2 px-1 font-bold bg-pink-300 text-[16px]">{program6}</div>
                         </div>
-                        <div className="sp">
-                            <div>{sp3}</div>
-                            <div>{sp4}</div>
+                        <div className="underline mt-5 flex flex-row justify-around">
+                            <div><a href="#home">{sp3}</a></div>
+                            <div><a href="#home">{sp4}</a></div>
                         </div>
                     </div>
-                    <div className="rw3">
-                        <div className="r61c">
-                            <h1>{data_graph}</h1>
-                            <div className="ai">{data_art}</div>
+                    <div className="font-[cursive] text-2xl border-4 border-solid border-black rounded-2xl shadow-[10px_6px_2px_black] flex flex-col bg-blue -rotate-1 transition-all delay-150 ease-in hover:rotate-0">
+                        <div className="text-center h-30 border-b-7 border-solid border-black relative bg-linear-45 from-pink-400 to-orange-300">
+                            <h1 className="text-6xl">{data_graph}</h1>
+                            <div className="text-[16px] absolute top-1 right-1 border-3 border-solid border-black rounded-2xl p-1 bg-white">{data_art}</div>
                         </div>
-                        <h2>{visual_data}</h2>
-                        <h4>{about_visual_data}</h4>
-                        <div className="r61">
-                            <div className="ri1 item4">{program7}</div>
-                            <div className="ri1 item3">{program8}</div>
-                            <div className="ri1 item2">{program9}</div>
+                        <h2 className="px-8.5 font-bold mb-0 text-green-500">{visual_data}</h2>
+                        <h4 className="px-2.5 font-bold mb-0">{about_visual_data} </h4>
+                        <div className="grid grid-cols-3 mt-5">
+                            <div className="text-center border-2 border-solid rounded-2xl mx-2 px-1 font-bold bg-orange-200 text-[16px]">{program7}</div>
+                            <div className="text-center border-2 border-solid rounded-2xl mx-2 px-1 font-bold bg-blue-200 text-[16px]">{program8}</div>
+                            <div className="text-center border-2 border-solid rounded-2xl mx-2 px-1 font-bold bg-pink-300 text-[16px]">{program9}</div>
                         </div>
-                        <div className="sp">
-                            <div>{sp5}</div>
-                            <div>{sp6}</div>
+                        <div className="underline mt-5 flex flex-row justify-around">
+                            <div><a href="#home">{sp5}</a></div>
+                            <div><a href="#home">{sp6}</a></div>
                         </div>
                     </div>
                 </div>
