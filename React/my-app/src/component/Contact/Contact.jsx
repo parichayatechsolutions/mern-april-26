@@ -22,7 +22,7 @@ function Contact() {
                         <p className="text-gray-600 text-xl leading-7">{co2}</p>
                     </div>
                     <div className="co_l grid-cols-2 grid gap-20">
-                        <div className="form pt-4 flex flex-col gap-5 font-sans ml-auto">
+                        <div className="form pt-14 flex flex-col gap-5 font-sans">
                             <form>
                                 <div className="row flex gap-5">
                                     <div className="input-group flex flex-1 flex-col p-1.5">
@@ -53,10 +53,10 @@ function Contact() {
                                 </button>
                             </form>
                         </div>
-                        <div className="co_r1 pt-4 max-w-2xl">
-                            <div className="d_r rounded-2xl bg-white box-border border-solid border-gray-300 ">
-                                <h3 className="text-black text-xl font-bold leading-7 mb-4">{co3}</h3>
-                                <div className="mail">
+                        <div className="co_r1 pt-14 max-w-2xl">
+                            <div className="d_r rounded-2xl bg-white box-border border-solid border-gray-300 shadow-lg/15">
+                                <h3 className="text-black text-xl font-bold leading-7 mb-4 pl-5">{co3}</h3>
+                                <div className="mail pl-5">
                                     <div className="m_l items-center flex">
                                         <div className="c_a w-14 h-14 flex items-center rounded-2xl justify-center text-white text-xl mb-4 bg-linear-to-r from-indigo-400 to-purple-800">
                                             <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px"
@@ -106,7 +106,7 @@ function Contact() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="last p-6 rounded-2xl bg-white box-border border-solid border-gray-300 mt-7">
+                            <div className="last p-6 rounded-2xl bg-white box-border border-solid border-gray-300 mt-7 shadow-lg/15">
                                 <div className="heading7 text-black text-xl font-bold leading-7 mb-4">
                                     <h3>{co7}</h3>
                                 </div>

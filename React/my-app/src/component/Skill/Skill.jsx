@@ -46,10 +46,10 @@ function Skill() {
                         </div>
                     </div>
                 </div>
-                <div className="tt max-w-7xl p-8 rounded-2xl bg-white box-border shadow-[0 10px 40px rgba(0, 0, 0, 0.08)] border-solid border-gray-300 mt-16">
+                <div className="tt max-w-7xl p-8 rounded-2xl bg-white box-border shadow-xl/15 border-solid border-gray-300 mt-16">
                     <h3 className="text-black text-3xl font-bold leading-8 pb-4">{to}</h3>
-                    <div className="items grid-cols-4 grid gap-4 ">
-                        <div className="one bg-pink-50 text-center rounded-2xl p-4">
+                    <div className="items grid-cols-4 grid gap-4">
+                        <div className="one grid justify-items-center bg-pink-50 text-center rounded-2xl p-4">
                             <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     fill="#a855f7" width="40px" height="40px" viewBox="0 0 32 32" id="Camada_1"
                                     version="1.1" xml:space="preserve">
@@ -62,7 +62,7 @@ function Skill() {
                                 </svg></span>
                             <p className="font-semibold">{to1}</p>
                         </div>
-                        <div className="two bg-green-50 text-center rounded-2xl p-4">
+                        <div className="two grid justify-items-center bg-green-50 text-center rounded-2xl p-4">
                             <span><svg xmlns="http://www.w3.org/2000/svg" fill="#31c969" width="40px" height="40px"
                                     viewBox="0 0 32 32">
                                     <path
@@ -71,7 +71,7 @@ function Skill() {
                             </span>
                             <p className="font-semibold">{to2}</p>
                         </div>
-                        <div className="three bg-yellow-50 text-center rounded-2xl p-4">
+                        <div className="three grid justify-items-center bg-yellow-50 text-center rounded-2xl p-4">
                             <span><svg xmlns="http://www.w3.org/2000/svg" fill="#eab308" width="40px" height="40px"
                                     viewBox="0 0 20 20">
 
@@ -83,7 +83,7 @@ function Skill() {
                                 </svg></span>
                             <p className="font-semibold">{to3}</p>
                         </div>
-                        <div className="four bg-orange-50 text-center rounded-2xl p-4">
+                        <div className="four grid justify-items-center bg-orange-50 text-center rounded-2xl p-4">
                             <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24"
                                     fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -93,7 +93,7 @@ function Skill() {
                             </span>
                             <p className="font-semibold">{to4}</p>
                         </div>
-                        <div className="five bg-blue-50 text-center rounded-2xl p-4">
+                        <div className="five grid justify-items-center bg-blue-50 text-center rounded-2xl p-4">
                             <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 16 16"
                                     fill="none">
                                     <path
@@ -107,7 +107,7 @@ function Skill() {
                                 </svg></span>
                             <p className="font-semibold">{to5}</p>
                         </div>
-                        <div className="six bg-mauve-100 text-center rounded-2xl p-4">
+                        <div className="six grid justify-items-center bg-mauve-100 text-center rounded-2xl p-4">
                             <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     width="40px" height="40px" viewBox="0 0 32 32" version="1.1">
                                     <path fill="#ef4444"
@@ -116,7 +116,7 @@ function Skill() {
                             </span>
                             <p className="font-semibold">{to6}</p>
                         </div>
-                        <div className="seven bg-indigo-50 text-center rounded-2xl p-4">
+                        <div className="seven grid justify-items-center bg-indigo-50 text-center rounded-2xl p-4">
                             <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24"
                                     fill="none">
                                     <path
@@ -131,7 +131,7 @@ function Skill() {
                             </span>
                             <p className="font-semibold">{to7}</p>
                         </div>
-                        <div className="eight bg-red-50 text-center rounded-2xl p-4">
+                        <div className="eight grid justify-items-center bg-red-50 text-center rounded-2xl p-4">
                             <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24"
                                     fill="none">
                                     <path

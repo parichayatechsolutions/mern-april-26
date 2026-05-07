@@ -99,6 +99,8 @@
     text-align: center;
     border-radius: 12px;
     padding: 16px;
+    display: flex;
+    justify-content: center;
 } */
 
 /* .one p {
