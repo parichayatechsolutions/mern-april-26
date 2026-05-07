@@ -41,10 +41,10 @@ function About() {
                     <div className="third grid grid-cols-3 gap-9 box-border border-solid border-gray-300 pt-5">
                         <div className="heading2 grid col-span-2 box-border border-solid border-gray-300 ">
                             <div className="t_mid p-9 rounded-2xl bg-white box-border border-solid border-gray-300 shadow-lg/15 h-fit">
-                                <h3>{my}</h3>
-                                <p>{para3}<br></br></p>
-                                <p>{para4}</p>
-                                <div className="per grid-cols-4 grid gap-6">
+                                <h3 className="font-bold text-black text-2xl leading-8">{my}</h3>
+                                <p className="text-gray-600 mb-6 grid text-xl pt-2.5">{para3}<br></br></p>
+                                <p className="text-gray-600 mb-6 grid text-xl pt-2.5">{para4}</p>
+                                <div className="per grid-cols-4 grid gap-6 pt-5">
                                     <div className="per_1">
                                         <div className="p tw">{per1}</div>
                                         <div className="c tw">{per2}</div>

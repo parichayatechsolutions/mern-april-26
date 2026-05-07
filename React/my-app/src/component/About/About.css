@@ -102,7 +102,7 @@
     border-color: #e5e7eb;
 } */
 
-.loc span {
+/* .loc span {
     width: 55px;
     height: 55px;
     display: flex;
@@ -126,7 +126,7 @@
     font-size: 16px;
     color: #5b5f66;
     font-size: 18px;
-}
+} */
 
 /* .about_sec {
     margin-left: auto;
@@ -184,20 +184,20 @@
     border-color: #e5e7eb;
 } */
 
-.t_mid h3 {
+/* .t_mid h3 {
     font-weight: 700;
     color: black;
     font-size: 24px;
     line-height: 32px;
-}
+} */
 
-.t_mid p {
+/* .t_mid p {
     color: rgb(75 85 99);
     margin-bottom: 24px;
     display: grid;
     font-size: 20px;
     padding-top: 10px;
-}
+} */
 
 /* .per {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -223,7 +223,7 @@
     text-align: center;
 }
 
-.heading3 {
+/* .heading3 {
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
@@ -289,4 +289,4 @@
     font-weight: 600;
     font-size: 16px;
     color: #555;
-}
+} */
