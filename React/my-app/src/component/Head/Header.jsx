@@ -9,16 +9,13 @@ function Header() {
     return (
 
         <>
-            <nav className="navigation">
-                <div className="logo">
-                    <div className="top_l">
-                        <img src="./logo.png"></img>
-                    </div>
-                    <div className="top_m">
+            <nav className=" flex justify-between ">
+                <div className=" flex items-center gap-2 ">
+                    <div className=" text-3xl ">
                         <p>{port}</p>
                     </div>
                 </div>
-                <div className="nav-links">
+                <div className=" flex list-none gap-7.5 items-center">
                     <a href={`#${navItems[0]}`}>{navItems[0]}</a>
                     <a href={`#${navItems[1]}`}>{navItems[1]}</a>
                     <a href={`#${navItems[2]}`}>{navItems[2]}</a>

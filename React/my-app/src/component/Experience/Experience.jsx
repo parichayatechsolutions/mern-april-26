@@ -18,24 +18,24 @@ function Experience() {
         <>
 
             <section id="experience">
-                <div className="heading5">
-                    <h3>{ex}</h3>
-                    <p>{ex2}</p>
+                <div className="heading5 max-w-7xl ml-auto mr-auto text-center mt-28 pb-4">
+                    <h3 className="text-black font-bold text-4xl leading-10 mr-auto ml-auto mb-4">{ex}</h3>
+                    <p className="text-gray-600 text-xl leading-7">{ex2}</p>
                 </div>
-                <div className="ex">
-                    <div className="fourth">
-                        <div className="time"></div>
-                        <div className="f_t">
-                            <div className="t_l">
+                <div className="ex p-6 rounded-2xl bg-white shadow-[0 10px 40px rgba(0, 0, 0, 0.08)] box-border border-solid border-gray-300 ml-80 w-2/4">
+                    <div className="fourth relative mb-7">
+                        <div className="time relative right-20 top-2.5 w-4 h-4 rounded-full bg-indigo-400 border-4 border-solid border-white "></div>
+                        <div className="f_t flex justify-between">
+                            <div className="t_l text-2xl font-semibold p-3.5">
                                 <h3>{ex3}</h3>
                             </div>
-                            <div className="t_r">
+                            <div className="t_r text-lg text-indigo-400 p-3.5">
                                 <p>{ex4}</p>
                             </div>
                         </div>
                         <div className="f_b">
-                            <p>{ex5}</p>
-                            <ul>
+                            <p className="text-lg text-indigo-400">{ex5}</p>
+                            <ul className=" text-lg list-disc pl-7">
                                 <li>{ex6}</li>
                                 <li>{ex7}</li>
                                 <li>{ex8}</li>

@@ -6,26 +6,31 @@ function Home() {
     const seek = "Seeking Internship"
     const view = "View Projects"
     const le = "Lets Connect"
+    const no = "2"
+    const sup = "nd"
+    const year = "Year Computer Science Student"
+    const build = "Building The"
+    const span = "Future"
+    const w = "With Code"
+
     return (
 
         < >
             <section id="home">
-                <div className="second">
-                    <div className="second_l">
-                        <div className="s1">
-                            {/* <span>
-                                <p>2<sup>nd</sup> Year Computer Science Student</p>
-                            </span> */}
+                <div className="flex py-20 px-0 w-4/5 justify-between">
+                    <div className="w-3/4">
+                        <div className="s1 rounded-3xl bg-white text-blue-900 w-fit text-center text-xl flex items-center gap-4 py-0 px-5 shadow-[ 0 10px 40px rgba(0, 0, 0, 0.08)]">
+                            <p>{no}<sup>{sup}</sup>{year}</p>
                         </div>
-                        <div className="s2">
-                            <p>Building The <span>Future</span> With Code</p>
+                        <div className="s2 flex text-6xl font-bold ">
+                            <p>{build}<span>{span}</span><br></br>{w}</p>
                         </div>
-                        <div className="s3">
+                        <div className="s3 text-2xl text-gray-400 flex ">
                             <p>{para1}</p>
                         </div>
-                        <div className="buttons">
-                            <a href="# View projects" className="btn1">
-                               {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 16 16"
+                        <div className="buttons flex gap-5">
+                            <a href="# View projects" className="btn1 flex items-center gap-2 bg-purple-600 no-underline text-white py-2 px-5 rounded-2xl text-xl font-medium mt-3.5 w-fit ">
+                                {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 16 16"
                                     fill="none">
                                     <path
                                         d="M8.01005 0.858582L6.01005 14.8586L7.98995 15.1414L9.98995 1.14142L8.01005 0.858582Z"
@@ -38,7 +43,7 @@ function Home() {
                                 </svg></span>*/}
                                 <p>{view}</p>
                             </a>
-                            <a href="#contact" className="btn2">
+                            <a href="#contact" className="btn2 flex items-center gap-2 bg-white no-underline text-black py-2 px-5 rounded-2xl text-xl font-medium mt-3.5 w-fit box-border ">
                                 {/* <span><svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="20px" height="20px"
                                     viewBox="0 0 32 32" version="1.1">
                                     <title>paper-plane</title>
@@ -49,12 +54,16 @@ function Home() {
                             </a>
                         </div>
                     </div>
-                    <div className="second_r">
-                        <img src="./photo.png"></img>
+                    <div className="second_r w-1/3 relative">
+                        <div className="second_img rounded-2xl p-1.5 w-80 ml-5">
+                            <img src="./photo.png"></img>
+                        </div>
+                        <div className="intern absolute bg-gray-200/20 p-5 rounded-2xl text-xl mb-0.5 shadow-[ 0 10px 40px rgba(0, 0, 0, 0.2)]">
                             <p>{seek}</p>
+                        </div>
                     </div>
                 </div>
-            </section>
+        </section >
         </>
     )
 }

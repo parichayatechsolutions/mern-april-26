@@ -17,78 +17,78 @@ function Contact() {
 
             <section id="contact">
                 <div className="connect">
-                    <div className="heading6">
-                        <h3> {co1}</h3>
-                        <p>{co2}</p>
+                    <div className="heading6 max-w-7xl text-center mt-28 pb-5">
+                        <h3 className="text-black font-bold text-4xl"> {co1}</h3>
+                        <p className="text-gray-600 text-xl leading-7">{co2}</p>
                     </div>
-                    <div className="co_l">
-                        <div className="form">
+                    <div className="co_l grid-cols-2 grid gap-20">
+                        <div className="form pt-4 flex flex-col gap-5 font-sans ml-auto">
                             <form>
-                                <div className="row">
-                                    <div className="input-group">
-                                        <label>Name</label>
-                                        <input type="text" placeholder="Your name"></input>
+                                <div className="row flex gap-5">
+                                    <div className="input-group flex flex-1 flex-col p-1.5">
+                                        <label className=" font-medium text-black text-lg">Name</label>
+                                        <input className="p-3.5 rounded-2xl border-2 border-solid border-gray-300 text-lg bg-mist-100 font-sans" type="text" placeholder="Your name"></input>
                                     </div>
-                                    <div className="input-group">
-                                        <label>Email</label>
-                                        <input type="email" placeholder="Your email"></input>
+                                    <div className="input-group flex flex-1 flex-col p-1.5">
+                                        <label className=" font-medium text-black text-lg">Email</label>
+                                        <input className="p-3.5 rounded-2xl border-2 border-solid border-gray-300 text-lg bg-mist-100 font-sans" type="email" placeholder="Your email"></input>
                                     </div>
                                 </div>
-                                <div className="input-group">
-                                    <label>Subject</label>
-                                    <input type="text" placeholder="Subject"></input>
+                                <div className="input-group flex flex-1 flex-col p-1.5">
+                                    <label className=" font-medium text-black text-lg">Subject</label>
+                                    <input className="p-3.5 rounded-2xl border-2 border-solid border-gray-300 text-lg bg-mist-100 font-sans" type="text" placeholder="Subject"></input>
                                 </div>
-                                <div className="input-group">
-                                    <label>Message</label>
-                                    <textarea placeholder="Your message"></textarea>
+                                <div className="input-group flex flex-1 flex-col p-1.5">
+                                    <label className=" font-medium text-black text-lg">Message</label>
+                                    <textarea className="h-36 p-3.5 rounded-2xl border-2 border-solid border-gray-300 text-lg bg-mist-100 font-sans" placeholder="Your message"></textarea>
                                 </div>
-                                <button type="submit" className="btn">
+                                <button type="submit" className="btn mt-2.5 p-3.5 rounded-2xl text-white bg-linear-to-r from-indigo-400 to-purple-800 flex justify-center items-center gap-2.5 text-lg w-full cursor-auto">
                                     <p>{co8}</p>
-                                        {/* <span><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="20px"
+                                         <span><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="20px"
                                         height="20px" viewBox="0 0 32 32" version="1.1">
                                         <title>paper-plane</title>
                                         <path
                                             d="M0 14.016l9.216 6.912 18.784-16.928-14.592 20.064 10.592 7.936 8-32zM8 32l6.016-4-6.016-4v8z" />
-                                    </svg></span>  */}
+                                    </svg></span>
                                 </button>
                             </form>
                         </div>
-                        <div className="co_r1">
-                            <div className="d_r">
-                                <h3>{co3}</h3>
+                        <div className="co_r1 pt-4 max-w-2xl">
+                            <div className="d_r rounded-2xl bg-white box-border border-solid border-gray-300 ">
+                                <h3 className="text-black text-xl font-bold leading-7 mb-4">{co3}</h3>
                                 <div className="mail">
-                                    <div className="m_l">
-                                        <div className="c_a">
-                                            {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px"
+                                    <div className="m_l items-center flex">
+                                        <div className="c_a w-14 h-14 flex items-center rounded-2xl justify-center text-white text-xl mb-4 bg-linear-to-r from-indigo-400 to-purple-800">
+                                            <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px"
                                                 viewBox="0 0 24 24" fill="#ffffff">
                                                 <path
                                                     d="M3.02832 10L10.2246 14.8166C10.8661 15.2443 11.1869 15.4581 11.5336 15.5412C11.8399 15.6146 12.1593 15.6146 12.4657 15.5412C12.8124 15.4581 13.1332 15.2443 13.7747 14.8166L20.971 10M10.2981 4.06879L4.49814 7.71127C3.95121 8.05474 3.67775 8.22648 3.4794 8.45864C3.30385 8.66412 3.17176 8.90305 3.09111 9.161C3 9.45244 3 9.77535 3 10.4212V16.8C3 17.9201 3 18.4802 3.21799 18.908C3.40973 19.2843 3.71569 19.5903 4.09202 19.782C4.51984 20 5.07989 20 6.2 20H17.8C18.9201 20 19.4802 20 19.908 19.782C20.2843 19.5903 20.5903 19.2843 20.782 18.908C21 18.4802 21 17.9201 21 16.8V10.4212C21 9.77535 21 9.45244 20.9089 9.161C20.8282 8.90305 20.6962 8.66412 20.5206 8.45864C20.3223 8.22648 20.0488 8.05474 19.5019 7.71127L13.7019 4.06879C13.0846 3.68116 12.776 3.48735 12.4449 3.4118C12.152 3.34499 11.848 3.34499 11.5551 3.4118C11.224 3.48735 10.9154 3.68116 10.2981 4.06879Z"
-                                                    stroke="#6e63c5" stroke-width="2" stroke-linecap="round"
+                                                    stroke="#7c7dfb" stroke-width="1" stroke-linecap="round"
                                                     stroke-linejoin="round" />
-                                            </svg></span> */}
+                                            </svg></span>
                                         </div>
-                                        <div className="m_r">
+                                        <div className="m_r ml-5 text-xl">
                                             <p> {co4}</p>
                                         </div>
                                     </div>
-                                    <div className="call">
-                                        <div className="c_l">
-                                            {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px"
+                                    <div className="call items-center flex">
+                                        <div className="c_l w-14 h-14 flex items-center rounded-2xl justify-center text-white text-xl mb-4 bg-linear-to-r from-pink-400 to-red-500">
+                                            <span><svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px"
                                                 viewBox="0 0 16 16" fill="none">
                                                 <path
                                                     d="M1 5V1H7V5L4.5 7.5L8.5 11.5L11 9H15V15H11C5.47715 15 1 10.5228 1 5Z"
                                                     fill="#ffffff" />
-                                            </svg></span> */}
+                                            </svg></span>
                                         </div>
-                                        <div className="c_r">
+                                        <div className="c_r ml-5 text-xl">
                                             <p>{co5}</p>
                                         </div>
                                     </div>
-                                    <div className="loca">
-                                        <div className="l_l">
-                                            {/* <span><svg xmlns="http://www.w3.org/2000/svg"
+                                    <div className="loca items-center flex">
+                                        <div className="l_l w-14 h-14 flex items-center rounded-2xl justify-center text-white text-xl mb-4 bg-linear-to-r from-indigo-400 to-purple-800">
+                                            <span><svg xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" id="Layer_1"
-                                                width="40px" height="40px" viewBox="0 0 64 64"
+                                                width="30px" height="30px" viewBox="0 0 64 64"
                                                 enable-background="new 0 0 64 64" xml:space="preserve">
                                                 <g>
                                                     <path fill="#ffffff"
@@ -98,21 +98,21 @@ function Contact() {
                                                     <path fill="#ffffff"
                                                         d="M32,10c-7.732,0-14,6.268-14,14s6.268,14,14,14s14-6.268,14-14S39.732,10,32,10z M32,36   c-6.627,0-12-5.373-12-12s5.373-12,12-12s12,5.373,12,12S38.627,36,32,36z" />
                                                 </g>
-                                            </svg></span> */}
+                                            </svg></span>
                                         </div>
-                                        <div className="l_r">
+                                        <div className="l_r ml-5 text-xl">
                                             <p>{co6}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="last">
-                                <div className="heading7">
+                            <div className="last p-6 rounded-2xl bg-white box-border border-solid border-gray-300 mt-7">
+                                <div className="heading7 text-black text-xl font-bold leading-7 mb-4">
                                     <h3>{co7}</h3>
                                 </div>
-                                <div className="ic">
-                                    <div className="icon">
-                                        {/* <span>
+                                <div className="ic flex flex-row gap-6">
+                                    <div className="icon flex">
+                                         <span className="w-14 h-14 flex items-center justify-center rounded-2xl text-white text-xl mb-4 bg-linear-to-r from-indigo-400 to-purple-800">
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" version="1.1"
                                                 id="Capa_1" width="30px" height="30px" viewBox="0 0 552.77 552.77"
@@ -127,25 +127,25 @@ function Contact() {
                                                             d="M525.732,215.282c-10.098-13.292-24.988-24.223-44.676-32.791c-19.688-8.562-41.42-12.846-65.197-12.846    c-48.268,0-89.168,18.421-122.699,55.27c-6.672,7.332-11.523,5.729-11.523-4.186V196.8c0-9.915-8.037-17.95-17.951-17.95h-64.192    c-9.915,0-17.95,8.035-17.95,17.95v314.103c0,9.914,8.036,17.951,17.95,17.951h71.861c9.915,0,17.95-8.037,17.95-17.951V401.666    c0-45.508,2.748-76.701,8.244-93.574c5.494-16.873,15.66-30.422,30.488-40.649c14.83-10.227,31.574-15.343,50.24-15.343    c14.572,0,27.037,3.58,37.393,10.741c10.355,7.16,17.834,17.19,22.436,30.104c4.604,12.912,6.904,41.354,6.904,85.33v132.627    c0,9.914,8.035,17.951,17.949,17.951h71.861c9.914,0,17.949-8.037,17.949-17.951V333.02c0-31.445-1.982-55.607-5.941-72.48    S535.836,228.581,525.732,215.282z" />
                                                     </g>
                                                 </g>
-                                            </svg></span> */}
+                                            </svg></span>
                                     </div>
                                     <div className="icon_2">
-                                        {/* <span>
+                                        <span className="w-14 h-14 flex items-center justify-center rounded-2xl text-white text-xl mb-4 bg-linear-to-r from-pink-400 to-red-500">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px"
                                                 viewBox="0 0 24 24" fill="none">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                                     d="M19.7828 3.91825C20.1313 3.83565 20.3743 3.75444 20.5734 3.66915C20.8524 3.54961 21.0837 3.40641 21.4492 3.16524C21.7563 2.96255 22.1499 2.9449 22.4739 3.11928C22.7979 3.29366 23 3.6319 23 3.99986C23 5.08079 22.8653 5.96673 22.5535 6.7464C22.2911 7.40221 21.9225 7.93487 21.4816 8.41968C21.2954 11.7828 20.3219 14.4239 18.8336 16.4248C17.291 18.4987 15.2386 19.8268 13.0751 20.5706C10.9179 21.3121 8.63863 21.4778 6.5967 21.2267C4.56816 20.9773 2.69304 20.3057 1.38605 19.2892C1.02813 19.0108 0.902313 18.5264 1.07951 18.109C1.25671 17.6916 1.69256 17.4457 2.14144 17.5099C3.42741 17.6936 4.6653 17.4012 5.6832 16.9832C5.48282 16.8742 5.29389 16.7562 5.11828 16.6346C4.19075 15.9925 3.4424 15.1208 3.10557 14.4471C2.96618 14.1684 2.96474 13.8405 3.10168 13.5606C3.17232 13.4161 3.27562 13.293 3.40104 13.1991C2.04677 12.0814 1.49999 10.5355 1.49999 9.49986C1.49999 9.19192 1.64187 8.90115 1.88459 8.71165C1.98665 8.63197 2.10175 8.57392 2.22308 8.53896C2.12174 8.24222 2.0431 7.94241 1.98316 7.65216C1.71739 6.3653 1.74098 4.91284 2.02985 3.75733C2.1287 3.36191 2.45764 3.06606 2.86129 3.00952C3.26493 2.95299 3.6625 3.14709 3.86618 3.50014C4.94369 5.36782 6.93116 6.50943 8.78086 7.18568C9.6505 7.50362 10.4559 7.70622 11.0596 7.83078C11.1899 6.61019 11.5307 5.6036 12.0538 4.80411C12.7439 3.74932 13.7064 3.12525 14.74 2.84698C16.5227 2.36708 18.5008 2.91382 19.7828 3.91825ZM10.7484 9.80845C10.0633 9.67087 9.12171 9.43976 8.09412 9.06408C6.7369 8.56789 5.16088 7.79418 3.84072 6.59571C3.86435 6.81625 3.89789 7.03492 3.94183 7.24766C4.16308 8.31899 4.5742 8.91899 4.94721 9.10549C5.40342 9.3336 5.61484 9.8685 5.43787 10.3469C5.19827 10.9946 4.56809 11.0477 3.99551 10.9046C4.45603 11.595 5.28377 12.2834 6.66439 12.5135C7.14057 12.5929 7.49208 13.0011 7.49986 13.4838C7.50765 13.9665 7.16949 14.3858 6.69611 14.4805L5.82565 14.6546C5.95881 14.7703 6.103 14.8838 6.2567 14.9902C6.95362 15.4727 7.65336 15.6808 8.25746 15.5298C8.70991 15.4167 9.18047 15.6313 9.39163 16.0472C9.60278 16.463 9.49846 16.9696 9.14018 17.2681C8.49626 17.8041 7.74425 18.2342 6.99057 18.5911C6.63675 18.7587 6.24134 18.9241 5.8119 19.0697C6.14218 19.1402 6.48586 19.198 6.84078 19.2417C8.61136 19.4594 10.5821 19.3126 12.4249 18.6792C14.2614 18.0479 15.9589 16.9385 17.2289 15.2312C18.497 13.5262 19.382 11.1667 19.5007 7.96291C19.51 7.71067 19.6144 7.47129 19.7929 7.29281C20.2425 6.84316 20.6141 6.32777 20.7969 5.7143C20.477 5.81403 20.1168 5.90035 19.6878 5.98237C19.3623 6.04459 19.0272 5.94156 18.7929 5.70727C18.0284 4.94274 16.5164 4.43998 15.2599 4.77822C14.6686 4.93741 14.1311 5.28203 13.7274 5.89906C13.3153 6.52904 13 7.51045 13 8.9999C13 9.28288 12.8801 9.5526 12.6701 9.74221C12.1721 10.1917 11.334 9.92603 10.7484 9.80845Z"
                                                     fill="#ffffff" />
-                                            </svg></span> */}
+                                            </svg></span>
                                     </div>
                                     <div className="icon_3">
-                                        {/* <span>
+                                        <span className="w-14 h-14 flex items-center justify-center rounded-2xl text-white text-xl mb-4 bg-linear-to-r from-indigo-400 to-purple-800">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px"
                                                 viewBox="0 0 24 24" fill="#764ba2">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                                     d="M12 2C6.475 2 2 6.475 2 12C2 16.425 4.8625 20.1625 8.8375 21.4875C9.3375 21.575 9.525 21.275 9.525 21.0125C9.525 20.775 9.5125 19.9875 9.5125 19.15C7 19.6125 6.35 18.5375 6.15 17.975C6.0375 17.6875 5.55 16.8 5.125 16.5625C4.775 16.375 4.275 15.9125 5.1125 15.9C5.9 15.8875 6.4625 16.625 6.65 16.925C7.55 18.4375 8.9875 18.0125 9.5625 17.75C9.65 17.1 9.9125 16.6625 10.2 16.4125C7.975 16.1625 5.65 15.3 5.65 11.475C5.65 10.3875 6.0375 9.4875 6.675 8.7875C6.575 8.5375 6.225 7.5125 6.775 6.1375C6.775 6.1375 7.6125 5.875 9.525 7.1625C10.325 6.9375 11.175 6.825 12.025 6.825C12.875 6.825 13.725 6.9375 14.525 7.1625C16.4375 5.8625 17.275 6.1375 17.275 6.1375C17.825 7.5125 17.475 8.5375 17.375 8.7875C18.0125 9.4875 18.4 10.375 18.4 11.475C18.4 15.3125 16.0625 16.1625 13.8375 16.4125C14.2 16.725 14.5125 17.325 14.5125 18.2625C14.5125 19.6 14.5 20.675 14.5 21.0125C14.5 21.275 14.6875 21.5875 15.1875 21.4875C17.1727 20.8173 18.8977 19.5415 20.1198 17.8395C21.3419 16.1376 21.9995 14.0953 22 12C22 6.475 17.525 2 12 2Z"
                                                     fill="#ffffff" />
-                                            </svg></span> */}
+                                            </svg></span>
                                     </div>
                                 </div>
                             </div>
