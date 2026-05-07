@@ -205,7 +205,7 @@
     display: grid;
 } */
 
-.p {
+/* .p {
     font-weight: 700;
     font-size: 30px;
     line-height: 36px;
@@ -213,15 +213,15 @@
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-align: center;
-}
+    text-align: center; 
+} */
 
-.c {
+/* .c {
     color: rgb(75 85 99);
     font-size: 14px;
     line-height: 20px;
     text-align: center;
-}
+} */
 
 /* .heading3 {
     max-width: 1280px;
