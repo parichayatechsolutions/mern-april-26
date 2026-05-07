@@ -44,14 +44,14 @@
     position: relative;
 } */
 
-.circle::before {
+/* .circle::before {
     content: "";
     position: absolute;
     width: 85px;
     height: 85px;
     background: white;
     border-radius: 50%;
-}
+} */
 
 /* .circle span {
     position: relative;

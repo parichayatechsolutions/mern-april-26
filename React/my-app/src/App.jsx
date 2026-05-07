@@ -4,11 +4,11 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Header from './component/Head/Header'
-import About from './component/About/About'
 import Skill from './component/Skill/Skill'
 import Experience from './component/Experience/Experience'
 import Contact from './component/Contact/Contact'
 import Home from './component/Home/Home'
+import About from './component/About/About'
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
     < >
       <Header/>
       <Home />
-      <About />
+      <About/>
       <Skill />
       <Experience/>
       <Contact/>
