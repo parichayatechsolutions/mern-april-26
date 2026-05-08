@@ -104,23 +104,23 @@ function About() {
                             </div>
                         </div>
                         <div className="th_r max-w-sm m-auto flex flex-col gap-6 w-full ">
-                            <div className="edu bg-white p-6 rounded-2xl box-border border-solid border-gray-300 shadow-lg/15 transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100">
-                                {
-                                    detailsCard.map((detail, index) => {
-                                        return (
-                                            <div key={index}>
-                                                <h3 className=" mt-5 text-xl text-black font-semibold">{detail.heading1}</h3>
-                                                <p className="text-lg text-gray-600 ">{detail.subt1}<br></br></p>
-                                                <p className="text-lg text-gray-600">{detail.subt2}<br></br></p>
-                                                <p className="text-lg text-gray-600">{detail.subt3}</p>
-                                            </div>
+                                <div className="edu bg-white p-6 rounded-2xl box-border border-solid border-gray-300 shadow-lg/15 transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100">
+                                    {
+                                        detailsCard.map((detail, index) => {
+                                            return (
+                                                <div key={index}>
+                                                    <h3 className=" mt-5 text-xl text-black font-semibold">{detail.heading1}</h3>
+                                                    <p className="text-lg text-gray-600 ">{detail.subt1}<br></br></p>
+                                                    <p className="text-lg text-gray-600">{detail.subt2}<br></br></p>
+                                                    <p className="text-lg text-gray-600">{detail.subt3}</p>
+                                                </div>
 
-                                        )
-                                    })
+                                            )
+                                        })
 
-                                }
+                                    }
 
-                            </div>
+                                </div>
                         </div>
                         {/* <div className="car bg-white p-6 rounded-2xl box-border border-solid border-gray-300 shadow-lg/15">
                         <div className="car_s">

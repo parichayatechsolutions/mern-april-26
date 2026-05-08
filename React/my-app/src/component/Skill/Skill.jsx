@@ -82,11 +82,11 @@ function Skill() {
                                     return (
                                         <div key={index}>
                                             <div className="circle">
-                                                <div className="circle w-28 h-28 rounded-[50%] flex items-center justify-center flex-row relative bg-gray-300"></div>
-                                                <div className="circle w-28 h-28 rounded-[50%] flex items-center justify-center flex-row absolute bg-indigo-400 "></div>
+                                                <div className="circle w-28 h-28 rounded-[50%] flex items-center justify-center relative bg-gray-300"></div>
+                                                <div className="circle w-28 h-28 rounded-[50%] flex items-center justify-center absolute bg-indigo-400 "></div>
                                                 <div className=" ml-3 mr-5 w-22 h-22 rounded-full bottom-25 relative text-center bg-white font-semibold text-xl">{skill.per}<br></br><small className="font-semibold items-center text-base text-gray-600">{skill.desc}</small></div>
-                                                </div>
                                             </div>
+                                        </div>
                                             )
 
                                 })
