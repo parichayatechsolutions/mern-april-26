@@ -71,7 +71,7 @@ function About() {
     return (
         < >
 
-            <section id="about">
+            <section id="About">
                 <div className="about_sec ml-auto mr-auto max-w-7xl">
                     <div className="heading1 font-bold text-4xl leading-10 mb-4 text-center ">
                         <h3> {ab} </h3>
@@ -81,11 +81,11 @@ function About() {
                     </div>
                     <div className="third grid grid-cols-3 gap-9 box-border border-solid border-gray-300 pt-5">
                         <div className="heading2 grid col-span-2 box-border border-solid border-gray-300 ">
-                            <div className="t_mid p-9 rounded-2xl bg-white box-border border-solid border-gray-300 shadow-lg/15 h-fit">
+                            <div className="t_mid p-9 rounded-2xl bg-white box-border border-solid border-gray-300 shadow-lg/15 h-fit transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 ">
                                 <h3 className="font-bold text-black text-2xl leading-8">{my}</h3>
                                 <p className="text-gray-600 mb-6 grid text-xl pt-2.5">{para3}<br></br></p>
                                 <p className="text-gray-600 mb-6 grid text-xl pt-2.5">{para4}</p>
-                                <div className=" grid-cols-4 grid gap-6 pt-5">
+                                <div className=" grid-cols-4 grid gap-6 pt-5 ">
                                     {
                                         scoreCard.map((card, index) => {
                                             return (
@@ -104,7 +104,7 @@ function About() {
                             </div>
                         </div>
                         <div className="th_r max-w-sm m-auto flex flex-col gap-6 w-full ">
-                            <div className="edu bg-white p-6 rounded-2xl box-border border-solid border-gray-300 shadow-lg/15">
+                            <div className="edu bg-white p-6 rounded-2xl box-border border-solid border-gray-300 shadow-lg/15 transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100">
                                 {
                                     detailsCard.map((detail, index) => {
                                         return (

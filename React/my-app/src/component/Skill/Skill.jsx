@@ -71,7 +71,7 @@ function Skill() {
     return (
         <>
 
-            <section id="skill">
+            <section id="Skill">
                 <div className=" max-w-7xl ml-auto mr-auto text-center mt-28 pb-4">
                     <h3 className="text-black font-bold text-4xl leading-10 mr-auto ml-auto mb-4">{te}</h3>
                     <p className="text-gray-600 text-xl leading-7">{para}</p>
@@ -82,23 +82,22 @@ function Skill() {
                                     return (
                                         <div key={index}>
                                             <div className="circle">
-                                                <div className="circle w-28 h-28 rounded-full flex items-center justify-center flex-row relative bg-gray-300 "></div>
-                                                <div className="circle rounded-full flex items-center justify-center flex-row absolute bg-indigo-400"></div>
+                                                <div className="circle w-28 h-28 rounded-[50%] flex items-center justify-center flex-row relative bg-gray-300"></div>
+                                                <div className="circle w-28 h-28 rounded-[50%] flex items-center justify-center flex-row absolute bg-indigo-400 "></div>
+                                                <div className=" ml-3 mr-5 w-22 h-22 rounded-full bottom-25 relative text-center bg-white font-semibold text-xl">{skill.per}<br></br><small className="font-semibold items-center text-base text-gray-600">{skill.desc}</small></div>
+                                                </div>
                                             </div>
-                                            <div className="relative text-center font-semibold text-xl">{skill.per}<br></br><small className="font-semibold text-base text-gray-600">{skill.desc}</small>
-                                            </div>
-                                        </div>
-                                    )
+                                            )
 
                                 })
                             }
 
-                            {/* <div className="circle w-28 h-28 rounded-full flex items-center justify-center relative ">
+                                            {/* <div className="circle w-28 h-28 rounded-full flex items-center justify-center relative ">
                                 <span className="relative text-center font-semibold text-xl">90%<br></br><small className="font-semibold text-base text-gray-600">Python</small></span>
                             </div>
                         </div> */}
 
-                            {/* <div className="skill">
+                                            {/* <div className="skill">
                             <div className="circle w-28 h-28 rounded-full flex items-center justify-center relative">
                                 <span className="relative text-center font-semibold text-xl">80%<br></br><small className="font-semibold text-base text-gray-600">JavaScript</small></span>
                             </div>
@@ -109,29 +108,29 @@ function Skill() {
                                 <span className="relative text-center font-semibold text-xl">75%<br></br><small className="font-semibold text-base text-gray-600">React</small></span>
                             </div>
                         </div> */}
-                            {/* <div className="skill">
+                                            {/* <div className="skill">
                             <div className="circle w-28 h-28 rounded-full flex items-center justify-center relative">
                                 <span className="relative text-center font-semibold text-xl">70%<br></br><small className="font-semibold text-base text-gray-600">Node.js</small></span>
                             </div>
                         </div> */}
-                        </div>
                     </div>
-                    <div className="tt max-w-7xl p-8 rounded-2xl bg-white box-border shadow-xl/15 border-solid border-gray-300 mt-16">
-                        <h3 className="text-black text-3xl font-bold leading-8 pb-4">{to}</h3>
-                        <div className="items grid-cols-4 grid gap-4">
-                            {
-                                langCard.map((lang, index) => {
-                                    return (
-                                        <div key={index}>
-                                            <div className={`one grid justify-items-center ${lang.bg} text-center rounded-2xl p-4`}>
-                                                <p className="font-semibold">{lang.desc}</p>
+                </div>
+                        <div className="tt max-w-7xl p-8 rounded-2xl bg-white box-border shadow-xl/15 border-solid border-gray-300 mt-16 transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100">
+                            <h3 className="text-black text-3xl font-bold leading-8 pb-4">{to}</h3>
+                            <div className="items grid-cols-4 grid gap-4">
+                                {
+                                    langCard.map((lang, index) => {
+                                        return (
+                                            <div key={index}>
+                                                <div className={`one grid justify-items-center ${lang.bg} text-center rounded-2xl p-4`}>
+                                                    <p className="font-semibold">{lang.desc}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    )
-                                })
-                            }
-                            {/* <div className="one grid justify-items-center bg-pink-50 text-center rounded-2xl p-4"> */}
-                            {/* <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        )
+                                    })
+                                }
+                                {/* <div className="one grid justify-items-center bg-pink-50 text-center rounded-2xl p-4"> */}
+                                {/* <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     fill="#a855f7" width="40px" height="40px" viewBox="0 0 32 32" id="Camada_1"
                                     version="1.1" xml:space="preserve">
                                     <g>
@@ -141,19 +140,19 @@ function Skill() {
                                             d="M16.3,18.5c1.4,0,2.5-1.1,2.5-2.5s-1.1-2.5-2.5-2.5s-2.5,1.1-2.5,2.5S14.9,18.5,16.3,18.5z" />
                                     </g>
                                 </svg></span> */}
-                            {/* <p className="font-semibold">{to1}</p>
+                                {/* <p className="font-semibold">{to1}</p>
                         </div>
                         <div className="two grid justify-items-center bg-green-50 text-center rounded-2xl p-4">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" fill="#31c969" width="40px" height="40px" */}
-                            {/* viewBox="0 0 32 32">
+                                {/* viewBox="0 0 32 32">
                                     <path
                                         d="M 15.994141 3 C 15.629141 3 15.264219 3.0895313 14.949219 3.2695312 L 5.0390625 8.9902344 C 4.3990625 9.3602344 4 10.060781 4 10.800781 L 4 21.179688 C 4 21.929688 4.3990625 22.620234 5.0390625 22.990234 L 7.640625 24.490234 C 8.900625 25.110234 9.3499219 25.109375 9.9199219 25.109375 C 11.789922 25.109375 12.859375 23.979531 12.859375 22.019531 L 12.859375 11.310547 C 12.859375 11.150547 12.730312 11.019531 12.570312 11.019531 L 11.320312 11.019531 C 11.150313 11.019531 11.029297 11.150547 11.029297 11.310547 L 11.029297 22.009766 C 11.029297 22.889766 10.120391 23.749531 8.6503906 23.019531 L 5.9296875 21.449219 C 5.8296875 21.399219 5.7695313 21.289687 5.7695312 21.179688 L 5.7695312 10.810547 C 5.7695312 10.690547 5.8296875 10.589297 5.9296875 10.529297 L 15.839844 4.8105469 C 15.929844 4.7505469 16.050391 4.7505469 16.150391 4.8105469 L 26.060547 10.529297 C 26.160547 10.589297 26.220703 10.690781 26.220703 10.800781 L 26.220703 21.179688 C 26.220703 21.289687 26.160313 21.399219 26.070312 21.449219 L 16.150391 27.179688 C 16.060391 27.229688 15.929844 27.229688 15.839844 27.179688 L 13.289062 25.669922 C 13.219062 25.619922 13.120781 25.610391 13.050781 25.650391 C 12.340781 26.050391 12.210781 26.100078 11.550781 26.330078 C 11.390781 26.380078 11.140625 26.479766 11.640625 26.759766 L 14.949219 28.720703 C 15.269219 28.900703 15.630234 29 15.990234 29 C 16.360234 29 16.719062 28.900703 17.039062 28.720703 L 26.960938 22.990234 C 27.600938 22.620234 28 21.929688 28 21.179688 L 28 10.810547 C 28 10.060547 27.600938 9.37 26.960938 9 L 17.039062 3.2695312 C 16.724063 3.0895313 16.359141 3 15.994141 3 z M 18.660156 11.005859 C 15.830156 11.005859 14.140625 12.205078 14.140625 14.205078 C 14.140625 16.375078 15.819062 16.974141 18.539062 17.244141 C 21.789062 17.564141 22.039062 18.045547 22.039062 18.685547 C 22.039062 19.785547 21.150547 20.255859 19.060547 20.255859 C 16.430547 20.255859 15.850156 19.594922 15.660156 18.294922 C 15.640156 18.154922 15.520859 18.054688 15.380859 18.054688 L 14.089844 18.054688 C 13.929844 18.054688 13.810547 18.185938 13.810547 18.335938 C 13.810547 20.005937 14.720547 21.994141 19.060547 21.994141 C 22.200547 21.994141 24 20.755703 24 18.595703 C 24 16.455703 22.549766 15.884609 19.509766 15.474609 C 16.419766 15.074609 16.109375 14.864531 16.109375 14.144531 C 16.109375 13.544531 16.380156 12.755859 18.660156 12.755859 C 20.690156 12.755859 21.449766 13.194453 21.759766 14.564453 C 21.789766 14.694453 21.899062 14.794922 22.039062 14.794922 L 23.330078 14.794922 C 23.410078 14.794922 23.479063 14.755313 23.539062 14.695312 C 23.589062 14.645313 23.619375 14.564609 23.609375 14.474609 C 23.409375 12.114609 21.840156 11.005859 18.660156 11.005859 z" />
                                 </svg>
                                 </span> 
                             <p className="font-semibold">{to2}</p>
                         </div> */}
-                            {/* <div className="three grid justify-items-center bg-yellow-50 text-center rounded-2xl p-4"> */}
-                            {/* <span><svg xmlns="http://www.w3.org/2000/svg" fill="#eab308" width="40px" height="40px"
+                                {/* <div className="three grid justify-items-center bg-yellow-50 text-center rounded-2xl p-4"> */}
+                                {/* <span><svg xmlns="http://www.w3.org/2000/svg" fill="#eab308" width="40px" height="40px"
                                     viewBox="0 0 20 20">
 
                                     <rect x="0" fill="none" width="40" height="40" />
@@ -162,11 +161,11 @@ function Skill() {
                                             d="M10 6c3.9 0 7-.9 7-2s-3.1-2-7-2-7 .9-7 2 3.1 2 7 2zm0 9c-3.9 0-7-.9-7-2v3c0 1.1 3.1 2 7 2s7-.9 7-2v-3c0 1.1-3.1 2-7 2zm0-4c-3.9 0-7-.9-7-2v3c0 1.1 3.1 2 7 2s7-.9 7-2V9c0 1.1-3.1 2-7 2zm0-4c-3.9 0-7-.9-7-2v3c0 1.1 3.1 2 7 2s7-.9 7-2V5c0 1.1-3.1 2-7 2z" />
                                     </g>
                                 </svg></span> */}
-                            {/* <p className="font-semibold">{to3}</p>
+                                {/* <p className="font-semibold">{to3}</p>
                         </div>
                         <div className="four grid justify-items-center bg-orange-50 text-center rounded-2xl p-4">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24" */}
-                            {/* fill="none">
+                                {/* fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M13.4142 3.82843C12.6332 3.04738 11.3668 3.04738 10.5858 3.82843L9.91421 4.5L11.482 6.06774C11.6472 6.02356 11.8208 6 12 6C13.1046 6 14 6.89543 14 8C14 8.17916 13.9764 8.35282 13.9323 8.51804L15.982 10.5677C16.1472 10.5236 16.3208 10.5 16.5 10.5C17.6046 10.5 18.5 11.3954 18.5 12.5C18.5 13.6046 17.6046 14.5 16.5 14.5C15.3954 14.5 14.5 13.6046 14.5 12.5C14.5 12.3208 14.5236 12.1472 14.5677 11.982L13 10.4142V15.2676C13.5978 15.6134 14 16.2597 14 17C14 18.1046 13.1046 19 12 19C10.8954 19 10 18.1046 10 17C10 16.2597 10.4022 15.6134 11 15.2676V9.73244C10.4022 9.38663 10 8.74028 10 8C10 7.82084 10.0236 7.64718 10.0677 7.48196L8.5 5.91421L3.82843 10.5858C3.04738 11.3668 3.04738 12.6332 3.82843 13.4142L10.5858 20.1716C11.3668 20.9526 12.6332 20.9526 13.4142 20.1716L20.1716 13.4142C20.9526 12.6332 20.9526 11.3668 20.1716 10.5858L13.4142 3.82843ZM9.17157 2.41421C10.7337 0.852115 13.2663 0.852119 14.8284 2.41422L21.5858 9.17157C23.1479 10.7337 23.1479 13.2663 21.5858 14.8284L14.8284 21.5858C13.2663 23.1479 10.7337 23.1479 9.17157 21.5858L2.41421 14.8284C0.852115 13.2663 0.852119 10.7337 2.41422 9.17157L9.17157 2.41421Z"
                                         fill="#f97316" />
@@ -176,7 +175,7 @@ function Skill() {
                         </div>
                         <div className="five grid justify-items-center bg-blue-50 text-center rounded-2xl p-4">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 16 16" */}
-                            {/* fill="none">
+                                {/* fill="none">
                                     <path
                                         d="M8.01005 0.858582L6.01005 14.8586L7.98995 15.1414L9.98995 1.14142L8.01005 0.858582Z"
                                         fill="#60a5fa" />
@@ -190,7 +189,7 @@ function Skill() {
                         </div>
                         <div className="six grid justify-items-center bg-mauve-100 text-center rounded-2xl p-4">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" */}
-                            {/* width="40px" height="40px" viewBox="0 0 32 32" version="1.1">
+                                {/* width="40px" height="40px" viewBox="0 0 32 32" version="1.1">
                                     <path fill="#ef4444"
                                         d="M15.363 4.476c-0.863 0.281-1.431 0.944-1.575 1.831-0.050 0.3 0.006 0.931 0.313 3.706 0.206 1.838 0.363 3.381 0.356 3.425-0.012 0.044-1.313-0.875-2.925-2.056-1.594-1.169-3.044-2.2-3.219-2.294-0.425-0.219-1.181-0.262-1.688-0.1-0.744 0.231-1.375 0.863-1.606 1.6-0.206 0.681-0.119 1.287 0.287 1.9 0.394 0.588 0.656 0.731 4.187 2.3 1.813 0.8 3.294 1.481 3.287 1.512 0 0.031-1.419 0.669-3.144 1.413s-3.281 1.438-3.456 1.544c-0.419 0.25-0.869 0.744-1.075 1.181-0.144 0.3-0.169 0.438-0.169 0.887 0 0.463 0.025 0.581 0.2 0.95 0.25 0.525 0.606 0.919 1.063 1.162 0.731 0.387 1.412 0.381 2.206-0.019 0.225-0.113 1.675-1.131 3.219-2.269 2.037-1.494 2.819-2.038 2.831-1.963 0.006 0.056-0.15 1.613-0.356 3.45-0.4 3.625-0.406 3.75-0.119 4.363 0.188 0.394 0.606 0.8 1.037 1 0.313 0.15 0.438 0.169 0.981 0.169 0.556 0 0.663-0.019 0.981-0.175 0.669-0.331 1.106-0.913 1.244-1.675 0.063-0.363 0.031-0.738-0.313-3.8-0.212-1.869-0.375-3.406-0.363-3.419s1.169 0.825 2.581 1.863c3.431 2.525 3.581 2.619 4.212 2.738 1.269 0.238 2.637-0.856 2.738-2.188 0.038-0.556-0.069-0.975-0.369-1.438-0.413-0.637-0.65-0.769-4.213-2.306-1.787-0.769-3.275-1.419-3.3-1.444-0.031-0.025 1.363-0.675 3.094-1.438 3.787-1.675 3.675-1.625 4.094-2.012 0.444-0.425 0.656-0.869 0.694-1.45 0.069-1.113-0.637-2.15-1.669-2.45-0.506-0.15-1.262-0.094-1.706 0.119-0.181 0.094-1.644 1.125-3.231 2.294-1.594 1.169-2.912 2.119-2.925 2.106s0.15-1.569 0.363-3.456c0.413-3.737 0.419-3.819 0.106-4.45-0.188-0.394-0.613-0.8-1.025-0.994-0.431-0.194-1.225-0.256-1.631-0.119z" />
                                 </svg>
@@ -199,7 +198,7 @@ function Skill() {
                         </div>
                         <div className="seven grid justify-items-center bg-indigo-50 text-center rounded-2xl p-4">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24" */}
-                            {/* fill="none">
+                                {/* fill="none">
                                     <path
                                         d="M7 7L6 7C4.89543 7 4 7.89543 4 9L4 10.4721C4 10.7956 3.81722 11.0914 3.52786 11.2361V11.2361C2.89835 11.5508 2.89835 12.4492 3.52786 12.7639V12.7639C3.81722 12.9086 4 13.2044 4 13.5279L4 15C4 16.1046 4.89543 17 6 17L7 17"
                                         stroke="#6366f1" stroke-width="2" stroke-linecap="round"
@@ -214,7 +213,7 @@ function Skill() {
                         </div>
                         <div className="eight grid justify-items-center bg-red-50 text-center rounded-2xl p-4">
                             {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24" */}
-                            {/* fill="none">
+                                {/* fill="none">
                                     <path
                                         d="M14 17L17 14L14 11M10 7L7 10L10 13M7.8 21H16.2C17.8802 21 18.7202 21 19.362 20.673C19.9265 20.3854 20.3854 19.9265 20.673 19.362C21 18.7202 21 17.8802 21 16.2V7.8C21 6.11984 21 5.27976 20.673 4.63803C20.3854 4.07354 19.9265 3.6146 19.362 3.32698C18.7202 3 17.8802 3 16.2 3H7.8C6.11984 3 5.27976 3 4.63803 3.32698C4.07354 3.6146 3.6146 4.07354 3.32698 4.63803C3 5.27976 3 6.11984 3 7.8V16.2C3 17.8802 3 18.7202 3.32698 19.362C3.6146 19.9265 4.07354 20.3854 4.63803 20.673C5.27976 21 6.11984 21 7.8 21Z"
                                         stroke="#e993dc" stroke-width="2" stroke-linecap="round"
@@ -223,9 +222,9 @@ function Skill() {
                                 </span> 
                             <p className="font-semibold">{to8}</p>
                         </div> */}
+                            </div>
                         </div>
                     </div>
-                </div>
             </section >
 
         </>

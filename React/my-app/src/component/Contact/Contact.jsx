@@ -15,7 +15,7 @@ function Contact() {
     return (
         <>
 
-            <section id="contact">
+            <section id="Contact">
                 <div className="connect">
                     <div className="heading6 max-w-7xl text-center mt-28 pb-5">
                         <h3 className="text-black font-bold text-4xl"> {co1}</h3>
@@ -42,7 +42,7 @@ function Contact() {
                                     <label className=" font-medium text-black text-lg">Message</label>
                                     <textarea className="h-36 p-3.5 rounded-2xl border-2 border-solid border-gray-300 text-lg bg-mist-100 font-sans" placeholder="Your message"></textarea>
                                 </div>
-                                <button type="submit" className="btn mt-2.5 p-3.5 rounded-2xl text-white bg-linear-to-r from-indigo-400 to-purple-800 flex justify-center items-center gap-2.5 text-lg w-full cursor-auto">
+                                <button type="submit" className="btn mt-2.5 p-3.5 rounded-2xl text-white bg-linear-to-r transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 from-indigo-400 to-purple-800 flex justify-center items-center gap-2.5 text-lg w-full cursor-auto">
                                     <p>{co8}</p>
                                          <span><svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="20px"
                                         height="20px" viewBox="0 0 32 32" version="1.1">
@@ -54,7 +54,7 @@ function Contact() {
                             </form>
                         </div>
                         <div className="co_r1 pt-14 max-w-2xl">
-                            <div className="d_r rounded-2xl bg-white box-border border-solid border-gray-300 shadow-lg/15">
+                            <div className="d_r rounded-2xl bg-white box-border border-solid border-gray-300 shadow-lg/15 transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100">
                                 <h3 className="text-black text-xl font-bold leading-7 mb-4 pl-5">{co3}</h3>
                                 <div className="mail pl-5">
                                     <div className="m_l items-center flex">
@@ -106,7 +106,7 @@ function Contact() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="last p-6 rounded-2xl bg-white box-border border-solid border-gray-300 mt-7 shadow-lg/15">
+                            <div className="last p-6 rounded-2xl bg-white box-border border-solid border-gray-300 mt-7 shadow-lg/15 transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100">
                                 <div className="heading7 text-black text-xl font-bold leading-7 mb-4">
                                     <h3>{co7}</h3>
                                 </div>

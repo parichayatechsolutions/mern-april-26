@@ -16,10 +16,10 @@ function Home() {
     return (
 
         < >
-            <section id="home">
+            <section id="Home">
                 <div className="flex py-20 px-0 w-4/5 justify-between">
                     <div className="w-3/4">
-                        <div className="s1 rounded-3xl bg-white text-blue-900 w-fit text-center text-xl flex items-center gap-4 py-0 px-5 shadow-lg ml-3.5">
+                        <div className="s1 rounded-3xl bg-white text-blue-900 w-fit text-center text-xl flex items-center gap-4 py-0 px-5 shadow-lg ml-3.5 transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100">
                             <p>{no}<sup>{sup}</sup>{year}</p>
                         </div>
                         <div className="s2 flex text-6xl font-bold pt-9 pl-5">
@@ -29,7 +29,7 @@ function Home() {
                             <p>{para1}</p>
                         </div>
                         <div className="buttons flex gap-5 pl-5">
-                            <a href="# View projects" className="btn1 flex items-center gap-2 bg-linear-to-r from-indigo-400 to-purple-800 no-underline text-white py-2 px-5 rounded-2xl text-xl font-medium mt-3.5 w-fit ">
+                            <a href="# View projects" className="btn1 flex items-center gap-2 bg-linear-to-r from-indigo-400 to-purple-800 no-underline text-white py-2 px-5 rounded-2xl text-xl font-medium mt-3.5 w-fit transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 ">
                                 <span><svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 16 16"
                                     fill="none">
                                     <path
@@ -43,7 +43,7 @@ function Home() {
                                 </svg></span>
                                 <p>{view}</p>
                             </a>
-                            <a href="#contact" className="btn2 flex items-center gap-2 bg-white no-underline text-black py-2 px-5 rounded-2xl text-xl font-medium mt-3.5 w-fit box-border shadow-lg/15 ">
+                            <a href="#contact" className="btn2 flex items-center gap-2 bg-white no-underline text-black py-2 px-5 rounded-2xl text-xl font-medium mt-3.5 w-fit box-border shadow-lg/15 transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100">
                                 <span><svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="20px" height="20px"
                                     viewBox="0 0 32 32" version="1.1">
                                     <title>paper-plane</title>
@@ -58,11 +58,11 @@ function Home() {
                         <div className="second_img rounded-2xl p-1.5 w-80 ml-5 border-purple-100">
                             <img src="./photo.png"></img>
                         </div>
-                            <p className="absolute bg-white p-5 rounded-2xl bottom-0.5 text-xl shadow-lg/15 w-fit">{seek}</p>
+                            <p className="absolute bg-white p-5 rounded-2xl bottom-0.5 text-xl shadow-lg/15 w-fit transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100">{seek}</p>
                     </div>
                 </div>
         </section >
-        </>
+    </>
     )
 }
 
