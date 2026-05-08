@@ -50,7 +50,7 @@ function Journey_content() {
                         )
                     })
                 }
-                <div className="border-2 border-solid rounded-3xl absolute w-[2px] h-[80%] left-0 right-0 m-auto"></div>
+                <div className="border-2 border-solid rounded-3xl absolute w-0.5 h-[80%] left-0 right-0 m-auto"></div>
 
                 {/* <div className="w-1/2 relative">
                     <div className={`font-[cursive] border-2 border-solid border-black h-fit w-[84%] rounded-3xl absolute ${journey.position1} shadow-[6px_6px_black] rotate-3 transition-all delay-300 ease-in py-2.5 px-2.5 ${journey.boxColor} ${journey.contentColor} hover:rotate-0 `}>

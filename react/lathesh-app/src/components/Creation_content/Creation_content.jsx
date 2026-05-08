@@ -133,7 +133,7 @@ function Creation_content() {
                                         {
                                             creation.links.map((link,index) => {
                                                 return (
-                                                    <div><a key={index} href="#home">{link}</a></div>
+                                                    <div key={index}><a href="#home">{link}</a></div>
 
                                                 )
                                             })
