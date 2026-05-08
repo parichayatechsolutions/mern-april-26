@@ -1,270 +1,109 @@
 import "./Project.css"
 
 function Project() {
-const heading="Featured Projects"
-const para=["A selection of my recent work showcasing different technical skills","and problem-solving approaches." ] 
-const box1=["Smart Attendance System","A facial recognition-based attendance system using Python and OpenCV that automates classroom attendance tracking."]
-const abs1="AI/ML"
-const src="Source Code"
-const f1=["Python","Open CV","Machine Learning"]
-const box2=["Task Management App","A cross-platform mobile application for task management with cloud synchronization and team collaboration features."]
-const abs2="Mobile"
-const f2=["React Native","Firebase","Javascript"]
-const box3=["Stock Price Predictor","A machine learning model to predict stock prices using historical data and sentiment analysis from financial news."]
-const abs3="Data Science"
-const f3=["Python","Tensorflow","Pandas"]
-const box4=["E-Commerce Platform","A full-stack e-commerce solution with user authentication, product catalog, shopping cart, and payment integration."]
-const abs4="E-commerce"
-const f4=["React","Node.js","MongoDB"]
-const proj="View All Projects"
+    const heading = "Featured Projects"
+    const para = ["A selection of my recent work showcasing different technical skills", "and problem-solving approaches."]
+    const proj = "View All Projects"
 
+    
+    const projectCards = [
+        {
+            category: "AI/ML",
+            title: "Smart Atendance System",
+            description: "A facial recognition-based attendance system using Python and OpenCV that automates classroom attendance tracking.",
+            skills: ["Python", "Open CV", "Machine Learning"],
+            footerDesc: "Source Code",
+            colorClass: "bg-gradient-to-r from-purple-400 to-purple-700",
+            boxColor: "bg-purple-200 text-purple-700",
+            sourceColor:"text-purple-700"
+        },
+        {
+            category: "Mobile",
+            title: "Task Management App",
+            description: "A cross-platform mobile application for task management with cloud synchronization and team collaboration features.",
+            skills: ["React Native", "Firebase", "Javascript"],
+            footerDesc: "Source Code",
+            colorClass: "bg-gradient-to-r from-blue-400 to-blue-700",
+            boxColor: "bg-blue-200 text-blue-700",
+            sourceColor:"text-blue-700"
+        },
+        {
+            category: "Data Science",
+            title: "Stock Price Predictor",
+            description: "A machine learning model to predict stock prices using historical data and sentiment analysis from financial news.",
+            skills: ["Python", "Tensorflow", "Pandas"],
+            footerDesc: "Source Code",
+            colorClass: "bg-gradient-to-r from-green-400 to-green-700",
+            boxColor: "bg-green-200 text-green-700",
+            sourceColor:"text-green-700"
+        },
+        {
+            category: "E-commerce",
+            title: "E-Commerce Platform",
+            description: "A full-stack e-commerce solution with user authentication, product catalog, shopping cart, and payment integration.",
+            skills: ["React", "Node.js", "MongoDB"],
+            footerDesc: "Source Code",
+            colorClass: "bg-gradient-to-r from-orange-400 to-orange-700",
+            boxColor: "bg-orange-200 text-orange-700",
+            sourceColor:"text-orange-700"
+        }
+    ]
 
- return (
+    return (
 
         <>
             <section id="Project">
-                <div className="four">
-                    <div className="Proj">
-                        <h1>{heading}</h1>
-                        <p>{`${para[0]}`} <br/>{`${para[1]}`} </p>
-                        <div className="line"></div>
+                <div className="flex flex-col mt-10 px-4 pt-[40px] bg-gray-100">
+                    <div className="text-center mb-[64px]">
+                        <h1 className="text-[36px]">{heading}</h1>
+                        <p className="text-xl text-gray-500 pb-2">{`${para[0]}`} <br />{`${para[1]}`} </p>
+                        <div className="rounded-xs w-[96px] h-1 place-self-center bg-gradient-to-r from-purple-500 to-pink-500"></div>
                     </div>
-                    <div className="box">
-                        <div className="pro1">
-                            <div className="pr1">
-                                {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"
-                                    data-name="025_SCIENCE" id="_025_SCIENCE">
-                                    <defs>
-                                        <style>
-                                            .cls-1 {
-                                                fill: white;
+                    <div className="grid grid-cols-2 grid-rows-2 gap-x-[30px] gap-y-[30px] pl-4 pr-4">
+                        {
+                            projectCards.map((project, index) => {
+                                console.log(project)
+                                return (
+                                    <div key={index} className="flex flex-col flex-wrap hover:shadow-[0px_5px_2px_gray]">
+                                        <div className={`relative h-[200px]  ${project.colorClass} rounded-t-xl`}>
+                                            <div className={`absolute top-[15px] right-[15px] border-2 rounded-3xl bg-white p-2 ${project.sourceColor}`}>{project.category}
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col  h-[200px] p-6 bg-white rounded-b-xl">
+                                            <div>
+                                                <h1 className="text-xl/[28px] mb-2">{project.title}</h1>
+                                                <p className="mb-4 text-gray-500">{project.description}</p>
+                                            </div>
+                                            <div className="flex flex-row gap-2.5">
+                                                {
+                                                    project.skills.map((skill, index) => {
+                                                        return <div key={index} className={`w-fit rounded-2xl p-[5px] ${project.boxColor}`}>{`${skill}`}</div>
+                                                    })
+                                                }
+                                            </div>
+                                            <div>
+                                                <div className={`flex items-center gap-2.5 ${project.sourceColor}`}>
+                                                    <h3 className="p-1 text-lg">{project.footerDesc}</h3>
+                                                </div>
+                                                <div></div>
 
-                                            }
-                                        </style>
-                                    </defs>
-                                    <path className="cls-1"
-                                        d="M18,22H6a3,3,0,0,1-3-3V7A3,3,0,0,1,6,4H18a3,3,0,0,1,3,3V19A3,3,0,0,1,18,22ZM6,6A1,1,0,0,0,5,7V19a1,1,0,0,0,1,1H18a1,1,0,0,0,1-1V7a1,1,0,0,0-1-1Z" />
-                                    <path className="cls-1" d="M9,13a1,1,0,0,1-1-1V10a1,1,0,0,1,2,0v2A1,1,0,0,1,9,13Z" />
-                                    <path className="cls-1" d="M15,13a1,1,0,0,1-1-1V10a1,1,0,0,1,2,0v2A1,1,0,0,1,15,13Z" />
-                                    <path className="cls-1" d="M12,5a1,1,0,0,1-1-1V2a1,1,0,0,1,2,0V4A1,1,0,0,1,12,5Z" />
-                                    <path className="cls-1" d="M15,18H9a1,1,0,0,1,0-2h6a1,1,0,0,1,0,2Z" />
-                                </svg></span> */}
-                                <div className="d1">{abs1}
-                                </div>
-                            </div>
-                            <div className="tx1">
-                                <div className="head1">
-                                    <h1>{`${box1[0]}`}</h1>
-                                    <p>{`${box1[1]}`}</p>
-                                </div>
-                                <div className="f1">
-                                    <div>{`${f1[0]}`}</div>
-                                    <div>{`${f1[1]}`}</div>
-                                    <div>{`${f1[2]}`} </div>
-                                </div>
-                                <div className="g1">
-                                    <div className="git1">
-                                        {/* <span><svg xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px"
-                                            viewBox="0 0 20 20" version="1.1">
-
-                                            <title>github [#142]</title>
-                                            <desc>Created with Sketch.</desc>
-                                            <defs>
-
-                                            </defs>
-                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
-                                                fill-rule="evenodd">
-                                                <g id="Dribbble-Light-Preview"
-                                                    transform="translate(-140.000000, -7559.000000)" fill="purple">
-                                                    <g id="icons" transform="translate(56.000000, 160.000000)">
-                                                        <path
-                                                            d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
-                                                            id="github-[#142]">
-
-                                                        </path>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </svg></span> */}
-                                        <h3>{src}</h3>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div></div>
+                                )
 
-                                </div>
-                            </div>
-                        </div>
-                        <div className="pro2">
-                            <div className="pr2">
-                                {/* <span><svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M11.9436 1.25H12.0564C13.8942 1.24998 15.3498 1.24997 16.489 1.40314C17.6614 1.56076 18.6104 1.89288 19.3588 2.64124C20.1071 3.38961 20.4392 4.33856 20.5969 5.51098C20.75 6.65019 20.75 8.10583 20.75 9.94359V14.0564C20.75 15.8942 20.75 17.3498 20.5969 18.489C20.4392 19.6614 20.1071 20.6104 19.3588 21.3588C18.6104 22.1071 17.6614 22.4392 16.489 22.5969C15.3498 22.75 13.8942 22.75 12.0564 22.75H11.9436C10.1058 22.75 8.65019 22.75 7.51098 22.5969C6.33856 22.4392 5.38961 22.1071 4.64124 21.3588C3.89288 20.6104 3.56076 19.6614 3.40314 18.489C3.24997 17.3498 3.24998 15.8942 3.25 14.0564V9.94358C3.24998 8.10582 3.24997 6.65019 3.40314 5.51098C3.56076 4.33856 3.89288 3.38961 4.64124 2.64124C5.38961 1.89288 6.33856 1.56076 7.51098 1.40314C8.65019 1.24997 10.1058 1.24998 11.9436 1.25ZM7.71085 2.88976C6.70476 3.02502 6.12511 3.27869 5.7019 3.7019C5.27869 4.12511 5.02502 4.70476 4.88976 5.71085C4.75159 6.73851 4.75 8.09318 4.75 10V14C4.75 15.9068 4.75159 17.2615 4.88976 18.2892C5.02502 19.2952 5.27869 19.8749 5.7019 20.2981C6.12511 20.7213 6.70476 20.975 7.71085 21.1102C8.73851 21.2484 10.0932 21.25 12 21.25C13.9068 21.25 15.2615 21.2484 16.2892 21.1102C17.2952 20.975 17.8749 20.7213 18.2981 20.2981C18.7213 19.8749 18.975 19.2952 19.1102 18.2892C19.2484 17.2615 19.25 15.9068 19.25 14V10C19.25 8.09318 19.2484 6.73851 19.1102 5.71085C18.975 4.70476 18.7213 4.12511 18.2981 3.7019C17.8749 3.27869 17.2952 3.02502 16.2892 2.88976C15.2615 2.75159 13.9068 2.75 12 2.75C10.0932 2.75 8.73851 2.75159 7.71085 2.88976ZM8.25 5C8.25 4.58579 8.58579 4.25 9 4.25H15C15.4142 4.25 15.75 4.58579 15.75 5C15.75 5.41421 15.4142 5.75 15 5.75H9C8.58579 5.75 8.25 5.41421 8.25 5ZM12 15.75C11.3096 15.75 10.75 16.3096 10.75 17C10.75 17.6904 11.3096 18.25 12 18.25C12.6904 18.25 13.25 17.6904 13.25 17C13.25 16.3096 12.6904 15.75 12 15.75ZM9.25 17C9.25 15.4812 10.4812 14.25 12 14.25C13.5188 14.25 14.75 15.4812 14.75 17C14.75 18.5188 13.5188 19.75 12 19.75C10.4812 19.75 9.25 18.5188 9.25 17Z"
-                                        fill="white" />
-                                </svg></span> */}
-                                <div className="d2">{abs2}
-                                </div>
-                            </div>
-                            <div className="tx2">
-                                <div className="head2">
-                                    <h1>{`${box2[0]}`}</h1>
-                                    <p>{`${box2[1]}`}</p>
-                                </div>
-                                <div className="f2">
-                                    <div>{`${f2[0]}`}</div>
-                                    <div>{`${f2[1]}`}</div>
-                                    <div>{`${f2[2]}`}</div>
-                                </div>
-                                <div className="g2">
-                                    <div className="git2">
-                                        {/* <span><svg xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px"
-                                            viewBox="0 0 20 20" version="1.1">
+                            })
+                        }
 
-                                            <title>github [#142]</title>
-                                            <desc>Created with Sketch.</desc>
-                                            <defs>
-
-                                            </defs>
-                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
-                                                fill-rule="evenodd">
-                                                <g id="Dribbble-Light-Preview"
-                                                    transform="translate(-140.000000, -7559.000000)" fill="dodgerblue">
-                                                    <g id="icons" transform="translate(56.000000, 160.000000)">
-                                                        <path
-                                                            d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
-                                                            id="github-[#142]">
-
-                                                        </path>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </svg></span> */}
-                                        <h3>{src}</h3>
-                                    </div>
-                                    <div></div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div className=" pro3">
-                            <div className="pr3">
-                                {/* <span><svg xmlns="http://www.w3.org/2000/svg" fill="white" width="80px" height="80px"
-                                    viewBox="0 0 1024 1024" className="icon">
-                                    <path
-                                        d="M904 747H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM165.7 621.8l39.7 39.5c3.1 3.1 8.2 3.1 11.3 0l234.7-233.9 97.6 97.3a32.11 32.11 0 0 0 45.2 0l264.2-263.2c3.1-3.1 3.1-8.2 0-11.3l-39.7-39.6a8.03 8.03 0 0 0-11.3 0l-235.7 235-97.7-97.3a32.11 32.11 0 0 0-45.2 0L165.7 610.5a7.94 7.94 0 0 0 0 11.3z" />
-                                </svg></span> */}
-                                <div className="d3">{abs3}
-                                </div>
-                            </div>
-                            <div className="tx3">
-                                <div className="head3">
-                                    <h1>{`${box3[0]}`}</h1>
-                                    <p>{`${box3[1]}`}</p>
-                                </div>
-                                <div className="f3">
-                                    <div>{`${f3[0]}`}</div>
-                                    <div>{`${f3[1]}`}</div>
-                                    <div>{`${f3[2]}`}</div>
-                                </div>
-                                <div className="g3">
-                                    <div className="git3">
-                                        {/* <span><svg xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px"
-                                            viewBox="0 0 20 20" version="1.1">
-
-                                            <title>github [#142]</title>
-                                            <desc>Created with Sketch.</desc>
-                                            <defs>
-
-                                            </defs>
-                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
-                                                fill-rule="evenodd">
-                                                <g id="Dribbble-Light-Preview"
-                                                    transform="translate(-140.000000, -7559.000000)" fill="green">
-                                                    <g id="icons" transform="translate(56.000000, 160.000000)">
-                                                        <path
-                                                            d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
-                                                            id="github-[#142]">
-
-                                                        </path>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </svg></span> */}
-                                        <h3>{src}</h3>
-                                    </div>
-                                    <div></div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div className="pro4">
-                            <div className="pr4">
-                                {/* <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    fill="white" height="80px" width="80px" version="1.1" id="Layer_1"
-                                    viewBox="0 0 491.52 491.52" xml:space="preserve">
-                                    <g>
-                                        <g>
-                                            <path
-                                                d="M102.4,358.4h368.64c11.311,0,20.48-9.169,20.48-20.48V112.64c0-11.311-9.169-20.48-20.48-20.48H102.4V30.72    c0-11.311-9.169-20.48-20.48-20.48H20.48C9.169,10.24,0,19.409,0,30.72S9.169,51.2,20.48,51.2h40.96v61.44v20.48v204.8v102.4    c0,11.311,9.169,20.48,20.48,20.48h87.409c7.081,12.242,20.305,20.48,35.471,20.48c15.166,0,28.39-8.238,35.471-20.48h174.818    c7.081,12.242,20.305,20.48,35.471,20.48c22.63,0,40.96-18.33,40.96-40.96s-18.33-40.96-40.96-40.96    c-15.166,0-28.39,8.238-35.471,20.48H240.271c-7.081-12.242-20.305-20.48-35.471-20.48c-15.166,0-28.39,8.238-35.471,20.48H102.4    V358.4z M450.56,133.12v184.32H102.4V133.12H450.56z" />
-                                        </g>
-                                    </g>
-                                </svg></span> */}
-                                <div className="d4">{abs4}
-                                </div>
-                            </div>
-                            <div className="tx4">
-                                <div className="head4">
-                                    <h1>{`${box4[0]}`}</h1>
-                                    <p>{`${box4[1]}`}</p>
-                                </div>
-                                <div className="f4">
-                                    <div>{`${f4[0]}`}</div>
-                                    <div>{`${f4[1]}`}</div>
-                                    <div>{`${f4[2]}`} </div>
-                                </div>
-                                <div className="g4">
-                                    <div className="git4">
-                                        {/* <span><svg xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px"
-                                            fill="orange" viewBox="0 0 20 20" version="1.1">
-
-                                            <title>github [#142]</title>
-                                            <desc>Created with Sketch.</desc>
-                                            <defs>
-
-                                            </defs>
-                                            <g id="Page-1" stroke="none" stroke-width="1" fill="none"
-                                                fill-rule="evenodd">
-                                                <g id="Dribbble-Light-Preview"
-                                                    transform="translate(-140.000000, -7559.000000)" fill="orangered">
-                                                    <g id="icons" transform="translate(56.000000, 160.000000)">
-                                                        <path
-                                                            d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
-                                                            id="github-[#142]">
-
-                                                        </path>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </svg></span> */}
-                                        <h3>{src}</h3>
-                                    </div>
-                                    <div></div>
-
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div className="last4">
+                    <div className="text-purple-700 text-xl text-center p-5">
                         <h3>{proj}</h3>
                     </div>
 
 
                 </div>
-        </section >
-        
+            </section >
+
         </>
     )
 }

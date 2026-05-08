@@ -1,4 +1,4 @@
-.two {
+/* .two {
     background-color: black;
     color: white;
     margin-top: 0;
@@ -7,15 +7,15 @@
     height: 400px;
     padding-left: 16px;
     padding-right: 16px;
-}
+} */
 
-.l1 {
+/* .l1 {
     width: 60%;
     gap: 15px;
     margin-left: 60px;
 
-}
-
+} */
+/* 
 .info {
     display: flex;
     gap: 5px;
@@ -28,48 +28,48 @@
     --tw-bg-opacity: 1;
     background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
     font-weight: 500;
-}
+} */
 
-
+/* 
 .stud {
     font-size: 15px;
     margin: 0;
-}
+} */
 
 
 
 
 
-.n span {
+/* .n span {
     font-size: 60px;
     color: transparent;
     background: linear-gradient(to right, purple, rgb(89, 89, 220));
     background-clip: text;
-}
-
+} */
+/* 
 .n h1 {
     font-size: 60px;
-}
+} */
 
-
+/* 
 
 .n p {
     font-size: 25px;
     color: grey;
     font-weight: 100;
-}
+} */
 
-.r1 {
+/* .r1 {
     width: 40%;
-}
-
+} */
+/* 
 .navi1 {
     display: flex;
     gap: 15px;
-}
+} */
 
 
-
+/* 
 .work {
     display: flex;
     flex-direction: row;
@@ -81,14 +81,14 @@
     padding: 8px 18px;
     border: 1px;
     background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
-}
+} */
 
-.work a {
+/* .work a {
     color: white;
     text-decoration: none;
-}
+} */
 
-.work2 {
+/* .work2 {
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -99,16 +99,16 @@
     font-size: 18px;
     justify-content: center;
     width: fit-content;
-}
+} */
 
-.work2 a {
+/* .work2 a {
     color: black;
     text-decoration: none;
-}
+} */
 
-.r1 {
+/* .r1 {
     position: relative
-}
+} */
 
 .pic {
     border: 4px solid white;
