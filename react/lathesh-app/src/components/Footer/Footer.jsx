@@ -7,7 +7,7 @@ function Footer() {
         <>
             <footer>
                 <div className="text-center pt-19 px-90">
-                    <p className="font-[cursive] text-2xl">{footer}</p>
+                    <p className="font-[cursive] text-2xl text-gray-600">{footer}</p>
                     <p className="text-gray-800">{last_line}</p>
                 </div>
             </footer>

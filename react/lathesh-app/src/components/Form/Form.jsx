@@ -10,6 +10,8 @@ function Form() {
     const city="Bangalore"
     const ebility="But My Ideas Are Global"
     const my_creativity="FOLLOW FOR CRATIVITY 🌈"
+
+    const 
     return (
         <>
             <div className="grid grid-cols-2 h-fit pt-25 px-90 gap-x-12.5">
