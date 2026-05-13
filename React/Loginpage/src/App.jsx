@@ -4,6 +4,9 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Left from './component/Loginpage/Lp'
+import Sign from './component/Signin/s'
+
+
 
 
 
@@ -13,6 +16,7 @@ function App() {
   return (
     <>
       <Left/>
+      <Sign/>
     </>
   )
 }

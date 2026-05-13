@@ -10,6 +10,8 @@ import Experience from "./Experience/Experience"
 import Contact from "./Contact/Contact"
 import Home from "./Home/Home"
 import About from "./About/About"
+import Left from "./Loginpage copy/Lp"
+import Sign from "./Signin/s"
 
 
 const Portfolio = () => {

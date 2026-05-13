@@ -5,8 +5,8 @@ function Left() {
 
     return (
         <>
-            <div className="main p-32 max-w-7xl ml-auto mr-auto flex justify-center w-full h-full bg-linear-to-r from-indigo-300 to-indigo-400 rounded-2xl items-center ">
-                <div className="page flex justify-start w-1/2 items-center bg-white rounded-2xl border-white shadow-white shadow-2xl/100 transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 ">
+            <div className="main p-32 max-w-7xl ml-auto mr-auto flex justify-center w-full h-full bg-linear-to-r from-indigo-300 to-purple-800 rounded-2xl items-center ">
+                <div className="page flex justify-start w-1/2 items-center bg-white rounded-2xl border-indigo-800 shadow-indigo-800 shadow-2xl/100 transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 ">
                     <div className="left w-full m-2.5 rounded-2xl bg-blue-50-100">
                         <form>
                             <div className="heading text-center text-3xl mt-100px font-bold">
@@ -30,7 +30,7 @@ function Left() {
                                 </div>
                             </div>
                             <div className="btn pt-4 flex justify-center items-center">
-                                <button className="w-4/5 p-2.5 text-base bg-linear-to-r from-indigo-300 to-indigo-400 rounded-2xl text-white transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100" type="submit">
+                                <button className="w-4/5 p-2.5 text-base bg-linear-to-r from-indigo-300 to-purple-800 rounded-2xl shadow-indigo-800 shadow-lg/50 text-white transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100" type="submit">
                                     {/* <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="15px" height="15px"
                                             viewBox="0 0 32 32" version="1.1">
