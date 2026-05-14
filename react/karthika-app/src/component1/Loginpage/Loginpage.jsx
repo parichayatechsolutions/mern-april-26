@@ -1,15 +1,35 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
 
-function Login() {
-    const navigate = useNavigate();
+const Loginpage = () => {
+    const navigate = useNavigate()
     const title = "Login"
-    const password = "Forget Password?"
+    const password = "Forgot Password?"
+    const [FormDetails, setFormDetails] = useState(null)
+
+    const formDocs = (details) => {
+        details.preventDefault()
+        console.log(details.target[0].value)
+        console.log(details.target[1].value)
+        console.log(details.target[2].value)
+        setFormDetails({
+            Name: details.target[0].value,
+            Email: details.target[1].value,
+            Password: details.target[2].value
+
+        })
+    }
+
+    useEffect(() => {
+        console.log("Form Details :", FormDetails)
+    }, [FormDetails])
+
     return (
         <>
-            <div className="bg-blue-500 min-h-screen py-10 px-120">
-                <div className="flex flex-col  bg-white/20 backdrop-invert backdrop-opacity-10 py-20 px-1">
+            <div className="bg-blue-300 min-h-screen py-10 px-120">
+                <div className="flex flex-col  bg-white/30 backdrop-invert backdrop-opacity-10 py-20 px-1">
                     <h1 className="text-6xl text-center mb-5">{title}</h1>
-                    <form className="flex flex-col gap-3 px-5">
+                    <form className="flex flex-col gap-3 px-5" onSubmit={formDocs}>
                         <label>Name:</label>
                         <input type="mail" className=" border-1 rounded-lg opacity focus:border-blue-800 focus:outline-0" placeholder="Enter your Name" />
                         <label>E-mail:</label>
@@ -25,4 +45,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Loginpage;
