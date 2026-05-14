@@ -10,8 +10,10 @@ import Experience from "./Experience/Experience"
 import Contact from "./Contact/Contact"
 import Home from "./Home/Home"
 import About from "./About/About"
-import Left from "./Loginpage copy/Lp"
-import Sign from "./Signin/s"
+import Left from "../component1/component/Loginpage/Lp"
+import Sign from "../component1/component/Signin/s"
+import Forgot from "../component1/component/Forgot/Forgot"
+
 
 
 const Portfolio = () => {
@@ -23,6 +25,9 @@ const Portfolio = () => {
             <Skill/>
             <Experience/>
             <Contact/>
+            <Left/>
+            <Sign/>
+            <Forgot/>
             <Outlet/>
         </>
     )

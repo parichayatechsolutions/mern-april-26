@@ -1,0 +1,128 @@
+/* .main {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgb(98, 131, 221), rgb(162, 164, 234), rgb(64, 98, 191));
+    /* background: rgb(162, 164, 234); */
+    /* border-radius: 16px;
+    align-items: center;
+}  */
+
+/* .page {
+    display: flex;
+    justify-content: start;
+    width: 80%;
+    align-items: center;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px 0 rgba(254, 253, 253, 0.5), 0 6px 20px 0 rgba(245, 241, 241, 0.7);
+} */
+
+/* .heading {
+    text-align: center;
+    font-size: 25px;
+} */
+
+/* .left {
+    width: 40%;
+    margin: 10px;
+    border-radius: 16px;
+    background: rgb(233, 239, 255);
+
+} */
+
+/* .form {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+} */
+
+/* .right {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+} */
+
+/* .mid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+
+} */
+/* a{
+    color: rgb(16, 50, 141);
+} */
+/* input[type="checkbox"] {
+    width: auto;
+} */
+
+/* .l_l {
+    display: flex;
+    align-items: center;
+} */
+
+/* .l_r {
+    width: auto;
+} */
+
+/* .right img {
+    width: 600px;
+    height: 550px;
+    border-radius: 16px;
+
+} */
+
+/* .btn {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .btn button {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    background-image: linear-gradient(to right, rgb(64, 98, 191), rgb(162, 164, 234));
+    font-family: serif;
+    border: rgb(64, 98, 191);
+    border-radius: 16px;
+    color: white;
+} */
+
+/* input {
+    color: rgb(15, 45, 127);
+    padding: 14px;
+    border: 1px solid #f1f4f9;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    background: #f7f8fc;
+    border-radius: 16px;
+} */
+/* input:hover{
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8;
+    border-color:rgb(177, 207, 250) ;
+    border-radius: 16px;
+} */
+
+/* label {
+    color: rgb(18, 43, 112);
+    padding: 5px;
+    padding-left: 15px;
+    font-size: 17px;
+} */
+
+/* .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+} */
