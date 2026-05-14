@@ -16,24 +16,14 @@ import Lets_create_together from './components/Lets_create_together/Lets_create_
 import Form from './components/Form/Form'
 import Footer from './components/Footer/Footer'
 import Creation_content from './components/Creation_content/Creation_content'
+import AppRouter from './AppRouter'
+import { Router } from 'react-router-dom'
 
 function App() {
 
   return (
-    <>
-      <Header />
-      <Home />
-      <About />
-      <About_content />
-      <My_creation />
-      <Creation_content />
-      <My_toolbox />
-      <Toolbox_content />
-      <My_journey />
-      <Journey_content />
-      <Lets_create_together />
-      <Form />
-      <Footer />
+    <>    
+        <AppRouter />
     </>
   )
 }
