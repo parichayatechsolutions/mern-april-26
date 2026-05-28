@@ -1,0 +1,42 @@
+body {
+    background: black;
+    color: white;
+    font-family: monospace;
+}
+
+.flip-clock {
+    display: flex;
+        height: 85vh;
+}
+
+.left,
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.am_pm {
+    place-self: start;
+    font-size: 20px;
+}
+
+.seconds {
+    place-self: end;
+    font-size: 20px;
+}
+
+#hour, #min{
+        font-size: 100px;
+        margin: 0;
+        font-size: 38vw;
+        place-self: center;
+}
+
+#dayOfWeek, .date {
+   place-self: center;
+   font-size: 20px;
+}
