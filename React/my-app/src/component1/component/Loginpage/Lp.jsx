@@ -17,7 +17,7 @@ function Left() {
         const password = "Password"
         const [FormDetails,setFormDetails] = useState(null)
 
-        cons (parameter) details: any
+        
         details.preventDefault()
         console.log(details.target[0].value)
         console.log(details.target[1].value)
