@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
     const navigate = useNavigate();
-    const submit = "SUBMIT🚀"
+    const submit = "SIGN IN🚀"
     const Login = "LOGIN"
     const forgot = "Forgot Password?"
     const site = "To MySite.com"
@@ -83,7 +83,7 @@ return (
                     <label>E-mail:</label> <input type="email" placeholder="Your email" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" />
                     <label>Password:</label>  <input type="password" placeholder="Your Password" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" />
                     <div className="flex justify-end font-bold">
-                        <button className="text-[10px] bg-white border border-solid border-black rounded-2xl py-1 px-1 hover:bg-red-400 hover:shadow-[2px_2px_1px_black]" onClick={() => { navigate("/ForgotPassword") }}>{forgot}</button>
+                        <button type="button" className="text-[10px] bg-white border border-solid border-black rounded-2xl py-1 px-1 hover:bg-red-400 hover:shadow-[2px_2px_1px_black]" onClick={() => { navigate("/ForgotPassword") }}>{forgot}</button>
 
                     </div>
                     <button type="submit" className="text-2xl py-2 px-9 bg-amber-400 h-15 border-3 border-solid borderr-black rounded-4xl"><strong>{submit}</strong></button>

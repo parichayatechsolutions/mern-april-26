@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
-#root{
-    background: linear-gradient(45deg, #f38888, #97f5ef, #a3f6cf, #8edcee, #f0e0ab);
-    background-size: 400% 400%;
-}
-body{
+/* #root{
+background-color: lightblue;
+background-repeat: repeat;
+} */
+/* body{
   margin: 0;
-}
+} */

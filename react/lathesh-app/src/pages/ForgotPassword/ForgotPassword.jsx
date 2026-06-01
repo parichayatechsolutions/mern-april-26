@@ -29,7 +29,7 @@ function ForgotPassword() {
                     <label>Old Password:</label>  <input type="password" placeholder="Old Password" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" />
                     <label>New Password:</label>  <input type="password" placeholder="New Password" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" />
                     <button type="submit" className="text-2xl py-2 px-9 bg-amber-400 h-15 border-3 border-solid borderr-black rounded-4xl"><strong>{submit}</strong></button>
-                    <button className="text-2xl bg-white border-2 border-solid border-black rounded-2xl py-2 px-9 hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" onClick={() => { navigate("/login") }}>{Backto}</button>
+                    <button type="button" className="text-2xl bg-white border-2 border-solid border-black rounded-2xl py-2 px-9 hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" onClick={() => { navigate("/login") }}>{Backto}</button>
                 </form>
             </div>
         </>
