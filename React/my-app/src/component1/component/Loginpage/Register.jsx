@@ -1,19 +1,19 @@
 import "./Loginp.css"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { PiSignIn } from "react-icons/pi";
 
 
-function Left() {
+function Register() {
     const navigate = useNavigate()
-    const heading = "Welcome to Login Page"
+    const heading = "Welcome to Register Page"
     const n = "First Name"
     const n1 = "Second Name"
     const mail = "E-mail"
+    const phone = "Phone"
     const p = "Password"
-    const log = "Keep me logged in"
-    const forgot = "Forgot Password?"
-    const button = "Log in"
-    const signin = "Don't have an account? Register"
+    const button = "Create"
+    const signin = "Already have an account? Log in"
 
     // const Login = () =>{
     //     const navigate = useNavigate();
@@ -56,34 +56,22 @@ function Left() {
                                 </div>
                                 <label className="text-white p-1.5 pl-3.5 text-lg">{mail}</label>
                                 <input className="text-indigo-900 p-3.5 border-2 border-solid border-purple-800 text-base w-full outline-none bg-indigo-200/10 hover:bg-indigo-50 focus:bg-indigo-50 rounded-2xl" type="e-mail" placeholder="E-mail"></input>
+                                <label className="text-white p-1.5 pl-3.5 text-lg">{phone}</label>
+                                <input className="text-indigo-900 p-3.5 border-2 border-solid border-purple-800 text-base w-full outline-none bg-indigo-200/10 hover:bg-indigo-50  focus:bg-indigo-50 rounded-2xl" type="tel" placeholder="Phone"></input>
                                 <label className="text-white p-1.5 pl-3.5 text-lg">{p}</label>
                                 <input className="text-indigo-900 p-3.5 border-2 border-solid border-purple-800 text-base w-full outline-none bg-indigo-200/10 hover:bg-indigo-50 focus:bg-indigo-50 rounded-2xl" type="password" placeholder="Password"></input>
-                            </div>
-                            <div className="mid flex justify-around items-center pt-2.5">
-                                <div className="l_l flex items-center">
-                                    <input className="w-auto" type="checkbox" id="check"></input>
-                                    <label className="text-white p-1.5 pl-3.5 text-lg hover:text-purple-800">{log}</label>
-                                </div>
-                                <div class="l_r w-auto">
-                                    <button type="text" className="text-white hover:text-purple-800 focus:underline focus:underline-offset-6 focus:decoration-2 focus:decoration-purple-800" onClick={() => { navigate("/forgot")}}>{forgot}</button>
-                                </div>
                             </div>
                             <div className="btn pt-4 flex justify-center items-center">
                                 <button className="flex items-center gap-1.5 justify-center w-4/5 p-2.5 text-base bg-linear-to-r from-purple-800 to-purple-300 rounded-2xl shadow-indigo-800 shadow-lg/50 text-white transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100" type="submit">
                                     <div className="span">
                                         <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="15px" height="15px"
-                                                viewBox="0 0 32 32" version="1.1">
-                                                <title>paper-plane</title>
-                                                <path
-                                                    d="M0 14.016l9.216 6.912 18.784-16.928-14.592 20.064 10.592 7.936 8-32zM8 32l6.016-4-6.016-4v8z" />
-                                            </svg>
+                                            <PiSignIn />
                                         </span></div>
                                     <div>{button}</div>
                                 </button>
                             </div>
                             <div className="footer flex justify-center text-center items-center pt-5">
-                                <button type="text" className="text-center text-white hover:text-purple-800 focus:underline focus:underline-offset-6 focus:decoration-2 focus:decoration-purple-800 focus:text-white" onClick={() => { navigate("/reg")}}>{signin}</button>
+                                <button type="text" className="text-center text-white hover:text-purple-800 focus:underline focus:underline-offset-6 focus:decoration-2 focus:decoration-purple-800 focus:text-white" onClick={() => { navigate("/log")}}>{signin}</button>
                             </div>
                         </form>
                     </div>
@@ -96,4 +84,4 @@ function Left() {
     )
 }
 
-export default Left
+export default Register
