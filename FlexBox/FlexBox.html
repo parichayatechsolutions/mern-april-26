@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 
 <head>
@@ -95,3 +96,241 @@
 
 
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="FlexBox.css">
+</head>
+<body>
+    
+    <header class="hero">
+        <h1>Flexbox Visualizer</h1>
+        <p>A clean, simple visual guide to CSS Flexbox properties.</p>
+    </header>
+
+    <main class="gallery">
+        <!-- 1. FLEX DIRECTION -->
+        <section class="demo-panel">
+            <div class="panel-header">
+                <h2>flex-direction</h2>
+                <p>Establishing the Main Axis direction.</p>
+            </div>
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <span class="tag">row</span>
+                    <div class="flex-parent fd-row">
+                        <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">column</span>
+                    <div class="flex-parent fd-col">
+                        <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. JUSTIFY CONTENT -->
+        <section class="demo-panel">
+            <div class="panel-header">
+                <h2>justify-content</h2>
+                <p>Alignment along the Main Axis.</p>
+            </div>
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <span class="tag">flex-start</span>
+                    <div class="flex-parent jc-start">
+                        <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">center</span>
+                    <div class="flex-parent jc-center">
+                        <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">space-between</span>
+                    <div class="flex-parent jc-between">
+                        <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">space-evenly</span>
+                    <div class="flex-parent jc-evenly">
+                        <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ALIGN ITEMS -->
+        <section class="demo-panel">
+            <div class="panel-header">
+                <h2>align-items</h2>
+                <p>This defines the default behavior for how flex items are laid out along the cross axis on the current line. Think of it as the justify-content version for the cross-axis (perpendicular to the main-axis).</p>
+                <code>align-items: stretch | flex-start | flex-end | center | baseline | start | end | self-start | self-end;</code>
+            </div>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <span class="tag">stretch (default)</span>
+                    <p class="demo-desc">stretch to fill the container (respects min-width/max-width)</p>
+                    <div class="flex-parent tall ai-stretch">
+                        <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">flex-start</span>
+                    <p class="demo-desc">items are placed at the start of the cross axis.</p>
+                    <div class="flex-parent tall ai-start">
+                        <div class="box">1</div><div class="box tall-box">2</div><div class="box">3</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">flex-end</span>
+                    <p class="demo-desc">items are placed at the end of the cross axis.</p>
+                    <div class="flex-parent tall ai-end">
+                        <div class="box">1</div><div class="box tall-box">2</div><div class="box">3</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">center</span>
+                    <p class="demo-desc">items are centered in the cross-axis.</p>
+                    <div class="flex-parent tall ai-center">
+                        <div class="box">1</div><div class="box tall-box">2</div><div class="box">3</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">baseline</span>
+                    <p class="demo-desc">items are aligned such as their baselines align.</p>
+                    <div class="flex-parent tall ai-baseline">
+                        <div class="box text-small">1</div>
+                        <div class="box text-large">2</div>
+                        <div class="box text-medium">3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FLEX WRAP -->
+        <section class="demo-panel">
+            <div class="panel-header">
+                <h2>flex-wrap</h2>
+                <p>Handling overflow and multiple lines.</p>
+            </div>
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <span class="tag">nowrap (default)</span>
+                    <div class="flex-parent fw-nowrap">
+                        <div class="box wide-box">1</div><div class="box wide-box">2</div><div class="box wide-box">3</div><div class="box wide-box">4</div><div class="box wide-box">5</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">wrap</span>
+                    <div class="flex-parent fw-wrap tall">
+                        <div class="box wide-box">1</div><div class="box wide-box">2</div><div class="box wide-box">3</div><div class="box wide-box">4</div><div class="box wide-box">5</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ALIGN CONTENT -->
+        <section class="demo-panel">
+            <div class="panel-header">
+                <h2>align-content</h2>
+                <p>This aligns a flex container's lines within when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis.</p>
+                <p class="note-box"><strong>⚠️ Note:</strong> This property only takes effect on multi-line flexible containers, where <code>flex-wrap</code> is set to either <code>wrap</code> or <code>wrap-reverse</code>. A single-line flexible container (<code>flex-wrap: nowrap</code>) will not reflect <code>align-content</code>.</p>
+                <code class="syntax-block">align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;</code>
+            </div>
+            
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <span class="tag">normal (default) / stretch</span>
+                    <p class="demo-desc">lines stretch to take up the remaining space</p>
+                    <div class="flex-parent tall fw-wrap ac-stretch">
+                        <div class="box wide-box">1</div><div class="box wide-box">2</div><div class="box wide-box">3</div><div class="box wide-box">4</div><div class="box wide-box">5</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">flex-start / start</span>
+                    <p class="demo-desc">items packed to the start of the container. <code>flex-start</code> honors the <code>flex-direction</code></p>
+                    <div class="flex-parent tall fw-wrap ac-start">
+                        <div class="box wide-box sm-box">1</div><div class="box wide-box sm-box">2</div><div class="box wide-box sm-box">3</div><div class="box wide-box sm-box">4</div><div class="box wide-box sm-box">5</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">flex-end / end</span>
+                    <p class="demo-desc">items packed to the end of the container. <code>flex-end</code> honors the <code>flex-direction</code></p>
+                    <div class="flex-parent tall fw-wrap ac-end">
+                        <div class="box wide-box sm-box">1</div><div class="box wide-box sm-box">2</div><div class="box wide-box sm-box">3</div><div class="box wide-box sm-box">4</div><div class="box wide-box sm-box">5</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">center</span>
+                    <p class="demo-desc">items centered in the container</p>
+                    <div class="flex-parent tall fw-wrap ac-center">
+                        <div class="box wide-box sm-box">1</div><div class="box wide-box sm-box">2</div><div class="box wide-box sm-box">3</div><div class="box wide-box sm-box">4</div><div class="box wide-box sm-box">5</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">space-between</span>
+                    <p class="demo-desc">lines evenly distributed — first line at the start, last line at the end</p>
+                    <div class="flex-parent tall fw-wrap ac-between">
+                        <div class="box wide-box sm-box">1</div><div class="box wide-box sm-box">2</div><div class="box wide-box sm-box">3</div><div class="box wide-box sm-box">4</div><div class="box wide-box sm-box">5</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">space-around</span>
+                    <p class="demo-desc">lines evenly distributed with equal space around each line</p>
+                    <div class="flex-parent tall fw-wrap ac-around">
+                        <div class="box wide-box sm-box">1</div><div class="box wide-box sm-box">2</div><div class="box wide-box sm-box">3</div><div class="box wide-box sm-box">4</div><div class="box wide-box sm-box">5</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <span class="tag">space-evenly</span>
+                    <p class="demo-desc">items are evenly distributed with equal space around them</p>
+                    <div class="flex-parent tall fw-wrap ac-evenly">
+                        <div class="box wide-box sm-box">1</div><div class="box wide-box sm-box">2</div><div class="box wide-box sm-box">3</div><div class="box wide-box sm-box">4</div><div class="box wide-box sm-box">5</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CHILD PROPERTIES -->
+        <section class="demo-panel">
+            <div class="panel-header">
+                <h2>Child Properties</h2>
+                <p>Controlling specific flex items.</p>
+            </div>
+            <div class="demo-grid">
+                <div class="demo-card full-width">
+                    <span class="tag">flex-grow</span>
+                    <div class="flex-parent">
+                        <div class="box grow-1">grow: 1</div>
+                        <div class="box highlight grow-2">grow: 2</div>
+                        <div class="box grow-1">grow: 1</div>
+                    </div>
+                </div>
+                <div class="demo-card full-width">
+                    <span class="tag">order & align-self</span>
+                    <div class="flex-parent tall ai-center">
+                        <div class="box">Order 0</div>
+                        <div class="box">Order 0</div>
+                        <div class="box highlight rebel-child">Order -1 & <br>align-self: start</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+>>>>>>> ca01ab411dd398dc926d68fd7ca57555baf282be
