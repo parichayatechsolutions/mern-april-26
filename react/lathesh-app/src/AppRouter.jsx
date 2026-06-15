@@ -2,9 +2,10 @@ import { Routes, Route } from 'react-router-dom';
 import Portfolio from './pages/Portfolio';
 import Login from './pages/Login/Login';
 import Dashboard from './pages/Dashboard/Dashboard';
-import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import Registration from './pages/Registration/Registration';
 import Popup from './pages/Popup/Popup';
+import Profile from './pages/Profile/Profile';
+import UpdatePassword from './pages/UpdatePassword/UpdatePassword';
 
 const AppRouter = () => {
     return (
@@ -15,7 +16,8 @@ const AppRouter = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/popup" element={<Popup />} />
-            <Route path="/forgotPassword" element={<ForgotPassword />} />
+            <Route path="/updatepassword" element={<UpdatePassword />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
     );

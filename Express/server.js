@@ -42,6 +42,194 @@ app.post("/users", async (req, res) => {
 
 /**
  * @swagger
+ * /register:
+ *   post:
+ *     summary: Register a new user
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               firstname:
+ *                 type: string
+ *               secondname:
+ *                 type: string
+ *               email :
+ *                 type: string
+ *                 format: email
+ *               password:
+ *                 type: string
+ *                 format: password
+ *               confirmpassword:
+ *                 type: string
+ *                 format: password
+ *     responses:
+ *       200:
+ *         description: User created
+ */
+app.post("/register", async (req, res) => {
+  const db = getDB();
+  const result = await db.collection("users").insertOne(req.body);
+  res.send({ message: "User created", id: result.insertedId });
+});
+
+/**
+ * @swagger
+ * /login:
+ *   post:
+ *     summary: Login
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               username: 
+ *                 type: string
+ *               E-mail:
+ *                 type: string
+ *                 format: email
+ *               password:
+ *                 type: string
+ *                 format: password
+ *     responses:
+ *       200:
+ *         description: User created
+ */
+app.post("/Login", async (req, res) => {
+  const db = getDB();
+  const users = await db.collection("users").find().toArray();
+  const currentUser = req.body;
+  console.log(users)
+  console.log(currentUser)
+  const user = users.filter((item) => item.FirstName == req.body.FirstName)
+  console.log(user[0]);
+
+  let islogin;
+  if (user[0]?.Password == req.body.Password) {
+    islogin = true
+  }
+  else {
+    islogin = false
+  }
+  res.send({ islogin: islogin });
+});
+
+
+
+/**
+ * @swagger
+ * /updatepassword:
+ *   post:
+ *     summary: updatepassword
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               FirstName: 
+ *                 type: string
+ *               oldpassword:
+ *                 type: string
+ *               newpassword:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Password Updated!
+ */
+app.post("/updatepassword", async (req, res) => {
+  const db = getDB();
+  const usersL = await db.collection("login").find().toArray();
+  const usersR = await db.collection("users").find().toArray();
+  const currentUser = req.body;
+  console.log(usersL)
+  console.log(usersR)
+  console.log(currentUser)
+  const user = (usersL.filter((item) => item.FirstName == req.body.FirstName) && usersR.filter((item1) => item1.FirstName == req.body.FirstName))
+  console.log(user[0]);
+
+  let isUpdate;
+  if (user[0]?.Password == req.body.oldpassword) {
+    isUpdate = true
+    await db
+      .collection("users")
+      .updateOne(
+        { _id: new ObjectId(user[0]._id) },
+        {
+          $set: {
+            Password: req.body.newpassword
+          }
+        }
+      );
+      await db
+      .collection("users")
+      .updateOne(
+        { _id: new ObjectId(user[0]._id) },
+        {
+          $set: {
+            ConfirmPassword: req.body.newpassword
+          }
+        }
+      );
+  }
+  else {
+    isUpdate = {
+      status: "failed",
+      message: "updating password failed, password missmatch"
+    }
+  }
+  res.send({ isUpdate: isUpdate });
+});
+
+/**
+ * @swagger
+ * /register/{id}:
+ *   put:
+ *     summary: Update a user by id
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               username:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *                 format: password
+ *               password:
+ *                 type: string
+ *                 format: password
+ *     responses:
+ *       200:
+ *         description: User updated
+ */
+app.put("/register/:id", async (req, res) => {
+  const db = getDB();
+  await db
+    .collection("register")
+    .updateOne(
+      { _id: new ObjectId(req.params.id) },
+      { $set: req.body }
+    );
+  res.send({ message: "User updated" });
+});
+
+
+/**
+ * @swagger
  * /users:
  *   get:
  *     summary: Get all users
@@ -51,6 +239,7 @@ app.post("/users", async (req, res) => {
  */
 app.get("/users", async (req, res) => {
   const db = getDB();
+  console.log(req.body)
   const users = await db.collection("users").find().toArray();
   res.send(users);
 });
