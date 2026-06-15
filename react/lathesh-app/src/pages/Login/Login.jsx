@@ -7,6 +7,7 @@ function Login() {
     const Login = "LOGIN"
     const forgot = "Update Password?"
     const site = "To MySite.com"
+    const incorrect = "Incorrect Password!"
     const [FormDetails, setFormDetails] = useState(null)
     const [visible, setVisible] = useState(false)
 
@@ -63,11 +64,11 @@ function Login() {
                     </div>
 
                     <form className="flex flex-col gap-5 mx-150 border-2 border-solid rounded-2xl shadow-[0px_7px_7px_white] px-2.5 py-2.5 " onSubmit={formValues}>
-                        <label>Name:</label> <input type="text" placeholder="Your name" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" />
-                        <label>E-mail:</label> <input type="email" placeholder="Your email" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" />
-                        <label>Password:</label>  <input type="password" placeholder="Your Password" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" />
+                        <label>Name:</label> <input type="text" placeholder="Your name" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" required />
+                        <label>E-mail:</label> <input type="email" placeholder="Your email" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" required/>
+                        <label>Password:</label>  <input type="password" placeholder="Your Password" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" required/>
                         <div className="flex flex-col justify-between font-bold">
-                            {visible && (<div className="flex justify-end text-sm">"Incorrect Password!"</div>)}
+                            {visible && (<div className="flex justify-end text-sm">{incorrect}</div>)}
                             <div className="flex justify-end">
                                 <button type="button" className=" w-fit text-sm bg-white border border-solid border-black rounded-2xl py-1 px-1 hover:bg-red-400 hover:shadow-[2px_2px_1px_black]" onClick={() => { navigate("/UpdatePassword") }}>{forgot}</button>
                             </div>

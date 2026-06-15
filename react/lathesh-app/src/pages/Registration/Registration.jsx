@@ -6,7 +6,7 @@ function Registration() {
     const Heading = "CREATE ACCOUNT"
     const site = "To MySite.com"
     const submit = "SUBMIT🚀"
-    const login = "Login->"
+    const login = "Login"
     const [RegDetails, setRegDetails] = useState(null)
     const [FirstName, setFirstName] = useState("")
     const [SecondName, setSecondName] = useState("")
@@ -83,14 +83,15 @@ function Registration() {
                     </div>
                     <div className="px-10 sm:px-50 xl:px-100 lg:px-70">
                         <form className="grid grid-cols-1 gap-3 border-2 border-solid rounded-2xl shadow-[0px_7px_7px_white] px-2.5 py-2.5  " onSubmit={registerValues}>
-                            <div className="flex flex-col xl:flex-row gap-3">
-                                <label>First Name:</label>  <input type="text" placeholder="Your first-name" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 xl:py-3 xl:px-1 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" />
-                                <label>Second Name:</label> <input type="text" placeholder="Your second-name" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 xl:py-3 xl:px-1 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" /></div>
-                            <label>E-mail:</label> <input type="email" placeholder="Your email" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" />
-                            <label>Phone No.:</label>  <input type="text" placeholder="Your Phone Number" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" />
-                            <label>Password:</label>  <input type="password" placeholder="Your Password" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" />
-                            <label>ConfirmPassword:</label>  <input type="password" placeholder="Re-enter Password" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" />
+                            <div className="flex flex-col lg:flex-row gap-2 items-center">
+                                <label>First Name:</label>  <input type="text" placeholder="Your first-name" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 xl:py-3 xl:px-1 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" placeholder="Your first-name" required />
+                                <label>Second Name:</label> <input type="text" placeholder="Your second-name" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 xl:py-3 xl:px-1 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" placeholder="Your second-name" required/></div>
+                            <label>E-mail:</label> <input type="email" placeholder="Your email" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" placeholder="Your email" required/>
+                            <label>Phone No.:</label>  <input type="text" placeholder="Your Phone Number" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" placeholder="Your Phone Number" required/>
+                            <label>Password:</label>  <input type="password" placeholder="Your Password" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" placeholder="Your Password" required/>
+                            <label>ConfirmPassword:</label>  <input type="password" placeholder="Re-enter Password" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" placeholder="Re-enter Password" required/>
                             <div className="flex justify-end font-bold">
+                                <h1 className="items-center flex">Already Have Account Please ➡️</h1>
                                 <button type="button" className="text-base bg-white border border-solid border-black rounded-2xl py-1 px-10 hover:bg-red-400 hover:shadow-[2px_2px_1px_black]" onClick={() => { navigate("/Login") }}>{login}</button>
 
                             </div>
