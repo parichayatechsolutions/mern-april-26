@@ -179,7 +179,7 @@ connectDB()
  */
 app.post("/register", async (req, res) => {
   const db = getDB();
-  const result = await db.collection("register").insertOne(req.body);
+  const result = await db.collection("users").insertOne(req.body);
   res.send({ message: "User created", id: result.insertedId });
 });
 
@@ -209,7 +209,7 @@ app.post("/register", async (req, res) => {
  */
 app.post("/login", async (req, res) => {
   const db = getDB();
-  const users = await db.collection("register").find().toArray();
+  const users = await db.collection("users").find().toArray();
   const currentUser = req.body;
   console.log(users)
   console.log(currentUser)
@@ -253,7 +253,7 @@ app.post("/login", async (req, res) => {
 app.post("/updatepassword", async (req, res) => {
   const db = getDB();
   const usersL = await db.collection("login").find().toArray();
-  const usersR = await db.collection("register").find().toArray();
+  const usersR = await db.collection("users").find().toArray();
   const currentUser = req.body;
   console.log(usersL)
   console.log(usersR)
@@ -265,19 +265,31 @@ app.post("/updatepassword", async (req, res) => {
   if (user[0]?.Password == req.body.oldpassword) {
     isUpdate = true
     await db
-      .collection("register")
+      .collection("users")
       .updateOne(
-        { _id: new ObjectId(req.params.id) },
-        { Password: req.body.newpassword },
-        { ConfirmPassword: req.body.newpassword }
+        { _id: new ObjectId(user[0]._id) },
+        {
+          $set: {
+            Password: req.body.newpassword
+          }
+        }
       );
-    res.send({ message: "User updated" });  
-  }
-  else {
+      await db
+      .collection("users")
+      .updateOne(
+        { _id: new ObjectId(user[0]._id) },
+        {
+          $set: {
+            ConfirmPassword: req.body.newpassword
+          }
+        }
+      );
+    }
+    else {
     isUpdate = {
       status: "failed",
       message: "updating password failed, password missmatch"
     }
   }
-    res.send({ isUpdate: isUpdate });
+  res.send({ isUpdate: isUpdate });
 });
