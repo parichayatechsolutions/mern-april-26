@@ -1,85 +1,200 @@
 import "./Loginp.css"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { PiSignIn } from "react-icons/pi";
-
+import { PiSignIn, PiUser, PiEnvelope, PiPhone, PiLock } from "react-icons/pi";
 
 function Register() {
     const navigate = useNavigate()
-    const heading = "Welcome to Register Page"
-    const n = "First Name"
-    const n1 = "Second Name"
-    const mail = "E-mail"
-    const phone = "Phone"
-    const p = "Password"
-    const button = "Create"
+    const heading = "Create Your Account"
+    const [FirstName, setFirstName] = useState("")
+    const [SecondName, setSecondName] = useState("")
+    const [Email, setEmail] = useState("")
+    const [Phone, setPhone] = useState("")
+    const [Password, setPassword] = useState("")
+    const button = "Create Account"
     const signin = "Already have an account? Log in"
 
-    // const Login = () =>{
-    //     const navigate = useNavigate();
-    //     const title = "Login"
-    //     const password = "Password"
-    //     const [FormDetails,setFormDetails] = useState(null)
+    const [RegDetails, setRegDetails] = useState(null)
+    const [data, setData] = useState({
+        FirstName: "",
+        SecondName: "",
+        Email: "",
+        Phone: "",
+        Password: "",
+        ConfirmPassword: "",
+    }
+    );
 
+    const regDocs = async (regdetails) => {
+        regdetails.preventDefault()
+        console.log(regdetails.target[0].value)
+        console.log(regdetails.target[1].value)
+        console.log(regdetails.target[2].value)
+        console.log(regdetails.target[3].value)
+        console.log(regdetails.target[4].value)
+        console.log(regdetails.target[5].value)
+        const UpDateDetails = {
+            FirstName: regdetails.target[0].value,
+            SecondName: regdetails.target[1].value,
+            Email: regdetails.target[2].value,
+            Phone: regdetails.target[3].value,
+            Password: regdetails.target[4].value,
+            ConfirmPassword: regdetails.target[5].value
+        }
+        setRegDetails(UpDateDetails)
 
-    //     details.preventDefault()
-    //     console.log(details.target[0].value)
-    //     console.log(details.target[1].value)
-    //     console.log(details.target[2].value)
-    //     setFormDetails({
-    //         Name:details.target[0].value,
-    //         Email:details.target[1].value,
-    //         Password:details.target[2].value,
-    //     })
+        const URL = "http://localhost:5000/register"
+        const response = await fetch(URL,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(UpDateDetails),
+            });
+        console.log(response);
 
-    // }
+        regdetails.target.reset();
+    }
+
+    useEffect(() => {
+        if (RegDetails) {
+            console.log(RegDetails);
+            const passwordMatch = (RegDetails.Password == RegDetails.ConfirmPassword) ? alert("Password matched! \nUser registered Successfully") : alert("Password not matched");
+        }
+    }, [RegDetails])
+
+    useEffect(() => {
+        console.log("Form Details :", RegDetails)
+    }, [RegDetails])
 
     return (
         <>
-            <div className="flex p-18 mb-auto justify-center w-full h-full bg-[url('/Users/Lakshmi/Documents/GitHub/mern-april-26/React/my-app/src/component1/component/Loginpage/bg.jpg')] bg-cover rounded-2xl ">
-                <div className="page flex justify-start w-1/2 items-center bg-white/10 rounded-2xl border-indigo-800 shadow-gray-800 shadow-2xl/100 transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 ">
-                    <div className="left w-full m-2.5 rounded-2xl bg-blue-50-100 ">
-                        <form>
-                            <div className="heading text-white text-center text-3xl mt-100px font-bold">
-                                <h2>{heading}</h2>
-                            </div>
-                            <div className="form text-base flex flex-col m-5">
-                                <div className="flex justify-between gap-3">
-                                    <div className="flex flex-col w-full">
-                                        <label className="text-white p-1.5 pl-3.5 text-lg">{n}</label>
-                                        <input className="text-indigo-900 p-3.5 border-2 border-solid border-purple-800 text-base w-full outline-none bg-indigo-200/10 hover:bg-indigo-50 focus:bg-indigo-50 rounded-2xl" type="text" placeholder="Your First name"></input>
-                                    </div>
-                                    <div className="flex flex-col w-full">
-                                        <label className="text-white p-1.5 pl-3.5 text-lg">{n1}</label>
-                                        <input className="text-indigo-900 p-3.5 border-2 border-solid border-purple-800 text-base w-full outline-none bg-indigo-200/10 hover:bg-indigo-50 focus:bg-indigo-50 rounded-2xl" type="text" placeholder="Your Second name"></input>
-                                    </div>
-                                </div>
-                                <label className="text-white p-1.5 pl-3.5 text-lg">{mail}</label>
-                                <input className="text-indigo-900 p-3.5 border-2 border-solid border-purple-800 text-base w-full outline-none bg-indigo-200/10 hover:bg-indigo-50 focus:bg-indigo-50 rounded-2xl" type="e-mail" placeholder="E-mail"></input>
-                                <label className="text-white p-1.5 pl-3.5 text-lg">{phone}</label>
-                                <input className="text-indigo-900 p-3.5 border-2 border-solid border-purple-800 text-base w-full outline-none bg-indigo-200/10 hover:bg-indigo-50  focus:bg-indigo-50 rounded-2xl" type="tel" placeholder="Phone"></input>
-                                <label className="text-white p-1.5 pl-3.5 text-lg">{p}</label>
-                                <input className="text-indigo-900 p-3.5 border-2 border-solid border-purple-800 text-base w-full outline-none bg-indigo-200/10 hover:bg-indigo-50 focus:bg-indigo-50 rounded-2xl" type="password" placeholder="Password"></input>
-                            </div>
-                            <div className="btn pt-4 flex justify-center items-center">
-                                <button className="flex items-center gap-1.5 justify-center w-4/5 p-2.5 text-base bg-linear-to-r from-purple-800 to-purple-300 rounded-2xl shadow-indigo-800 shadow-lg/50 text-white transition delay-100 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100" type="submit">
-                                    <div className="span">
-                                        <span>
-                                            <PiSignIn />
-                                        </span></div>
-                                    <div>{button}</div>
-                                </button>
-                            </div>
-                            <div className="footer flex justify-center text-center items-center pt-5">
-                                <button type="text" className="text-center text-white hover:text-purple-800 focus:underline focus:underline-offset-6 focus:decoration-2 focus:decoration-purple-800 focus:text-white" onClick={() => { navigate("/log")}}>{signin}</button>
-                            </div>
-                        </form>
+            <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900">
+                <div className="w-full max-w-2xl bg-white/5 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/10 p-8 md:p-10 transition-all duration-300 hover:shadow-indigo-500/20">
+                    
+                    {/* Header Section */}
+                    <div className="text-center mb-8">
+                        {/* <div className="inline-block p-3 bg-indigo-500/10 rounded-full mb-4">
+                            <PiUser className="text-4xl text-indigo-400" />
+                        </div> */}
+                        <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+                            {heading}
+                        </h2>
+                        <p className="text-indigo-300/70 mt-2 text-sm">
+                            Join us and start your journey today
+                        </p>
                     </div>
-                    {/* <div className="right w-3/5 flex flex-col">
-                        <img className="w-full h-full rounded-2xl" src="./clipart.jpg"></img>
-                    </div> */}
-                </div >
-            </div >
+
+                    <form onSubmit={regDocs} className="space-y-5">
+                        {/* Name Fields */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                                <label className="flex items-center gap-2 text-sm font-medium text-indigo-200">
+                                    <PiUser className="text-indigo-400" />
+                                    First Name
+                                </label>
+                                <input 
+                                    className="w-full px-4 py-3 bg-white/5 border-2 border-white/10 rounded-xl text-white placeholder-gray-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/30 focus:bg-white/10 transition-all duration-200 outline-none" 
+                                    type="text" 
+                                    placeholder="First Name" 
+                                    required
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="flex items-center gap-2 text-sm font-medium text-indigo-200">
+                                    <PiUser className="text-indigo-400" />
+                                    Last Name
+                                </label>
+                                <input 
+                                    className="w-full px-4 py-3 bg-white/5 border-2 border-white/10 rounded-xl text-white placeholder-gray-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/30 focus:bg-white/10 transition-all duration-200 outline-none" 
+                                    type="text" 
+                                    placeholder="Last Name" 
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        {/* Email Field */}
+                        <div className="space-y-2">
+                            <label className="flex items-center gap-2 text-sm font-medium text-indigo-200">
+                                <PiEnvelope className="text-indigo-400" />
+                                Email Address
+                            </label>
+                            <input 
+                                className="w-full px-4 py-3 bg-white/5 border-2 border-white/10 rounded-xl text-white placeholder-gray-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/30 focus:bg-white/10 transition-all duration-200 outline-none" 
+                                type="email" 
+                                placeholder="example@email.com" 
+                                required
+                            />
+                        </div>
+
+                        {/* Phone Field */}
+                        <div className="space-y-2">
+                            <label className="flex items-center gap-2 text-sm font-medium text-indigo-200">
+                                <PiPhone className="text-indigo-400" />
+                                Phone Number
+                            </label>
+                            <input 
+                                className="w-full px-4 py-3 bg-white/5 border-2 border-white/10 rounded-xl text-white placeholder-gray-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/30 focus:bg-white/10 transition-all duration-200 outline-none" 
+                                type="tel" 
+                                placeholder="Phone" 
+                                required
+                            />
+                        </div>
+
+                        {/* Password Fields */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                                <label className="flex items-center gap-2 text-sm font-medium text-indigo-200">
+                                    <PiLock className="text-indigo-400" />
+                                    Password
+                                </label>
+                                <input 
+                                    className="w-full px-4 py-3 bg-white/5 border-2 border-white/10 rounded-xl text-white placeholder-gray-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/30 focus:bg-white/10 transition-all duration-200 outline-none" 
+                                    type="password" 
+                                    placeholder="••••••••" 
+                                    required
+                                />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="flex items-center gap-2 text-sm font-medium text-indigo-200">
+                                    <PiLock className="text-indigo-400" />
+                                    Confirm Password
+                                </label>
+                                <input 
+                                    className="w-full px-4 py-3 bg-white/5 border-2 border-white/10 rounded-xl text-white placeholder-gray-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/30 focus:bg-white/10 transition-all duration-200 outline-none" 
+                                    type="password" 
+                                    placeholder="••••••••" 
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        {/* Submit Button */}
+                        <div className="pt-4">
+                            <button 
+                                className="w-full py-3.5 px-6 bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white font-semibold rounded-xl shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 text-base"
+                                type="submit"
+                            >
+                                <PiSignIn className="text-xl" />
+                                {button}
+                            </button>
+                        </div>
+
+                        {/* Login Link */}
+                        <div className="text-center pt-2">
+                            <button 
+                                type="button" 
+                                className="text-indigo-300/80 hover:text-indigo-300 text-sm transition-colors duration-200 hover:underline underline-offset-4"
+                                onClick={() => { navigate("/log") }}
+                            >
+                                {signin}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </>
     )
 }

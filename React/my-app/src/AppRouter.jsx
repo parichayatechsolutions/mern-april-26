@@ -6,8 +6,9 @@ import Skill from './component/Skill/Skill'
 import Experience from './component/Experience/Experience'
 import Contact from './component/Contact/Contact'
 import Forgot from './component1/component/Forgot/Forgot'
-import Left from './component1/component/Loginpage/Lp'
 import Register from './component1/component/Loginpage/Register'
+import Loginpage from './component1/component/Loginpage/Lp'
+
 
 
 
@@ -15,12 +16,9 @@ import Register from './component1/component/Loginpage/Register'
 const AppRouter = () =>{
     return(
         <Routes>
-            <Route path="/" element={<Left/>}/>
-            <Route path="/portfolio" element={<Portfolio/>}/>
-            <Route path="/log" element={<Left/>}/>
+            <Route path="/log" element={<Loginpage/>}/>
             <Route path="/reg" element={<Register/>}/>
             <Route path="/forgot" element={<Forgot/>}/>
-            <Route path="*" element={<Portfolio/>}/>
         </Routes>
     )
 }
