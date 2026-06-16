@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { 
-    AiOutlineUser, 
-    AiOutlineMail, 
-    AiOutlinePhone, 
-    AiOutlineCalendar, 
-    AiOutlineTeam, 
+import {
+    AiOutlineUser,
+    AiOutlineMail,
+    AiOutlinePhone,
+    AiOutlineCalendar,
+    AiOutlineTeam,
     AiOutlineHome,
     AiOutlineEdit,
     AiOutlineArrowLeft,
@@ -19,7 +19,7 @@ import {
 function Profile() {
     const navigate = useNavigate();
     const location = useLocation();
-    
+
     const [visible, setVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [isSaving, setIsSaving] = useState(false);
@@ -35,15 +35,26 @@ function Profile() {
     const [Gender, setGender] = useState("");
     const [Address, setAddress] = useState("");
 
+
     const getUserProfile = async (id) => {
         setIsLoading(true);
         try {
-            const response = await fetch('http://localhost:5000/users/' + id);
+            const response = await fetch(`http://localhost:5000/users/${id}`);
             const result = await response.json();
-            console.log(result);
+            console.log("Profile data:", result);
             setProfile(result);
+
+            // Handle photo - if it's base64 string, use directly
             if (result.photo) {
-                setPhotoPreview(result.photo);
+                // Check if it's a base64 string (starts with data:image/)
+                if (result.photo.startsWith('data:image/')) {
+                    setPhotoPreview(result.photo);
+                } else {
+                    // If it's a path, construct URL
+                    setPhotoPreview(`http://localhost:5000${result.photo}`);
+                }
+            } else {
+                setPhotoPreview(null);
             }
             return result;
         } catch (error) {
@@ -52,7 +63,6 @@ function Profile() {
             setIsLoading(false);
         }
     };
-
     useEffect(() => {
         console.log(location.search);
         if (location.search) {
@@ -80,10 +90,24 @@ function Profile() {
     const handlePhotoChange = (event) => {
         const file = event.target.files[0];
         if (file) {
+            // Check file size (max 5MB)
+            if (file.size > 5 * 1024 * 1024) {
+                alert("File size should be less than 5MB");
+                return;
+            }
+
+            // Check file type
+            if (!file.type.startsWith('image/')) {
+                alert("Please select an image file");
+                return;
+            }
+
             const reader = new FileReader();
             reader.onloadend = () => {
-                setPhotoPreview(reader.result);
-                setPhotoFile(file);
+                // This will be the base64 string
+                const base64String = reader.result;
+                setPhotoPreview(base64String); // For preview
+                setPhotoFile(base64String); // Store base64 string instead of file object
             };
             reader.readAsDataURL(file);
         }
@@ -110,50 +134,81 @@ function Profile() {
     const handleAddress = (event) => {
         setAddress(event.target.value);
     };
-const updateUser = async (e) => {
-    e.preventDefault();
-    setIsSaving(true);
-    
-    const updateData = {
-        FirstName: FirstName,
-        SecondName: SecondName,
-        Email: Email,
-        Phone: Phone,
-        DOB: DOB,
-        Gender: Gender,
-        Address: Address
-    };
 
-    const URL = `http://localhost:5000/users/${location.search.slice(1)}`;
-    console.log("Sending update:", updateData);
-    
-    try {
-        const response = await fetch(URL, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(updateData),
-        });
-        
-        const result = await response.json();
-        console.log("Response:", result);
-        
-        if (response.status === 200) {
-            await getUserProfile(location.search.slice(1));
-            setVisible(false);
-            alert("Profile updated successfully!");
-        } else {
-            alert(result.message || "Failed to update profile");
+    const updateUser = async (e) => {
+        e.preventDefault();
+        setIsSaving(true);
+
+        // Create update data object
+        const updateData = {
+            FirstName: FirstName,
+            SecondName: SecondName,
+            Email: Email,
+            Phone: Phone,
+            DOB: DOB,
+            Gender: Gender,
+            Address: Address
+        };
+
+        // Append base64 photo if selected
+        if (photoFile) {
+            updateData.photo = photoFile; // photoFile is already base64 string
         }
-    } catch (error) {
-        console.error("Error updating profile:", error);
-        alert("Error updating profile. Please try again.");
-    } finally {
-        setIsSaving(false);
-    }
-};
 
+        const URL = `http://localhost:5000/users/${location.search.slice(1)}`;
+
+        try {
+            const response = await fetch(URL, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updateData),
+            });
+
+            const result = await response.json();
+
+            if (response.status === 200) {
+                await getUserProfile(location.search.slice(1));
+                setVisible(false);
+                setPhotoFile(null);
+                alert("Profile updated successfully!");
+            } else {
+                alert(result.message || "Failed to update profile");
+            }
+        } catch (error) {
+            console.error("Error updating profile:", error);
+            alert("Error updating profile. Please try again.");
+        } finally {
+            setIsSaving(false);
+        }
+    };
+    const handleCancel = () => {
+        setVisible(false);
+        setPhotoFile(null);
+        // Reset photo preview to original
+        if (profile?.photo) {
+            if (profile.photo.startsWith('data:image/')) {
+                setPhotoPreview(profile.photo);
+            } else if (profile.photo.startsWith('/uploads/')) {
+                setPhotoPreview(`http://localhost:5000${profile.photo}`);
+            } else {
+                setPhotoPreview(profile.photo);
+            }
+        } else {
+            setPhotoPreview(null);
+        }
+        // Reset form fields
+        if (profile) {
+            setFirstName(profile.FirstName || "");
+            setSecondName(profile.SecondName || "");
+            setAddress(profile.Address || "");
+            setDOB(profile.DOB || "");
+            setEmail(profile.Email || "");
+            setPhone(profile.Phone || "");
+            setGender(profile.Gender || "");
+        }
+    };
     const InfoItem = ({ icon: Icon, label, value }) => (
         <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
             <div className="p-2 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-lg">
@@ -180,8 +235,8 @@ const updateUser = async (e) => {
                                 Profile
                             </h1>
                         </div>
-                        <button 
-                            onClick={() => navigate("/Dashboard")} 
+                        <button
+                            onClick={() => navigate("/Dashboard")}
                             className="flex items-center gap-2 px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white font-medium rounded-xl transition-all duration-200 shadow-lg shadow-gray-500/30"
                         >
                             <AiOutlineArrowLeft />
@@ -206,9 +261,9 @@ const updateUser = async (e) => {
                                 <div className="relative">
                                     <div className="w-24 h-24 rounded-full border-4 border-white/30 overflow-hidden bg-white/20 flex items-center justify-center">
                                         {photoPreview ? (
-                                            <img 
-                                                src={photoPreview} 
-                                                alt="Profile" 
+                                            <img
+                                                src={photoPreview}
+                                                alt="Profile"
                                                 className="w-full h-full object-cover"
                                             />
                                         ) : (
@@ -217,8 +272,8 @@ const updateUser = async (e) => {
                                     </div>
                                     {/* Camera icon at bottom-right - only visible in edit mode */}
                                     {visible && (
-                                        <label 
-                                            htmlFor="photo-upload" 
+                                        <label
+                                            htmlFor="photo-upload"
                                             className="absolute bottom-0 right-0 p-1.5 bg-white rounded-full shadow-lg cursor-pointer hover:bg-gray-100 transition-colors border-2 border-white"
                                         >
                                             <AiOutlineCamera className="w-4 h-4 text-indigo-600" />
@@ -260,10 +315,10 @@ const updateUser = async (e) => {
 
                                     {/* Edit Button */}
                                     <div className="flex justify-end mt-6 pt-6 border-t border-gray-200">
-                                        <button 
+                                        <button
                                             onClick={() => {
                                                 setVisible(true);
-                                            }} 
+                                            }}
                                             className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 shadow-lg shadow-indigo-500/30"
                                         >
                                             <AiOutlineEdit />
@@ -281,11 +336,11 @@ const updateUser = async (e) => {
                                                     <AiOutlineUser className="text-indigo-500" />
                                                     First Name
                                                 </label>
-                                                <input 
-                                                    type="text" 
-                                                    value={FirstName} 
-                                                    onChange={handleFirstName} 
-                                                    placeholder="First Name" 
+                                                <input
+                                                    type="text"
+                                                    value={FirstName}
+                                                    onChange={handleFirstName}
+                                                    placeholder="First Name"
                                                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition-all duration-200"
                                                     required
                                                 />
@@ -295,11 +350,11 @@ const updateUser = async (e) => {
                                                     <AiOutlineUser className="text-indigo-500" />
                                                     Last Name
                                                 </label>
-                                                <input 
-                                                    type="text" 
-                                                    value={SecondName} 
-                                                    onChange={handleSecondName} 
-                                                    placeholder="Last Name" 
+                                                <input
+                                                    type="text"
+                                                    value={SecondName}
+                                                    onChange={handleSecondName}
+                                                    placeholder="Last Name"
                                                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition-all duration-200"
                                                     required
                                                 />
@@ -309,11 +364,11 @@ const updateUser = async (e) => {
                                                     <AiOutlineMail className="text-indigo-500" />
                                                     Email Address
                                                 </label>
-                                                <input 
-                                                    type="email" 
-                                                    value={Email} 
-                                                    onChange={handleEmail} 
-                                                    placeholder="Email" 
+                                                <input
+                                                    type="email"
+                                                    value={Email}
+                                                    onChange={handleEmail}
+                                                    placeholder="Email"
                                                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition-all duration-200"
                                                     required
                                                 />
@@ -323,11 +378,11 @@ const updateUser = async (e) => {
                                                     <AiOutlinePhone className="text-indigo-500" />
                                                     Phone Number
                                                 </label>
-                                                <input 
-                                                    type="tel" 
-                                                    value={Phone} 
-                                                    onChange={handlePhone} 
-                                                    placeholder="Phone" 
+                                                <input
+                                                    type="tel"
+                                                    value={Phone}
+                                                    onChange={handlePhone}
+                                                    placeholder="Phone"
                                                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition-all duration-200"
                                                     required
                                                 />
@@ -337,10 +392,10 @@ const updateUser = async (e) => {
                                                     <AiOutlineCalendar className="text-indigo-500" />
                                                     Date of Birth
                                                 </label>
-                                                <input 
-                                                    type="date" 
-                                                    value={DOB} 
-                                                    onChange={handleDOB} 
+                                                <input
+                                                    type="date"
+                                                    value={DOB}
+                                                    onChange={handleDOB}
                                                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition-all duration-200"
                                                     required
                                                 />
@@ -350,9 +405,9 @@ const updateUser = async (e) => {
                                                     <AiOutlineTeam className="text-indigo-500" />
                                                     Gender
                                                 </label>
-                                                <select 
-                                                    value={Gender} 
-                                                    onChange={handleGender} 
+                                                <select
+                                                    value={Gender}
+                                                    onChange={handleGender}
                                                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition-all duration-200"
                                                     required
                                                 >
@@ -367,11 +422,11 @@ const updateUser = async (e) => {
                                                     <AiOutlineHome className="text-indigo-500" />
                                                     Address
                                                 </label>
-                                                <textarea 
-                                                    rows={3} 
-                                                    value={Address} 
-                                                    onChange={handleAddress} 
-                                                    placeholder="Address" 
+                                                <textarea
+                                                    rows={3}
+                                                    value={Address}
+                                                    onChange={handleAddress}
+                                                    placeholder="Address"
                                                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none transition-all duration-200 resize-none"
                                                 />
                                             </div>
@@ -379,30 +434,16 @@ const updateUser = async (e) => {
 
                                         {/* Action Buttons */}
                                         <div className="flex flex-wrap justify-end gap-3 pt-6 border-t border-gray-200">
-                                            <button 
-                                                type="button" 
-                                                onClick={() => {
-                                                    setVisible(false);
-                                                    setPhotoFile(null);
-                                                    // Reset form values to profile data
-                                                    if (profile) {
-                                                        setFirstName(profile.FirstName || "");
-                                                        setSecondName(profile.SecondName || "");
-                                                        setAddress(profile.Address || "");
-                                                        setDOB(profile.DOB || "");
-                                                        setEmail(profile.Email || "");
-                                                        setPhone(profile.Phone || "");
-                                                        setGender(profile.Gender || "");
-                                                        setPhotoPreview(profile.photo || null);
-                                                    }
-                                                }} 
+                                            <button
+                                                type="button"
+                                                onClick={handleCancel}
                                                 className="flex items-center gap-2 px-6 py-2.5 bg-red-100 text-red-600 font-medium rounded-xl hover:bg-red-200 transition-all duration-200"
                                             >
                                                 <AiOutlineClose />
                                                 Cancel
                                             </button>
-                                            <button 
-                                                type="submit" 
+                                            <button
+                                                type="submit"
                                                 disabled={isSaving}
                                                 className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 shadow-lg shadow-indigo-500/30 disabled:opacity-70"
                                             >
