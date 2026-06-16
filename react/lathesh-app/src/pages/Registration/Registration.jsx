@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaUser, FaEnvelope, FaPhone, FaLock, FaUserPlus, FaArrowRight, FaCheckCircle, FaMoon, FaSun, FaEyeSlash, FaEye } from "react-icons/fa";
 
 function Registration() {
     const navigate = useNavigate();
     const Heading = "CREATE ACCOUNT"
-    const site = "To MySite.com"
-    const submit = "SUBMIT🚀"
-    const login = "Login"
+    const site = "MySite.com"
+    const submit = "Create Account"
+    const login = "Sign In"
     const [RegDetails, setRegDetails] = useState(null)
     const [FirstName, setFirstName] = useState("")
     const [SecondName, setSecondName] = useState("")
@@ -14,6 +15,12 @@ function Registration() {
     const [Phone, setPhone] = useState("")
     const [Password, setPassword] = useState("")
     const [ConfirmPassword, setConfirmPassword] = useState("")
+    const [passwordError, setPasswordError] = useState("")
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [successMessage, setSuccessMessage] = useState("")
+    const [isDark, setIsDark] = useState(false)
+    const [showPassword, setShowPassword] = useState(false)
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false)
     const [data, setData] = useState({
         FirstName: "",
         SecondName: "",
@@ -21,86 +28,521 @@ function Registration() {
         Phone: "",
         Password: "",
         ConfirmPassword: "",
-    }
-    );
+    });
+
+    // Toggle theme
+    const toggleTheme = () => {
+        setIsDark(!isDark);
+    };
+
+    // Password strength checker
+    const getPasswordStrength = (password) => {
+        let strength = 0;
+        if (password.length >= 8) strength++;
+        if (password.match(/[a-z]+/)) strength++;
+        if (password.match(/[A-Z]+/)) strength++;
+        if (password.match(/[0-9]+/)) strength++;
+        if (password.match(/[$@#&!]+/)) strength++;
+        return strength;
+    };
+
+    const passwordStrength = getPasswordStrength(Password);
+    const strengthColor = [
+        'bg-gray-200',
+        'bg-red-500',
+        'bg-orange-500',
+        'bg-yellow-500',
+        'bg-blue-500',
+        'bg-green-500'
+    ][passwordStrength];
+    
+    const strengthText = [
+        'No Password',
+        'Very Weak',
+        'Weak',
+        'Fair',
+        'Strong',
+        'Very Strong'
+    ][passwordStrength];
 
     const registerValues = async (regdetails) => {
         regdetails.preventDefault();
-        console.log(regdetails.target[0].value)
-        console.log(regdetails.target[1].value)
-        console.log(regdetails.target[2].value)
-        console.log(regdetails.target[3].value)
-        console.log(regdetails.target[4].value)
-        console.log(regdetails.target[5].value)
+        setIsSubmitting(true);
+        
+        // Password validation
+        if (Password !== ConfirmPassword) {
+            setPasswordError("Passwords do not match!");
+            setIsSubmitting(false);
+            return;
+        }
+        
+        if (Password.length < 8) {
+            setPasswordError("Password must be at least 8 characters!");
+            setIsSubmitting(false);
+            return;
+        }
+        
+        setPasswordError("");
+        
         const UpDateDetails = {
-            FirstName: regdetails.target[0].value,
-            SecondName: regdetails.target[1].value,
-            Email: regdetails.target[2].value,
-            Phone: regdetails.target[3].value,
-            Password: regdetails.target[4].value,
-            ConfirmPassword: regdetails.target[5].value
+            FirstName: FirstName,
+            SecondName: SecondName,
+            Email: Email,
+            Phone: Phone,
+            Password: Password,
+            ConfirmPassword: ConfirmPassword
         }
         setRegDetails(UpDateDetails);
 
-        const URL = "http://localhost:5000/register"
-        const response = await fetch(URL,
-            {
+        try {
+            const URL = "http://localhost:5000/register"
+            const response = await fetch(URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(UpDateDetails),
             });
-        console.log(response);
-
+            
+            if (response.ok) {
+                setSuccessMessage("Account created successfully! 🎉");
+                setTimeout(() => {
+                    navigate("/Login");
+                }, 2000);
+            } else {
+                const error = await response.json();
+                setPasswordError(error.message || "Registration failed. Please try again.");
+                setIsSubmitting(false);
+            }
+        } catch (error) {
+            setPasswordError("Network error. Please try again.");
+            setIsSubmitting(false);
+        }
     }
 
     useEffect(() => {
         if (RegDetails) {
             console.log(RegDetails);
-
-            const passwordMatch = (RegDetails.Password == RegDetails.ConfirmPassword) ? alert("Password matched! \nUser registered Successfully") : alert("Password not matched");
-            navigate("/Login")
         }
-
     }, [RegDetails])
-
-    useEffect(() => {
-        console.log("RegDetail are", RegDetails)
-    }, [RegDetails])
-
-
-
 
     return (
         <>
+            <div className={`min-h-screen transition-colors duration-500 ${
+                isDark 
+                    ? 'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900' 
+                    : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'
+            } flex items-center justify-center p-4 relative overflow-hidden`}>
+                
+                {/* Animated Background Elements */}
+                <div className="absolute inset-0 overflow-hidden">
+                    <div className={`absolute -top-40 -right-40 w-80 h-80 rounded-full mix-blend-multiply filter blur-3xl animate-pulse ${
+                        isDark 
+                            ? 'bg-purple-500 opacity-20' 
+                            : 'bg-purple-300 opacity-30'
+                    }`}></div>
+                    <div className={`absolute -bottom-40 -left-40 w-80 h-80 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000 ${
+                        isDark 
+                            ? 'bg-blue-500 opacity-20' 
+                            : 'bg-blue-300 opacity-30'
+                    }`}></div>
+                    <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-2000 ${
+                        isDark 
+                            ? 'bg-indigo-500 opacity-10' 
+                            : 'bg-indigo-300 opacity-20'
+                    }`}></div>
+                </div>
 
-            <div className="min-h-screen bg-blue-300  ">
-                <div className="flex flex-col">
-                    <div className=" flex flex-col text-center font-bold py-2 mb-4">
-                        <h1 className="mb-2 sm:mb-4 lg:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-shadow-[2px_3px_yellow] font-[cursive]">{Heading}</h1>
-                        <h1 className="text-xl sm:text-2xl lg:text-3xl font-[cursive]">{site}</h1>
+                <div className="w-full max-w-md relative z-10">
+                    {/* Theme Toggle Button */}
+                    <div className="flex justify-end mb-4">
+                        <button
+                            onClick={toggleTheme}
+                            className={`p-3 rounded-full transition-all duration-300 transform hover:scale-110 ${
+                                isDark 
+                                    ? 'bg-white/10 text-yellow-400 hover:bg-white/20' 
+                                    : 'bg-white/80 text-gray-700 hover:bg-white shadow-lg'
+                            }`}
+                        >
+                            {isDark ? <FaSun className="text-xl" /> : <FaMoon className="text-xl" />}
+                        </button>
                     </div>
-                    <div className="px-10 sm:px-50 xl:px-100 lg:px-70">
-                        <form className="grid grid-cols-1 gap-3 border-2 border-solid rounded-2xl shadow-[0px_7px_7px_white] px-2.5 py-2.5  " onSubmit={registerValues}>
-                            <div className="flex flex-col lg:flex-row gap-2 items-center">
-                                <label>First Name:</label>  <input type="text" placeholder="Your first-name" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 xl:py-3 xl:px-1 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" placeholder="Your first-name" required />
-                                <label>Second Name:</label> <input type="text" placeholder="Your second-name" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 xl:py-3 xl:px-1 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" placeholder="Your second-name" required/></div>
-                            <label>E-mail:</label> <input type="email" placeholder="Your email" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" placeholder="Your email" required/>
-                            <label>Phone No.:</label>  <input type="text" placeholder="Your Phone Number" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" placeholder="Your Phone Number" required/>
-                            <label>Password:</label>  <input type="password" placeholder="Your Password" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" placeholder="Your Password" required/>
-                            <label>ConfirmPassword:</label>  <input type="password" placeholder="Re-enter Password" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" placeholder="Re-enter Password" required/>
-                            <div className="flex justify-end font-bold">
-                                <h1 className="items-center flex">Already Have Account Please ➡️</h1>
-                                <button type="button" className="text-base bg-white border border-solid border-black rounded-2xl py-1 px-10 hover:bg-red-400 hover:shadow-[2px_2px_1px_black]" onClick={() => { navigate("/Login") }}>{login}</button>
 
+                    {/* Header Section */}
+                    <div className="text-center mb-8">
+                        <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl mb-4 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300 ${
+                            isDark 
+                                ? 'bg-gradient-to-br from-blue-500 to-purple-600' 
+                                : 'bg-gradient-to-br from-blue-500 to-purple-600'
+                        }`}>
+                            <FaUserPlus className="text-white text-4xl" />
+                        </div>
+                        <h1 className={`text-4xl sm:text-5xl font-bold mb-2 tracking-tight transition-colors duration-300 ${
+                            isDark ? 'text-white' : 'text-gray-800'
+                        }`}>
+                            {Heading}
+                        </h1>
+                        <div className="h-1 w-24 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full mb-3"></div>
+                        <p className={`text-sm font-light transition-colors duration-300 ${
+                            isDark ? 'text-gray-300' : 'text-gray-600'
+                        }`}>
+                            Join <span className="font-semibold">{site}</span> and get started
+                        </p>
+                    </div>
+
+                    {/* Form Section */}
+                    <form className={`rounded-2xl shadow-2xl px-6 sm:px-8 py-8 space-y-5 transition-all duration-500 ${
+                        isDark 
+                            ? 'bg-white/10 backdrop-blur-lg border border-white/10' 
+                            : 'bg-white shadow-2xl'
+                    }`} onSubmit={registerValues}>
+                        
+                        {/* Success Message */}
+                        {successMessage && (
+                            <div className={`border-l-4 p-4 rounded-lg flex items-center gap-2 ${
+                                isDark 
+                                    ? 'bg-green-500/20 border-green-400' 
+                                    : 'bg-green-50 border-green-500'
+                            }`}>
+                                <FaCheckCircle className={isDark ? 'text-green-400' : 'text-green-500'} />
+                                <p className={isDark ? 'text-green-300 font-medium' : 'text-green-700 font-medium'}>
+                                    {successMessage}
+                                </p>
                             </div>
-                            <button type="submit" className="text-2xl py-2 px-9 bg-amber-400 h-15 border-3 border-solid borderr-black rounded-4xl"><strong>{submit}</strong></button>
-                        </form>
+                        )}
+
+                        {/* Error Message */}
+                        {passwordError && (
+                            <div className={`border-l-4 p-4 rounded-lg ${
+                                isDark 
+                                    ? 'bg-red-500/20 border-red-400' 
+                                    : 'bg-red-50 border-red-500'
+                            }`}>
+                                <p className={isDark ? 'text-red-300 font-medium' : 'text-red-700 font-medium'}>
+                                    {passwordError}
+                                </p>
+                            </div>
+                        )}
+
+                        {/* Name Fields - Two columns on desktop */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label className={`block font-semibold text-sm mb-2 uppercase tracking-wider transition-colors duration-300 ${
+                                    isDark ? 'text-gray-300' : 'text-gray-700'
+                                }`}>
+                                    First Name
+                                </label>
+                                <div className="relative group">
+                                    <FaUser className={`absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 ${
+                                        isDark 
+                                            ? 'text-gray-400 group-focus-within:text-blue-400' 
+                                            : 'text-gray-400 group-focus-within:text-blue-500'
+                                    }`} />
+                                    <input 
+                                        type="text" 
+                                        value={FirstName}
+                                        onChange={(e) => setFirstName(e.target.value)}
+                                        placeholder="John" 
+                                        className={`w-full pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ${
+                                            isDark 
+                                                ? 'bg-white/5 border border-white/10 text-white placeholder-gray-400 backdrop-blur-sm uppercase' 
+                                                : 'bg-white border border-gray-300 text-gray-700 placeholder-gray-400 uppercase'
+                                        }`}
+                                        required 
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <label className={`block font-semibold text-sm mb-2 uppercase tracking-wider transition-colors duration-300 ${
+                                    isDark ? 'text-gray-300' : 'text-gray-700'
+                                }`}>
+                                    Last Name
+                                </label>
+                                <div className="relative group">
+                                    <FaUser className={`absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 ${
+                                        isDark 
+                                            ? 'text-gray-400 group-focus-within:text-blue-400' 
+                                            : 'text-gray-400 group-focus-within:text-blue-500'
+                                    }`} />
+                                    <input 
+                                        type="text" 
+                                        value={SecondName}
+                                        onChange={(e) => setSecondName(e.target.value)}
+                                        placeholder="Doe" 
+                                        className={`w-full pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ${
+                                            isDark 
+                                                ? 'bg-white/5 border border-white/10 text-white placeholder-gray-400 backdrop-blur-sm uppercase' 
+                                                : 'bg-white border border-gray-300 text-gray-700 placeholder-gray-400 uppercase'
+                                        }`}
+                                        required 
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Email Field */}
+                        <div>
+                            <label className={`block font-semibold text-sm mb-2 uppercase tracking-wider transition-colors duration-300 ${
+                                isDark ? 'text-gray-300' : 'text-gray-700'
+                            }`}>
+                                Email Address
+                            </label>
+                            <div className="relative group">
+                                <FaEnvelope className={`absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 ${
+                                    isDark 
+                                        ? 'text-gray-400 group-focus-within:text-blue-400' 
+                                        : 'text-gray-400 group-focus-within:text-blue-500'
+                                }`} />
+                                <input 
+                                    type="email" 
+                                    value={Email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    placeholder="you@example.com" 
+                                    className={`w-full pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ${
+                                        isDark 
+                                            ? 'bg-white/5 border border-white/10 text-white placeholder-gray-400 backdrop-blur-sm' 
+                                            : 'bg-white border border-gray-300 text-gray-700 placeholder-gray-400'
+                                    }`}
+                                    required 
+                                />
+                            </div>
+                        </div>
+
+                        {/* Phone Field */}
+                        <div>
+                            <label className={`block font-semibold text-sm mb-2 uppercase tracking-wider transition-colors duration-300 ${
+                                isDark ? 'text-gray-300' : 'text-gray-700'
+                            }`}>
+                                Phone Number
+                            </label>
+                            <div className="relative group">
+                                <FaPhone className={`absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 ${
+                                    isDark 
+                                        ? 'text-gray-400 group-focus-within:text-blue-400' 
+                                        : 'text-gray-400 group-focus-within:text-blue-500'
+                                }`} />
+                                <input 
+                                    type="tel" 
+                                    value={Phone}
+                                    onChange={(e) => setPhone(e.target.value)}
+                                    placeholder="+91 98765 43210" 
+                                    className={`w-full pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ${
+                                        isDark 
+                                            ? 'bg-white/5 border border-white/10 text-white placeholder-gray-400 backdrop-blur-sm' 
+                                            : 'bg-white border border-gray-300 text-gray-700 placeholder-gray-400'
+                                    }`}
+                                    required 
+                                />
+                            </div>
+                        </div>
+
+                        {/* Password Field */}
+                        <div>
+                            <label className={`block font-semibold text-sm mb-2 uppercase tracking-wider transition-colors duration-300 ${
+                                isDark ? 'text-gray-300' : 'text-gray-700'
+                            }`}>
+                                Password
+                            </label>
+                            <div className="relative group">
+                                <FaLock className={`absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 ${
+                                    isDark 
+                                        ? 'text-gray-400 group-focus-within:text-blue-400' 
+                                        : 'text-gray-400 group-focus-within:text-blue-500'
+                                }`} />
+                                <input 
+                                    type={showPassword ? "text" : "password"}
+                                    value={Password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    placeholder="Create a strong password" 
+                                    className={`w-full pl-10 pr-12 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ${
+                                        isDark 
+                                            ? 'bg-white/5 border border-white/10 text-white placeholder-gray-400 backdrop-blur-sm' 
+                                            : 'bg-white border border-gray-300 text-gray-700 placeholder-gray-400'
+                                    }`}
+                                    required 
+                                />
+                                <button
+                                    type="button"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    className={`absolute right-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 ${
+                                        isDark 
+                                            ? 'text-gray-400 hover:text-white' 
+                                            : 'text-gray-400 hover:text-gray-600'
+                                    }`}
+                                >
+                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                </button>
+                            </div>
+                            
+                            {/* Password Strength Indicator */}
+                            {Password && (
+                                <div className="mt-2">
+                                    <div className="flex items-center gap-2">
+                                        <div className={`flex-1 h-1.5 rounded-full overflow-hidden ${
+                                            isDark ? 'bg-gray-600' : 'bg-gray-200'
+                                        }`}>
+                                            <div 
+                                                className={`h-full ${strengthColor} transition-all duration-500`}
+                                                style={{ width: `${(passwordStrength / 5) * 100}%` }}
+                                            ></div>
+                                        </div>
+                                        <span className={`text-xs font-medium ${
+                                            passwordStrength <= 2 ? 'text-red-400' :
+                                            passwordStrength === 3 ? 'text-yellow-400' :
+                                            'text-green-400'
+                                        }`}>
+                                            {strengthText}
+                                        </span>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Confirm Password Field */}
+                        <div>
+                            <label className={`block font-semibold text-sm mb-2 uppercase tracking-wider transition-colors duration-300 ${
+                                isDark ? 'text-gray-300' : 'text-gray-700'
+                            }`}>
+                                Confirm Password
+                            </label>
+                            <div className="relative group">
+                                <FaLock className={`absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 ${
+                                    isDark 
+                                        ? 'text-gray-400 group-focus-within:text-blue-400' 
+                                        : 'text-gray-400 group-focus-within:text-blue-500'
+                                }`} />
+                                <input 
+                                    type={showConfirmPassword ? "text" : "password"}
+                                    value={ConfirmPassword}
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                    placeholder="Re-enter your password" 
+                                    className={`w-full pl-10 pr-12 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ${
+                                        isDark 
+                                            ? 'bg-white/5 border border-white/10 text-white placeholder-gray-400 backdrop-blur-sm' 
+                                            : 'bg-white border border-gray-300 text-gray-700 placeholder-gray-400'
+                                    }`}
+                                    required 
+                                />
+                                <button
+                                    type="button"
+                                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                    className={`absolute right-3 top-1/2 transform -translate-y-1/2 transition-colors duration-200 ${
+                                        isDark 
+                                            ? 'text-gray-400 hover:text-white' 
+                                            : 'text-gray-400 hover:text-gray-600'
+                                    }`}
+                                >
+                                    {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+                                </button>
+                            </div>
+                            {ConfirmPassword && Password !== ConfirmPassword && (
+                                <p className="text-red-400 text-xs mt-1">Passwords do not match</p>
+                            )}
+                            {ConfirmPassword && Password === ConfirmPassword && Password && (
+                                <p className="text-green-400 text-xs mt-1">✓ Passwords match</p>
+                            )}
+                        </div>
+
+                        {/* Password Requirements */}
+                        <div className={`rounded-lg p-4 transition-colors duration-300 ${
+                            isDark ? 'bg-white/5' : 'bg-gray-50'
+                        }`}>
+                            <p className={`text-xs font-semibold uppercase tracking-wide mb-2 transition-colors duration-300 ${
+                                isDark ? 'text-gray-400' : 'text-gray-600'
+                            }`}>
+                                Password Requirements:
+                            </p>
+                            <ul className={`text-xs space-y-1 transition-colors duration-300 ${
+                                isDark ? 'text-gray-400' : 'text-gray-500'
+                            }`}>
+                                <li className="flex items-center gap-2">
+                                    <span className={`w-2 h-2 rounded-full ${
+                                        Password.length >= 8 ? 'bg-green-500' : isDark ? 'bg-gray-600' : 'bg-gray-300'
+                                    }`}></span>
+                                    At least 8 characters long
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className={`w-2 h-2 rounded-full ${
+                                        Password.match(/[A-Z]/) && Password.match(/[a-z]/) ? 'bg-green-500' : isDark ? 'bg-gray-600' : 'bg-gray-300'
+                                    }`}></span>
+                                    Include uppercase and lowercase letters
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className={`w-2 h-2 rounded-full ${
+                                        Password.match(/[0-9]/) ? 'bg-green-500' : isDark ? 'bg-gray-600' : 'bg-gray-300'
+                                    }`}></span>
+                                    Include at least one number
+                                </li>
+                                <li className="flex items-center gap-2">
+                                    <span className={`w-2 h-2 rounded-full ${
+                                        Password === ConfirmPassword && Password ? 'bg-green-500' : isDark ? 'bg-gray-600' : 'bg-gray-300'
+                                    }`}></span>
+                                    Passwords must match
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Login Redirect */}
+                        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 pt-2">
+                            <p className={`text-sm transition-colors duration-300 ${
+                                isDark ? 'text-gray-400' : 'text-gray-600'
+                            }`}>
+                                Already have an account?
+                            </p>
+                            <button 
+                                type="button" 
+                                className={`flex items-center gap-2 font-semibold transition duration-200 hover:underline ${
+                                    isDark 
+                                        ? 'text-blue-400 hover:text-blue-300' 
+                                        : 'text-blue-600 hover:text-blue-800'
+                                }`}
+                                onClick={() => { navigate("/Login") }}
+                            >
+                                {login}
+                                <FaArrowRight className="text-sm" />
+                            </button>
+                        </div>
+
+                        {/* Submit Button */}
+                        <button 
+                            type="submit" 
+                            disabled={isSubmitting}
+                            className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3.5 px-4 rounded-lg transition duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-900 text-lg disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+                        >
+                            {isSubmitting ? (
+                                <span className="flex items-center justify-center gap-2">
+                                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    Creating Account...
+                                </span>
+                            ) : (
+                                <span className="flex items-center justify-center gap-2">
+                                    <FaUserPlus />
+                                    {submit}
+                                </span>
+                            )}
+                        </button>
+
+                        {/* Terms & Conditions */}
+                        <p className={`text-center text-xs transition-colors duration-300 ${
+                            isDark ? 'text-gray-500' : 'text-gray-400'
+                        }`}>
+                            By creating an account, you agree to our Terms of Service and Privacy Policy
+                        </p>
+                    </form>
+
+                    {/* Footer */}
+                    <div className="text-center mt-6">
+                        <p className={`text-xs transition-colors duration-300 ${
+                            isDark ? 'text-gray-500' : 'text-gray-400'
+                        }`}>
+                            Secured with 256-bit encryption
+                        </p>
                     </div>
                 </div>
             </div>
-
         </>
     )
 }
