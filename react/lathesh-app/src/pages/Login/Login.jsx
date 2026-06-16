@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
     const navigate = useNavigate();
-    const submit = "SIGN IN🚀"
+    const submit = "SIGN IN"
     const Login = "LOGIN"
     const forgot = "Update Password?"
     const site = "To MySite.com"
@@ -42,7 +42,6 @@ function Login() {
             setVisible(!visible);
             setTimeout(()=>setVisible(visible),8000);
         }
-
     }
 
     useEffect(() => {
@@ -53,33 +52,96 @@ function Login() {
         console.log("FormDetail are", FormDetails)
     }, [FormDetails])
 
-
     return (
         <>
-            <div className="bg-blue-300 min-h-screen">
-                <div className="flex flex-col ">
-                    <div className="text-4xl text-center font-bold py-2 mb-4">
-                        <h1 className="mb-10 text-5xl text-shadow-[2px_3px_yellow] font-[cursive]">{Login}</h1>
-                        <h1 className="text-3xl font-[cursive]">{site}</h1>
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen flex items-center justify-center p-4">
+                <div className="w-full max-w-md">
+                    {/* Header Section */}
+                    <div className="text-center mb-8">
+                        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-2 tracking-tight">
+                            {Login}
+                        </h1>
+                        <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full mb-4"></div>
+                        <p className="text-gray-600 text-lg font-medium">{site}</p>
                     </div>
 
-                    <form className="flex flex-col gap-5 mx-150 border-2 border-solid rounded-2xl shadow-[0px_7px_7px_white] px-2.5 py-2.5 " onSubmit={formValues}>
-                        <label>Name:</label> <input type="text" placeholder="Your name" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" required />
-                        <label>E-mail:</label> <input type="email" placeholder="Your email" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" required/>
-                        <label>Password:</label>  <input type="password" placeholder="Your Password" className=" font-[cursive] bg-white border-2 border-solid border-black rounded-2xl py-4.5 px-5 text-[16px] hover:bg-blue-200 hover:shadow-[3px_3px_1px_black]" required/>
-                        <div className="flex flex-col justify-between font-bold">
-                            {visible && (<div className="flex justify-end text-sm">{incorrect}</div>)}
+                    {/* Form Section */}
+                    <form className="bg-white rounded-xl shadow-2xl px-6 sm:px-8 py-8 space-y-6" onSubmit={formValues}>
+                        {/* Name Field */}
+                        <div className="space-y-2">
+                            <label className="block text-gray-700 font-semibold text-sm uppercase tracking-wide">
+                                Full Name
+                            </label>
+                            <input 
+                                type="text" 
+                                placeholder="Enter your full name" 
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 text-gray-700 placeholder-gray-400"
+                                required 
+                            />
+                        </div>
+
+                        {/* Email Field */}
+                        <div className="space-y-2">
+                            <label className="block text-gray-700 font-semibold text-sm uppercase tracking-wide">
+                                Email Address
+                            </label>
+                            <input 
+                                type="email" 
+                                placeholder="your@email.com" 
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 text-gray-700 placeholder-gray-400"
+                                required
+                            />
+                        </div>
+
+                        {/* Password Field */}
+                        <div className="space-y-2">
+                            <label className="block text-gray-700 font-semibold text-sm uppercase tracking-wide">
+                                Password
+                            </label>
+                            <input 
+                                type="password" 
+                                placeholder="Enter your password" 
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 text-gray-700 placeholder-gray-400"
+                                required
+                            />
+                        </div>
+
+                        {/* Error Message & Forgot Password */}
+                        <div className="space-y-3">
+                            {visible && (
+                                <div className="bg-red-50 border-l-4 border-red-500 p-3 rounded">
+                                    <p className="text-red-700 text-sm font-medium">{incorrect}</p>
+                                </div>
+                            )}
+                            
                             <div className="flex justify-end">
-                                <button type="button" className=" w-fit text-sm bg-white border border-solid border-black rounded-2xl py-1 px-1 hover:bg-red-400 hover:shadow-[2px_2px_1px_black]" onClick={() => { navigate("/UpdatePassword") }}>{forgot}</button>
+                                <button 
+                                    type="button" 
+                                    className="text-sm text-blue-600 hover:text-blue-800 font-medium transition duration-200 hover:underline focus:outline-none"
+                                    onClick={() => { navigate("/UpdatePassword") }}
+                                >
+                                    {forgot}
+                                </button>
                             </div>
                         </div>
-                        <button type="submit" className="text-2xl py-2 px-9 bg-amber-400 h-15 border-3 border-solid borderr-black rounded-4xl"><strong>{submit}</strong></button>
+
+                        {/* Submit Button */}
+                        <button 
+                            type="submit" 
+                            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-lg"
+                        >
+                            {submit}
+                        </button>
+
+                        {/* Additional Info */}
+                        <p className="text-center text-gray-500 text-sm mt-4">
+                            Secure login • Protected by encryption
+                        </p>
                     </form>
                 </div>
             </div>
         </>
     )
 }
-
 
 export default Login;
