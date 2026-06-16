@@ -5,9 +5,10 @@ import About from './component/About/About'
 import Skill from './component/Skill/Skill'
 import Experience from './component/Experience/Experience'
 import Contact from './component/Contact/Contact'
-import Forgot from './component1/component/Forgot/Forgot'
 import Register from './component1/component/Loginpage/Register'
 import Loginpage from './component1/component/Loginpage/Lp'
+import Password from './component1/component/Forgot/Forgot'
+import Dashboard from './component1/component/Dashboard/Dashboard'
 
 
 
@@ -18,7 +19,8 @@ const AppRouter = () =>{
         <Routes>
             <Route path="/log" element={<Loginpage/>}/>
             <Route path="/reg" element={<Register/>}/>
-            <Route path="/forgot" element={<Forgot/>}/>
+            <Route path="/forgot" element={<Password/>}/>
+            <Route path="/dashboard" element={<Dashboard/>}/>
         </Routes>
     )
 }

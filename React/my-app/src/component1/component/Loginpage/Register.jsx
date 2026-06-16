@@ -167,7 +167,9 @@ function Register() {
                                     type="password" 
                                     placeholder="••••••••" 
                                     required
+                                    
                                 />
+                                
                             </div>
                         </div>
 
